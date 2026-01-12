@@ -1,0 +1,372 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mustaquim Ahmad | IT Architect & Strategist</title>
+    
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;700;900&family=JetBrains+Mono:wght@400;700&display=swap" rel="stylesheet">
+    
+    <!-- Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <!-- Styles -->
+    <link rel="stylesheet" href="assets/css/style.css">
+</head>
+<body class="loading">
+
+    <!-- 1. PRELOADER -->
+    <div class="preloader">
+        <div class="loader-content">
+            <div class="loader-text">SYSTEM_INITIALIZING...</div>
+            <div class="loader-bar"><div class="bar-fill"></div></div>
+        </div>
+    </div>
+
+    <!-- 2. ANIMATED BACKGROUND (3D Grid) -->
+    <div class="cyber-grid-container">
+        <div class="cyber-grid"></div>
+        <div class="cyber-glow"></div>
+    </div>
+    <div id="spotlight"></div>
+
+    <!-- 3. FLOATING NAVBAR -->
+    <nav class="floating-nav">
+        <div class="nav-content">
+            <a href="#" class="brand">
+                <i class="fas fa-terminal"></i> MA<span class="blink">_</span>
+            </a>
+            <ul class="nav-links">
+                <li><a href="#home">Command</a></li>
+                <li><a href="#metrics">Metrics</a></li>
+                <li><a href="#experience">Timeline</a></li>
+                <li><a href="#skills">Stack</a></li>
+            </ul>
+            <div class="nav-actions">
+                <a href="#contact" class="btn-glow">
+                    <span>Initialize Contact</span>
+                    <div class="glow-effect"></div>
+                </a>
+                <div class="mobile-menu-btn">
+                    <div class="bar"></div>
+                    <div class="bar"></div>
+                    <div class="bar"></div>
+                </div>
+            </div>
+        </div>
+        <!-- Mobile Dropdown -->
+        <div class="mobile-menu">
+            <a href="#home">Home</a>
+            <a href="#metrics">Metrics</a>
+            <a href="#experience">Experience</a>
+            <a href="#skills">Skills</a>
+            <a href="#contact">Contact</a>
+        </div>
+    </nav>
+
+    <!-- 4. HERO SECTION (Holographic & 3D) -->
+    <section id="home" class="hero-split">
+        <!-- Left: Text Content -->
+        <div class="hero-text-side">
+            <div class="sys-badge">
+                <span class="status-dot"></span> SYSTEM ONLINE: V2.0
+            </div>
+            
+            <h1 class="mega-title">
+                <span class="sub">Architecting</span><br>
+                <span class="hacker-text" data-value="DIGITAL RESILIENCE">DIGITAL RESILIENCE</span>
+            </h1>
+            
+            <p class="hero-brief">
+                I am <strong class="text-white">Mustaquim Ahmad</strong>. An IT Strategist who transforms chaotic infrastructures into 
+                <span class="highlight">secure</span>, <span class="highlight">automated</span>, and <span class="highlight">profit-driving</span> ecosystems.
+            </p>
+
+            <div class="cmd-actions">
+                <a href="#experience" class="cmd-btn primary">
+                    <i class="fas fa-chevron-right"></i> Explore Career
+                </a>
+                <a href="assets/pdf/resume.pdf" target="_blank" class="cmd-btn secondary">
+                    <i class="fas fa-download"></i> Download CV
+                </a>
+            </div>
+
+            <!-- Experience Counter -->
+            <div class="xp-counter">
+                <div class="xp-item">
+                    <span class="xp-num">08+</span>
+                    <span class="xp-label">Years Experience</span>
+                </div>
+                <div class="xp-divider"></div>
+                <div class="xp-item">
+                    <span class="xp-num">99.9%</span>
+                    <span class="xp-label">Uptime Delivered</span>
+                </div>
+            </div>
+        </div>
+
+        <!-- Right: 3D Holographic Server Card -->
+        <div class="hero-visual-side">
+            <div class="holo-card-container" data-tilt data-tilt-max="10" data-tilt-speed="400" data-tilt-glare data-tilt-max-glare="0.2">
+                <div class="holo-card">
+                    <div class="card-header">
+                        <i class="fab fa-microsoft"></i>
+                        <span>SERVER_STATUS: <span style="color:#10b981">ACTIVE</span></span>
+                    </div>
+                    <div class="card-body">
+                        <div class="data-row">
+                            <span><i class="fas fa-shield-alt"></i> Security Level</span>
+                            <div class="progress-mini"><div class="fill" style="width:100%"></div></div>
+                        </div>
+                        <div class="data-row">
+                            <span><i class="fas fa-network-wired"></i> Network Load</span>
+                            <div class="progress-mini"><div class="fill" style="width:45%"></div></div>
+                        </div>
+                        <div class="data-row">
+                            <span><i class="fas fa-cloud"></i> Azure Sync</span>
+                            <div class="progress-mini"><div class="fill" style="width:92%"></div></div>
+                        </div>
+                        
+                        <div class="code-snippet">
+                            <code>
+                                > Initiating Protocol...<br>
+                                > User: Mustaquim Ahmad<br>
+                                > Role: Lead IT Engineer<br>
+                                > Stack: Intune, SCCM, Azure<br>
+                                <span class="blink">> Ready_</span>
+                            </code>
+                        </div>
+                    </div>
+                    <div class="card-footer">
+                        <div class="id-scan">ID: MA-880-BD</div>
+                    </div>
+                </div>
+                <!-- Floating Icons behind -->
+                <div class="float-icon i-1"><i class="fab fa-windows"></i></div>
+                <div class="float-icon i-2"><i class="fas fa-server"></i></div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 5. METRICS SECTION -->
+    <section id="metrics" class="section">
+        <div class="section-header">
+            <span class="sub-head">/// PERFORMANCE DATA</span>
+            <h2>Key Metrics</h2>
+        </div>
+        
+        <div class="metrics-grid">
+            <!-- Metric 1 -->
+            <div class="metric-card glass-panel" data-tilt>
+                <div class="circle-chart" data-percent="99">
+                    <svg viewBox="0 0 36 36">
+                        <path class="circle-bg" d="M18 2.0845 a 15.9155 15.9155 0 0 1 0 31.831 a 15.9155 15.9155 0 0 1 0 -31.831" />
+                        <path class="circle" stroke-dasharray="99, 100" d="M18 2.0845 a 15.9155 15.9155 0 0 1 0 31.831 a 15.9155 15.9155 0 0 1 0 -31.831" />
+                    </svg>
+                    <div class="percentage">99.9%</div>
+                </div>
+                <h3>System Uptime</h3>
+                <p>Ensuring business continuity via redundant LAN/WAN.</p>
+            </div>
+
+            <!-- Metric 2 -->
+            <div class="metric-card glass-panel" data-tilt>
+                <div class="circle-chart" data-percent="95">
+                    <svg viewBox="0 0 36 36">
+                        <path class="circle-bg" d="M18 2.0845 a 15.9155 15.9155 0 0 1 0 31.831 a 15.9155 15.9155 0 0 1 0 -31.831" />
+                        <path class="circle color-2" stroke-dasharray="95, 100" d="M18 2.0845 a 15.9155 15.9155 0 0 1 0 31.831 a 15.9155 15.9155 0 0 1 0 -31.831" />
+                    </svg>
+                    <div class="percentage">95%</div>
+                </div>
+                <h3>SLA Compliance</h3>
+                <p>Meeting resolution targets for 100+ corporate users.</p>
+            </div>
+
+            <!-- Stat Box -->
+            <div class="metric-card glass-panel stat-box">
+                <i class="fas fa-laptop-medical big-icon"></i>
+                <div class="big-number">500+</div>
+                <p>Assets Managed</p>
+                <small>Procurement to EOL via SCCM</small>
+            </div>
+        </div>
+    </section>
+
+    <!-- 6. EXPERIENCE TIMELINE -->
+    <section id="experience" class="section">
+        <div class="section-header">
+            <span class="sub-head">/// CAREER TRAJECTORY</span>
+            <h2>Professional Experience</h2>
+        </div>
+
+        <div class="timeline">
+            <!-- Job 1 -->
+            <div class="timeline-item">
+                <div class="timeline-dot"></div>
+                <div class="timeline-date">Jan 2025 - Present</div>
+                <div class="timeline-content glass-panel" data-tilt>
+                    <div class="job-header">
+                        <h3>Information Technology Officer</h3>
+                        <span class="company">Omnicare Diagnostic Ltd.</span>
+                    </div>
+                    <ul class="job-details">
+                        <li>Tier 1 & 2 support for 100+ end-users; minimized downtime.</li>
+                        <li>Lifecycle mgmt of 500+ IT assets; optimized inventory compliance.</li>
+                        <li>Administered <strong>MySoft</strong> (Hospital Mgmt System) & EMR systems.</li>
+                        <li>Managed dual WAN connectivity (LINK3, BDCOM) & Firewall security.</li>
+                    </ul>
+                </div>
+            </div>
+
+            <!-- Job 2 -->
+            <div class="timeline-item">
+                <div class="timeline-dot"></div>
+                <div class="timeline-date">Jan 2024 - July 2024</div>
+                <div class="timeline-content glass-panel" data-tilt>
+                    <div class="job-header">
+                        <h3>Technical Support Specialist</h3>
+                        <span class="company">1000fix Services Ltd.</span>
+                    </div>
+                    <ul class="job-details">
+                        <li>Supported <strong>Arla Foods</strong>; resolved 95% of incidents within SLA.</li>
+                        <li>Optimized Azure AD, SCCM, Intune, & MFA configurations.</li>
+                        <li>Proactive network monitoring using <strong>PRTG</strong> & <strong>MRTG</strong>.</li>
+                        <li>Reduced downtime incidents by 20% via anomaly detection.</li>
+                    </ul>
+                </div>
+            </div>
+
+            <!-- Job 3 -->
+            <div class="timeline-item">
+                <div class="timeline-dot"></div>
+                <div class="timeline-date">Feb 2021 - Dec 2023</div>
+                <div class="timeline-content glass-panel" data-tilt>
+                    <div class="job-header">
+                        <h3>Sr. IT Support Engineer</h3>
+                        <span class="company">Entrust Global Ltd. / e-TEK</span>
+                    </div>
+                    <ul class="job-details">
+                        <li>Critical G2G project support (Govt & UAE).</li>
+                        <li>90% first-call resolution via <strong>ServiceNow</strong>.</li>
+                        <li>Led Root Cause Analysis (RCA) cutting recurring issues by 30%.</li>
+                    </ul>
+                </div>
+            </div>
+
+            <!-- Job 4 -->
+            <div class="timeline-item">
+                <div class="timeline-dot"></div>
+                <div class="timeline-date">Dec 2017 - Dec 2020</div>
+                <div class="timeline-content glass-panel" data-tilt>
+                    <div class="job-header">
+                        <h3>IT Engineer</h3>
+                        <span class="company">M/S Shahin International</span>
+                    </div>
+                    <ul class="job-details">
+                        <li>Maintained 98% system uptime via OS/Software patching.</li>
+                        <li>Implemented CCTV & Biometric attendance integration.</li>
+                    </ul>
+                </div>
+            </div>
+            
+            <!-- Job 5 -->
+            <div class="timeline-item">
+                <div class="timeline-dot"></div>
+                <div class="timeline-date">Jan 2016 - Jan 2017</div>
+                <div class="timeline-content glass-panel" data-tilt>
+                    <div class="job-header">
+                        <h3>Assistant IT Engineer</h3>
+                        <span class="company">GrameenPhone Ltd.</span>
+                    </div>
+                    <ul class="job-details">
+                        <li>Troubleshot hardware/software maintaining 90% user satisfaction.</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 7. SKILLS & CERTIFICATIONS -->
+    <section id="skills" class="section">
+        <div class="section-header">
+            <span class="sub-head">/// ARSENAL</span>
+            <h2>Tools & Certifications</h2>
+        </div>
+
+        <div class="skills-wrapper">
+            <!-- Cloud -->
+            <div class="skill-category">
+                <h3><i class="fab fa-windows"></i> Microsoft & Cloud</h3>
+                <div class="skill-list">
+                    <div class="skill"><span>Windows Server / Active Directory</span> <div class="bar"><div class="fill" style="width:95%"></div></div></div>
+                    <div class="skill"><span>Azure AD & Intune</span> <div class="bar"><div class="fill" style="width:90%"></div></div></div>
+                    <div class="skill"><span>SCCM / MECM</span> <div class="bar"><div class="fill" style="width:85%"></div></div></div>
+                </div>
+            </div>
+            <!-- Network -->
+            <div class="skill-category">
+                <h3><i class="fas fa-network-wired"></i> Network & Sec</h3>
+                <div class="skill-list">
+                    <div class="skill"><span>PRTG / MRTG / Wireshark</span> <div class="bar"><div class="fill" style="width:90%"></div></div></div>
+                    <div class="skill"><span>Firewall / VPN / VLAN</span> <div class="bar"><div class="fill" style="width:88%"></div></div></div>
+                    <div class="skill"><span>Hardware Lifecycle</span> <div class="bar"><div class="fill" style="width:95%"></div></div></div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Badges -->
+        <h3 class="cert-title">Verified Credentials</h3>
+        <div class="cert-grid">
+            <div class="cert-badge">
+                <i class="fas fa-certificate"></i>
+                <div>
+                    <h4>MTCNA</h4>
+                    <small>MikroTik Certified Network Assoc.</small>
+                </div>
+            </div>
+            <div class="cert-badge">
+                <i class="fas fa-shield-alt"></i>
+                <div>
+                    <h4>CompTIA A+</h4>
+                    <small>1000 Part 1 & 2</small>
+                </div>
+            </div>
+            <div class="cert-badge">
+                <i class="fab fa-google"></i>
+                <div>
+                    <h4>Google IT Support</h4>
+                    <small>Professional Certification</small>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 8. FOOTER -->
+    <section id="contact" class="section contact-section">
+        <div class="glass-panel contact-box">
+            <h2>Let's Engineer Success</h2>
+            <p>Based in Dhaka, Bangladesh. Ready for local leadership or global remote roles.</p>
+            <div class="contact-details">
+                <a href="tel:+8801627562313"><i class="fas fa-phone"></i> +880 1627 562 313</a>
+                <a href="mailto:mustaquimmahmad@gmail.com"><i class="fas fa-envelope"></i> mustaquimmahmad@gmail.com</a>
+            </div>
+            <div class="social-row">
+                <a href="https://linkedin.com/in/mustaquimahmad" target="_blank"><i class="fab fa-linkedin"></i></a>
+                <a href="https://github.com/mustaquim-ms" target="_blank"><i class="fab fa-github"></i></a>
+            </div>
+        </div>
+        <footer>
+            <p>© 2026 Mustaquim Ahmad. BSc in EEE (Major IT).</p>
+        </footer>
+    </section>
+
+    <!-- Scripts -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/vanilla-tilt/1.8.0/vanilla-tilt.min.js"></script>
+    <script src="assets/js/main.js"></script>
+</body>
+</html>
