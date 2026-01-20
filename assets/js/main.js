@@ -3,7 +3,6 @@ document.addEventListener("DOMContentLoaded", () => {
     // ==========================================
     // 1. Lenis Smooth Scroll
     // ==========================================
-    // Ensure you have the script tag in HTML head
     if (typeof Lenis !== 'undefined') {
         const lenis = new Lenis({
             duration: 1.2,
@@ -17,7 +16,7 @@ document.addEventListener("DOMContentLoaded", () => {
     }
 
     // ==========================================
-    // 2. Intersection Observer (Fade In)
+    // 2. Intersection Observer (Fade In Animation)
     // ==========================================
     const observer = new IntersectionObserver((entries) => {
         entries.forEach(entry => {
@@ -66,32 +65,34 @@ document.addEventListener("DOMContentLoaded", () => {
         counterObserver.observe(counterSection);
     }
 
-    // Dynamic Greeting
-const greetingEl = document.getElementById('greeting');
-if(greetingEl) {
-    const hour = new Date().getHours();
-    let text = "Hello.";
-    
-    if (hour < 12) text = "Good Morning.";
-    else if (hour < 18) text = "Good Afternoon.";
-    else text = "Good Evening.";
-    
-    // Typewriter effect logic
-    let i = 0;
-    greetingEl.innerHTML = ""; // Clear
-    function typeWriter() {
-        if (i < text.length) {
-            greetingEl.innerHTML += text.charAt(i);
-            i++;
-            setTimeout(typeWriter, 100);
+    // ==========================================
+    // 4. Dynamic Time-Based Greeting
+    // ==========================================
+    const greetingEl = document.getElementById('greeting');
+    if(greetingEl) {
+        const hour = new Date().getHours();
+        let text = "Hello.";
+        
+        if (hour < 12) text = "Good Morning.";
+        else if (hour < 18) text = "Good Afternoon.";
+        else text = "Good Evening.";
+        
+        // Typewriter effect
+        let i = 0;
+        greetingEl.innerHTML = ""; 
+        function typeWriter() {
+            if (i < text.length) {
+                greetingEl.innerHTML += text.charAt(i);
+                i++;
+                setTimeout(typeWriter, 100);
+            }
         }
+        // Start typing after preloader finishes (approx 2.5s delay)
+        setTimeout(typeWriter, 2500);
     }
-    // Start typing after preloader
-    setTimeout(typeWriter, 1500);
-}
 
     // ==========================================
-    // 4. Bento Box Spotlight Effect
+    // 5. Bento Box Spotlight Effect
     // ==========================================
     const bentoBoxes = document.querySelectorAll(".bento-box");
     bentoBoxes.forEach((box) => {
@@ -105,41 +106,40 @@ if(greetingEl) {
     });
 
     // ==========================================
-    // 5. Project Hover Image Reveal
+    // 6. Project Hover Image Reveal
     // ==========================================
     const projectItems = document.querySelectorAll('.project-item');
     const revealEl = document.querySelector('.hover-reveal');
     const revealImg = document.querySelector('#reveal-img');
 
-    projectItems.forEach(item => {
-        item.addEventListener('mouseenter', () => {
-            // Pull image URL from data-img attribute
-            const imgUrl = item.getAttribute('data-img');
-            if (imgUrl) {
-                revealImg.src = imgUrl;
-                revealEl.classList.add('active');
-            }
-        });
+    if (revealEl && revealImg) {
+        projectItems.forEach(item => {
+            item.addEventListener('mouseenter', () => {
+                const imgUrl = item.getAttribute('data-img');
+                if (imgUrl) {
+                    revealImg.src = imgUrl;
+                    revealEl.classList.add('active');
+                }
+            });
 
-        item.addEventListener('mouseleave', () => {
-            revealEl.classList.remove('active');
-        });
+            item.addEventListener('mouseleave', () => {
+                revealEl.classList.remove('active');
+            });
 
-        item.addEventListener('mousemove', (e) => {
-            // Position the floating image
-            revealEl.style.left = `${e.clientX}px`;
-            revealEl.style.top = `${e.clientY}px`;
-            
-            // Add slight inertia/tilt
-            revealEl.animate({
-                left: `${e.clientX}px`,
-                top: `${e.clientY}px`
-            }, { duration: 500, fill: "forwards" });
+            item.addEventListener('mousemove', (e) => {
+                revealEl.style.left = `${e.clientX}px`;
+                revealEl.style.top = `${e.clientY}px`;
+                
+                revealEl.animate({
+                    left: `${e.clientX}px`,
+                    top: `${e.clientY}px`
+                }, { duration: 500, fill: "forwards" });
+            });
         });
-    });
+    }
 
     // ==========================================
-    // 6. Magnetic Buttons
+    // 7. Magnetic Buttons
     // ==========================================
     const magnets = document.querySelectorAll('.magnetic-btn');
     magnets.forEach((magnet) => {
@@ -155,7 +155,7 @@ if(greetingEl) {
     });
 
     // ==========================================
-    // 7. Dark Mode Toggle & Logic
+    // 8. Dark Mode Toggle
     // ==========================================
     const themeBtn = document.getElementById('theme-btn');
     const body = document.body;
@@ -179,150 +179,164 @@ if(greetingEl) {
         });
     }
 
-});
+    // ==========================================
+    // 9. NAVBAR SLIDING BACKDROP (NEW)
+    // ==========================================
+    const navLinksContainer = document.querySelector('.nav-links');
+    const navItems = document.querySelectorAll('.nav-links a');
+    const navSlider = document.querySelector('.nav-slider');
 
-/* ==========================================
-   8. INTERACTIVE TERMINAL LOGIC
-   ========================================== */
-const termBtn = document.getElementById('term-btn');
-const termOverlay = document.getElementById('terminal');
-const closeTerm = document.getElementById('close-term');
-const termInput = document.getElementById('term-input');
-const termBody = document.querySelector('.output');
+    if (navItems.length > 0 && navSlider && navLinksContainer) {
+        navItems.forEach(item => {
+            item.addEventListener('mouseenter', (e) => {
+                const target = e.target;
+                const rect = target.getBoundingClientRect();
+                const containerRect = navLinksContainer.getBoundingClientRect();
 
-// Open/Close
-if(termBtn) {
-    termBtn.addEventListener('click', () => {
-        termOverlay.classList.add('open');
-        termInput.focus();
-    });
-}
-closeTerm.addEventListener('click', () => termOverlay.classList.remove('open'));
+                // Calculate relative position
+                const left = rect.left - containerRect.left;
+                const width = rect.width;
 
-// Commands
-const commands = {
-    help: "Available commands: <br> - about <br> - skills <br> - email <br> - clear",
-    about: "Mustaquim Ahmad. IT Strategist. Results-oriented.",
-    skills: "Intune, Azure, SCCM, Cisco, Python, ITIL.",
-    email: "Opening mail client...",
-    clear: "clear"
-};
+                // Apply styles
+                navSlider.style.width = `${width}px`;
+                navSlider.style.transform = `translateX(${left}px)`;
+                navSlider.style.opacity = '1';
+            });
+        });
 
-// Handle Input
-termInput.addEventListener('keydown', (e) => {
-    if (e.key === 'Enter') {
-        const input = termInput.value.toLowerCase().trim();
-        let response = `<span style='color: #FF5F56;'>Command not found: ${input}</span>`;
-
-        if (commands[input]) {
-            response = commands[input];
-            if (input === 'email') {
-                setTimeout(() => window.location.href = "mailto:hello@mustaquim.tech", 1000);
-            }
-        }
-        
-        if (input === 'clear') {
-            termBody.innerHTML = "";
-        } else {
-            // Append previous line
-            const oldLine = `<div><span class="prompt">➜  ~</span> ${input}</div>`;
-            const newLine = `<div style="margin-bottom: 10px; color: #CE9178;">${response}</div>`;
-            termBody.innerHTML += oldLine + newLine;
-        }
-        
-        termInput.value = "";
-        // Scroll to bottom
-        document.getElementById('term-body').scrollTop = document.getElementById('term-body').scrollHeight;
+        navLinksContainer.addEventListener('mouseleave', () => {
+            navSlider.style.opacity = '0';
+        });
     }
-});
 
-// ==========================================
-    // 8. Unique Shutter Preloader Logic
+    // ==========================================
+    // 10. INTERACTIVE TERMINAL LOGIC
+    // ==========================================
+    const termBtn = document.getElementById('term-btn');
+    const termOverlay = document.getElementById('terminal');
+    const closeTerm = document.getElementById('close-term');
+    const termInput = document.getElementById('term-input');
+    const termBody = document.querySelector('.output');
+
+    if(termBtn && termOverlay) {
+        termBtn.addEventListener('click', () => {
+            termOverlay.classList.add('open');
+            setTimeout(() => termInput.focus(), 100);
+        });
+        
+        closeTerm.addEventListener('click', () => termOverlay.classList.remove('open'));
+
+        const commands = {
+            help: "Available commands: <br> - about <br> - skills <br> - email <br> - clear",
+            about: "Mustaquim Ahmad. IT Strategist. Results-oriented.",
+            skills: "Intune, Azure, SCCM, Cisco, Python, ITIL.",
+            email: "Opening mail client...",
+            clear: "clear"
+        };
+
+        termInput.addEventListener('keydown', (e) => {
+            if (e.key === 'Enter') {
+                const input = termInput.value.toLowerCase().trim();
+                let response = `<span style='color: #FF5F56;'>Command not found: ${input}</span>`;
+
+                if (commands[input]) {
+                    response = commands[input];
+                    if (input === 'email') {
+                        setTimeout(() => window.location.href = "mailto:hello@mustaquim.tech", 1000);
+                    }
+                }
+                
+                if (input === 'clear') {
+                    termBody.innerHTML = "";
+                } else {
+                    const oldLine = `<div><span class="prompt">➜  ~</span> ${input}</div>`;
+                    const newLine = `<div style="margin-bottom: 10px; color: #CE9178;">${response}</div>`;
+                    termBody.innerHTML += oldLine + newLine;
+                }
+                
+                termInput.value = "";
+                document.getElementById('term-body').scrollTop = document.getElementById('term-body').scrollHeight;
+            }
+        });
+    }
+
+    // ==========================================
+    // 11. Unique Shutter Preloader Logic
     // ==========================================
     const preloader = document.getElementById('preloader');
     const counterEl = document.getElementById('loader-counter');
     const statusEl = document.getElementById('loader-status');
     
-    // Tech words to cycle through while loading
-    const techWords = [
-        "Initializing", "Verifying Integrity", "Loading Assets", 
-        "Securing Connection", "Optimizing", "Ready"
-    ];
-    
-    let loadValue = 0;
-    let wordIndex = 0;
-    
-    // Randomize speed to feel like "processing" rather than a linear timer
-    const simulateLoad = () => {
-        // Random jump between 1 and 5
-        loadValue += Math.floor(Math.random() * 5) + 1;
+    if (preloader && counterEl && statusEl) {
+        const techWords = [
+            "Initializing", "Verifying Integrity", "Loading Assets", 
+            "Securing Connection", "Optimizing", "Ready"
+        ];
         
-        if (loadValue > 100) loadValue = 100;
+        let loadValue = 0;
+        let wordIndex = 0;
         
-        // Update Number
-        counterEl.innerText = loadValue;
-        
-        // Cycle words every ~20%
-        if (loadValue % 20 === 0 && wordIndex < techWords.length) {
-            statusEl.innerText = techWords[wordIndex];
-            wordIndex++;
-        }
-        
-        if (loadValue < 100) {
-            // Random delay between 30ms and 70ms for "computing" feel
-            setTimeout(simulateLoad, Math.random() * 40 + 30);
-        } else {
-            // Finished
-            setTimeout(() => {
-                preloader.classList.add('loaded');
-            }, 200);
-        }
-    };
-
-    // Start loading
-    simulateLoad();
-
+        const simulateLoad = () => {
+            loadValue += Math.floor(Math.random() * 5) + 1;
+            
+            if (loadValue > 100) loadValue = 100;
+            
+            counterEl.innerText = loadValue;
+            
+            if (loadValue % 20 === 0 && wordIndex < techWords.length) {
+                statusEl.innerText = techWords[wordIndex];
+                wordIndex++;
+            }
+            
+            if (loadValue < 100) {
+                setTimeout(simulateLoad, Math.random() * 40 + 30);
+            } else {
+                setTimeout(() => {
+                    preloader.classList.add('loaded');
+                }, 200);
+            }
+        };
+        simulateLoad();
+    }
 
     // ==========================================
-    // 9. Smart Copy-to-Clipboard
+    // 12. Smart Copy-to-Clipboard
     // ==========================================
     const emailLinks = document.querySelectorAll('a[href^="mailto:"]');
     const toast = document.getElementById('toast');
 
-    emailLinks.forEach(link => {
-        link.addEventListener('click', function(e) {
-            // Prevent default mail app opening
-            e.preventDefault();
-            
-            // Extract email address
-            const email = this.getAttribute('href').replace('mailto:', '');
-            
-            // Copy to clipboard
-            navigator.clipboard.writeText(email).then(() => {
-                showToast();
+    if (toast) {
+        emailLinks.forEach(link => {
+            link.addEventListener('click', function(e) {
+                e.preventDefault();
+                const email = this.getAttribute('href').replace('mailto:', '');
+                navigator.clipboard.writeText(email).then(() => {
+                    toast.classList.add('show');
+                    setTimeout(() => {
+                        toast.classList.remove('show');
+                    }, 3000);
+                });
             });
         });
-    });
-
-    function showToast() {
-        toast.classList.add('show');
-        setTimeout(() => {
-            toast.classList.remove('show');
-        }, 3000); // Hide after 3 seconds
     }
 
+    // ==========================================
+    // 13. PDF Modal Logic
+    // ==========================================
     const pdfModal = document.getElementById('pdf-modal');
-const closePdf = document.getElementById('close-pdf');
-// Find your resume button and add class 'trigger-pdf' to it
-const resumeBtns = document.querySelectorAll('.trigger-pdf');
+    const closePdf = document.getElementById('close-pdf');
+    // Note: Ensure your resume buttons have the class 'secondary-btn' or a specific ID if you want to trigger this. 
+    // Or you can add 'trigger-pdf' class to your specific Download CV button.
+    const resumeBtns = document.querySelectorAll('.trigger-pdf'); 
 
-resumeBtns.forEach(btn => {
-    btn.addEventListener('click', (e) => {
-        e.preventDefault(); // Stop download
-        pdfModal.classList.add('open');
-    });
+    if (pdfModal && closePdf) {
+        resumeBtns.forEach(btn => {
+            btn.addEventListener('click', (e) => {
+                e.preventDefault(); 
+                pdfModal.classList.add('open');
+            });
+        });
+        closePdf.addEventListener('click', () => pdfModal.classList.remove('open'));
+    }
+
 });
-
-if(closePdf) {
-    closePdf.addEventListener('click', () => pdfModal.classList.remove('open'));
-}

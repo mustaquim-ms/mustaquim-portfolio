@@ -68,55 +68,82 @@
             
             <!-- Navbar -->
             <nav class="navbar">
+                <!-- 1. Logo with Hover Interaction -->
                 <a href="#" class="brand-logo">
-                    <div class="logo-icon"></div> Mustaquim.
+                    <div class="logo-icon"></div> 
+                    <span class="logo-text">Mustaquim<span class="logo-dot">.</span></span>
                 </a>
                 
-                <!-- Center Floating Pill -->
+                <!-- 2. Center Pill with Sliding Effect -->
                 <div class="nav-center">
                     <ul class="nav-links">
+                        <!-- The Sliding Background Element -->
+                        <div class="nav-slider"></div>
+                        
                         <li><a href="#about">About</a></li>
                         <li><a href="#expertise">Services</a></li>
                         <li><a href="#process">Workflow</a></li>
                         <li><a href="#projects">Work</a></li>
                     </ul>
-                    <!-- Dark Mode Toggle -->
-                    <div class="theme-toggle" id="theme-btn">
-                        <i class="fas fa-moon"></i>
-                    </div>
-                    <div class="terminal-trigger" id="term-btn" title="Open Terminal">
-                        <i class="fas fa-terminal"></i>
+
+                    <div class="nav-divider"></div>
+
+                    <!-- Utility Icons -->
+                    <div class="nav-utils">
+                        <div class="theme-toggle" id="theme-btn" title="Toggle Theme">
+                            <i class="fas fa-moon"></i>
+                        </div>
+                        <div class="terminal-trigger" id="term-btn" title="Command Line">
+                            <i class="fas fa-terminal"></i>
+                        </div>
                     </div>
 
-                    <!-- Live Status Indicator -->
-                    <div class="system-status">
+                    <!-- System Status (Integrated neatly) -->
+                    <div class="system-status-pill">
                         <span class="status-dot"></span>
-                        <span class="status-text">All Systems Operational</span>
+                        <span class="status-text">Operational</span>
                     </div>
                 </div>
                 
-                <!-- Change href to javascript:void(0) and add onclick -->
-                    <a href="javascript:void(0)" class="cta-button magnetic-btn" onclick="Calendly.initPopupWidget({url: 'https://calendly.com/YOUR_USERNAME'});return false;">
-                        Book Consultation <i class="fas fa-calendar-check"></i>
-                    </a>
+                <!-- 3. Magnetic CTA -->
+                <a href="javascript:void(0)" class="cta-button magnetic-btn" onclick="Calendly.initPopupWidget({url: 'https://calendly.com/YOUR_LINK'});return false;">
+                    <span>Book Consultation</span> <i class="fas fa-calendar-check"></i>
+                </a>
             </nav>
 
             <!-- Hero Section -->
             <header class="hero" id="about">
-                <div class="hero-content fade-in">
-                    <div class="pill-badge">Available for Hire</div>
-                    <h1 class="hero-title">
-                        Optimizing infrastructure <br>
-                        for <span class="serif-italic">business velocity.</span>
+                <!-- New Background Elements -->
+                <div class="hero-grid"></div>
+                <div class="hero-glow"></div>
+
+                <div class="hero-content">
+                    <!-- New Animated Glass Badge -->
+                    <div class="status-badge fade-in">
+                        <span class="status-dot"></span>
+                        <span>Available for New Opportunities</span>
+                    </div>
+
+                    <!-- The Headline with Mixed Typography -->
+                    <h1 class="hero-title fade-in">
+                        Optimizing <span class="highlight-text">Infrastructure</span><br>
+                        for <span class="serif-italic gradient-text">Business Velocity.</span>
                     </h1>
-                    <div class="hero-greeting" id="greeting">Hello, World.</div>
-                    <p class="hero-subtitle">
+
+                    <!-- The Refined Subtitle -->
+                    <p class="hero-subtitle fade-in">
                         I am an IT Strategist who transforms chaotic tech stacks into 
-                        streamlined, secure, and profitable business engines.
+                        <strong>streamlined</strong>, <strong>secure</strong>, and <strong>profitable</strong> business engines.
                     </p>
-                    <div class="hero-actions">
-                        <a href="#projects" class="primary-btn magnetic-btn">View My Work</a>
-                        <a href="assets/pdf/resume.pdf" class="secondary-btn magnetic-btn">Download CV</a>
+
+                    <!-- CTA Buttons (Existing Code) -->
+                    <div class="hero-actions fade-in">
+                        <a href="#projects" class="primary-btn">
+                            <span>View My Work</span> <i class="fas fa-arrow-right"></i>
+                        </a>
+                        <a href="assets/pdf/resume.pdf" class="secondary-btn trigger-pdf">
+                            <span>Download CV</span> <i class="fas fa-download"></i>
+                        </a>
                     </div>
                 </div>
             </header>
