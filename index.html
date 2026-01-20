@@ -3,370 +3,444 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Mustaquim Ahmad | IT Architect & Strategist</title>
-    
-    <!-- Fonts -->
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;700;900&family=JetBrains+Mono:wght@400;700&display=swap" rel="stylesheet">
-    
+    <title>Mustaquim Ahmad | IT Strategy & Operations</title>
     <!-- Icons -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    
-    <!-- Styles -->
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;800;900&family=Playfair+Display:ital,wght@0,400;1,400;1,600&display=swap" rel="stylesheet">
+    <!-- Lenis Smooth Scroll -->
+    <script src="https://cdn.jsdelivr.net/gh/studio-freight/lenis@1.0.29/bundled/lenis.min.js"></script>
+    <!-- Main CSS -->
     <link rel="stylesheet" href="assets/css/style.css">
 </head>
-<body class="loading">
+<body>
+        <!-- Unique Digital Shutter Preloader -->
+            <div class="preloader-container" id="preloader">
+                <!-- The Top Shutter Panel -->
+                <div class="shutter-top"></div>
+                
+                <!-- The Bottom Shutter Panel -->
+                <div class="shutter-bottom"></div>
+                
+                <!-- The Content Floating in the Middle -->
+                <div class="loader-content">
+                    <h1 class="loader-counter" id="loader-counter">0</h1>
+                    <div class="loader-text-wrapper">
+                        <span class="loader-status" id="loader-status">System Check</span>
+                    </div>
+                </div>
+            </div>
 
-    <!-- 1. PRELOADER -->
-    <div class="preloader">
-        <div class="loader-content">
-            <div class="loader-text">SYSTEM_INITIALIZING...</div>
-            <div class="loader-bar"><div class="bar-fill"></div></div>
+    <!-- Floating Image Reveal (Must be outside wrapper to float freely) -->
+    <div class="hover-reveal">
+        <div class="reveal-inner">
+            <img src="" class="reveal-img" id="reveal-img" alt="Project Preview">
         </div>
     </div>
 
-    <!-- 2. ANIMATED BACKGROUND (3D Grid) -->
-    <div class="cyber-grid-container">
-        <div class="cyber-grid"></div>
-        <div class="cyber-glow"></div>
-    </div>
-    <div id="spotlight"></div>
-
-    <!-- 3. FLOATING NAVBAR -->
-    <nav class="floating-nav">
-        <div class="nav-content">
-            <a href="#" class="brand">
-                <i class="fas fa-terminal"></i> MA<span class="blink">_</span>
-            </a>
-            <ul class="nav-links">
-                <li><a href="#home">Command</a></li>
-                <li><a href="#metrics">Metrics</a></li>
-                <li><a href="#experience">Timeline</a></li>
-                <li><a href="#skills">Stack</a></li>
-            </ul>
-            <div class="nav-actions">
-                <a href="#contact" class="btn-glow">
-                    <span>Initialize Contact</span>
-                    <div class="glow-effect"></div>
-                </a>
-                <div class="mobile-menu-btn">
-                    <div class="bar"></div>
-                    <div class="bar"></div>
-                    <div class="bar"></div>
-                </div>
-            </div>
-        </div>
-        <!-- Mobile Dropdown -->
-        <div class="mobile-menu">
-            <a href="#home">Home</a>
-            <a href="#metrics">Metrics</a>
-            <a href="#experience">Experience</a>
-            <a href="#skills">Skills</a>
-            <a href="#contact">Contact</a>
-        </div>
-    </nav>
-
-    <!-- 4. HERO SECTION (Holographic & 3D) -->
-    <section id="home" class="hero-split">
-        <!-- Left: Text Content -->
-        <div class="hero-text-side">
-            <div class="sys-badge">
-                <span class="status-dot"></span> SYSTEM ONLINE: V2.0
-            </div>
-            
-            <h1 class="mega-title">
-                <span class="sub">Architecting</span><br>
-                <span class="hacker-text" data-value="DIGITAL RESILIENCE">DIGITAL RESILIENCE</span>
-            </h1>
-            
-            <p class="hero-brief">
-                I am <strong class="text-white">Mustaquim Ahmad</strong>. An IT Strategist who transforms chaotic infrastructures into 
-                <span class="highlight">secure</span>, <span class="highlight">automated</span>, and <span class="highlight">profit-driving</span> ecosystems.
-            </p>
-
-            <div class="cmd-actions">
-                <a href="#experience" class="cmd-btn primary">
-                    <i class="fas fa-chevron-right"></i> Explore Career
-                </a>
-                <a href="assets/pdf/resume.pdf" target="_blank" class="cmd-btn secondary">
-                    <i class="fas fa-download"></i> Download CV
-                </a>
-            </div>
-
-            <!-- Experience Counter -->
-            <div class="xp-counter">
-                <div class="xp-item">
-                    <span class="xp-num">08+</span>
-                    <span class="xp-label">Years Experience</span>
-                </div>
-                <div class="xp-divider"></div>
-                <div class="xp-item">
-                    <span class="xp-num">99.9%</span>
-                    <span class="xp-label">Uptime Delivered</span>
-                </div>
-            </div>
-        </div>
-
-        <!-- Right: 3D Holographic Server Card -->
-        <div class="hero-visual-side">
-            <div class="holo-card-container" data-tilt data-tilt-max="10" data-tilt-speed="400" data-tilt-glare data-tilt-max-glare="0.2">
-                <div class="holo-card">
-                    <div class="card-header">
-                        <i class="fab fa-microsoft"></i>
-                        <span>SERVER_STATUS: <span style="color:#10b981">ACTIVE</span></span>
-                    </div>
-                    <div class="card-body">
-                        <div class="data-row">
-                            <span><i class="fas fa-shield-alt"></i> Security Level</span>
-                            <div class="progress-mini"><div class="fill" style="width:100%"></div></div>
-                        </div>
-                        <div class="data-row">
-                            <span><i class="fas fa-network-wired"></i> Network Load</span>
-                            <div class="progress-mini"><div class="fill" style="width:45%"></div></div>
-                        </div>
-                        <div class="data-row">
-                            <span><i class="fas fa-cloud"></i> Azure Sync</span>
-                            <div class="progress-mini"><div class="fill" style="width:92%"></div></div>
-                        </div>
-                        
-                        <div class="code-snippet">
-                            <code>
-                                > Initiating Protocol...<br>
-                                > User: Mustaquim Ahmad<br>
-                                > Role: Lead IT Engineer<br>
-                                > Stack: Intune, SCCM, Azure<br>
-                                <span class="blink">> Ready_</span>
-                            </code>
-                        </div>
-                    </div>
-                    <div class="card-footer">
-                        <div class="id-scan">ID: MA-880-BD</div>
-                    </div>
-                </div>
-                <!-- Floating Icons behind -->
-                <div class="float-icon i-1"><i class="fab fa-windows"></i></div>
-                <div class="float-icon i-2"><i class="fas fa-server"></i></div>
-            </div>
-        </div>
-    </section>
-
-    <!-- 5. METRICS SECTION -->
-    <section id="metrics" class="section">
-        <div class="section-header">
-            <span class="sub-head">/// PERFORMANCE DATA</span>
-            <h2>Key Metrics</h2>
-        </div>
+    <!-- Outer Background Wrapper -->
+    <div class="page-wrapper">
         
-        <div class="metrics-grid">
-            <!-- Metric 1 -->
-            <div class="metric-card glass-panel" data-tilt>
-                <div class="circle-chart" data-percent="99">
-                    <svg viewBox="0 0 36 36">
-                        <path class="circle-bg" d="M18 2.0845 a 15.9155 15.9155 0 0 1 0 31.831 a 15.9155 15.9155 0 0 1 0 -31.831" />
-                        <path class="circle" stroke-dasharray="99, 100" d="M18 2.0845 a 15.9155 15.9155 0 0 1 0 31.831 a 15.9155 15.9155 0 0 1 0 -31.831" />
-                    </svg>
-                    <div class="percentage">99.9%</div>
-                </div>
-                <h3>System Uptime</h3>
-                <p>Ensuring business continuity via redundant LAN/WAN.</p>
-            </div>
-
-            <!-- Metric 2 -->
-            <div class="metric-card glass-panel" data-tilt>
-                <div class="circle-chart" data-percent="95">
-                    <svg viewBox="0 0 36 36">
-                        <path class="circle-bg" d="M18 2.0845 a 15.9155 15.9155 0 0 1 0 31.831 a 15.9155 15.9155 0 0 1 0 -31.831" />
-                        <path class="circle color-2" stroke-dasharray="95, 100" d="M18 2.0845 a 15.9155 15.9155 0 0 1 0 31.831 a 15.9155 15.9155 0 0 1 0 -31.831" />
-                    </svg>
-                    <div class="percentage">95%</div>
-                </div>
-                <h3>SLA Compliance</h3>
-                <p>Meeting resolution targets for 100+ corporate users.</p>
-            </div>
-
-            <!-- Stat Box -->
-            <div class="metric-card glass-panel stat-box">
-                <i class="fas fa-laptop-medical big-icon"></i>
-                <div class="big-number">500+</div>
-                <p>Assets Managed</p>
-                <small>Procurement to EOL via SCCM</small>
-            </div>
-        </div>
-    </section>
-
-    <!-- 6. EXPERIENCE TIMELINE -->
-    <section id="experience" class="section">
-        <div class="section-header">
-            <span class="sub-head">/// CAREER TRAJECTORY</span>
-            <h2>Professional Experience</h2>
-        </div>
-
-        <div class="timeline">
-            <!-- Job 1 -->
-            <div class="timeline-item">
-                <div class="timeline-dot"></div>
-                <div class="timeline-date">Jan 2025 - Present</div>
-                <div class="timeline-content glass-panel" data-tilt>
-                    <div class="job-header">
-                        <h3>Information Technology Officer</h3>
-                        <span class="company">Omnicare Diagnostic Ltd.</span>
-                    </div>
-                    <ul class="job-details">
-                        <li>Tier 1 & 2 support for 100+ end-users; minimized downtime.</li>
-                        <li>Lifecycle mgmt of 500+ IT assets; optimized inventory compliance.</li>
-                        <li>Administered <strong>MySoft</strong> (Hospital Mgmt System) & EMR systems.</li>
-                        <li>Managed dual WAN connectivity (LINK3, BDCOM) & Firewall security.</li>
-                    </ul>
-                </div>
-            </div>
-
-            <!-- Job 2 -->
-            <div class="timeline-item">
-                <div class="timeline-dot"></div>
-                <div class="timeline-date">Jan 2024 - July 2024</div>
-                <div class="timeline-content glass-panel" data-tilt>
-                    <div class="job-header">
-                        <h3>Technical Support Specialist</h3>
-                        <span class="company">1000fix Services Ltd.</span>
-                    </div>
-                    <ul class="job-details">
-                        <li>Supported <strong>Arla Foods</strong>; resolved 95% of incidents within SLA.</li>
-                        <li>Optimized Azure AD, SCCM, Intune, & MFA configurations.</li>
-                        <li>Proactive network monitoring using <strong>PRTG</strong> & <strong>MRTG</strong>.</li>
-                        <li>Reduced downtime incidents by 20% via anomaly detection.</li>
-                    </ul>
-                </div>
-            </div>
-
-            <!-- Job 3 -->
-            <div class="timeline-item">
-                <div class="timeline-dot"></div>
-                <div class="timeline-date">Feb 2021 - Dec 2023</div>
-                <div class="timeline-content glass-panel" data-tilt>
-                    <div class="job-header">
-                        <h3>Sr. IT Support Engineer</h3>
-                        <span class="company">Entrust Global Ltd. / e-TEK</span>
-                    </div>
-                    <ul class="job-details">
-                        <li>Critical G2G project support (Govt & UAE).</li>
-                        <li>90% first-call resolution via <strong>ServiceNow</strong>.</li>
-                        <li>Led Root Cause Analysis (RCA) cutting recurring issues by 30%.</li>
-                    </ul>
-                </div>
-            </div>
-
-            <!-- Job 4 -->
-            <div class="timeline-item">
-                <div class="timeline-dot"></div>
-                <div class="timeline-date">Dec 2017 - Dec 2020</div>
-                <div class="timeline-content glass-panel" data-tilt>
-                    <div class="job-header">
-                        <h3>IT Engineer</h3>
-                        <span class="company">M/S Shahin International</span>
-                    </div>
-                    <ul class="job-details">
-                        <li>Maintained 98% system uptime via OS/Software patching.</li>
-                        <li>Implemented CCTV & Biometric attendance integration.</li>
-                    </ul>
-                </div>
-            </div>
+        <!-- White Rounded "Card" Container -->
+        <div class="main-container">
             
-            <!-- Job 5 -->
-            <div class="timeline-item">
-                <div class="timeline-dot"></div>
-                <div class="timeline-date">Jan 2016 - Jan 2017</div>
-                <div class="timeline-content glass-panel" data-tilt>
-                    <div class="job-header">
-                        <h3>Assistant IT Engineer</h3>
-                        <span class="company">GrameenPhone Ltd.</span>
-                    </div>
-                    <ul class="job-details">
-                        <li>Troubleshot hardware/software maintaining 90% user satisfaction.</li>
+            <!-- Navbar -->
+            <nav class="navbar">
+                <a href="#" class="brand-logo">
+                    <div class="logo-icon"></div> Mustaquim.
+                </a>
+                
+                <!-- Center Floating Pill -->
+                <div class="nav-center">
+                    <ul class="nav-links">
+                        <li><a href="#about">About</a></li>
+                        <li><a href="#expertise">Services</a></li>
+                        <li><a href="#process">Workflow</a></li>
+                        <li><a href="#projects">Work</a></li>
                     </ul>
+                    <!-- Dark Mode Toggle -->
+                    <div class="theme-toggle" id="theme-btn">
+                        <i class="fas fa-moon"></i>
+                    </div>
+                    <div class="terminal-trigger" id="term-btn" title="Open Terminal">
+                        <i class="fas fa-terminal"></i>
+                    </div>
+
+                    <!-- Live Status Indicator -->
+                    <div class="system-status">
+                        <span class="status-dot"></span>
+                        <span class="status-text">All Systems Operational</span>
+                    </div>
+                </div>
+                
+                <a href="#contact" class="cta-button magnetic-btn">Let's Talk <i class="fas fa-arrow-right"></i></a>
+            </nav>
+
+            <!-- Hero Section -->
+            <header class="hero" id="about">
+                <div class="hero-content fade-in">
+                    <div class="pill-badge">Available for Hire</div>
+                    <h1 class="hero-title">
+                        Optimizing infrastructure <br>
+                        for <span class="serif-italic">business velocity.</span>
+                    </h1>
+                    <p class="hero-subtitle">
+                        I am an IT Strategist who transforms chaotic tech stacks into 
+                        streamlined, secure, and profitable business engines.
+                    </p>
+                    <div class="hero-actions">
+                        <a href="#projects" class="primary-btn magnetic-btn">View My Work</a>
+                        <a href="assets/pdf/resume.pdf" class="secondary-btn magnetic-btn">Download CV</a>
+                    </div>
+                </div>
+            </header>
+
+            <!-- 3. Certifications Strip -->
+            <div class="cert-strip fade-in">
+                <p class="cert-label">Industry Certifications & Standards</p>
+                <div class="cert-logos">
+                    <!-- Logo 1: Microsoft -->
+                    <div class="cert-item" title="Microsoft Certified">
+                        <i class="fab fa-microsoft"></i> <span>Microsoft Certified</span>
+                    </div>
+                    <!-- Logo 2: Cisco -->
+                    <div class="cert-item" title="CCNA/CCNP">
+                        <i class="fas fa-network-wired"></i> <span>Cisco Certified</span>
+                    </div>
+                    <!-- Logo 3: ITIL -->
+                    <div class="cert-item" title="ITIL v4">
+                        <i class="fas fa-book-reader"></i> <span>ITIL v4 Foundation</span>
+                    </div>
+                    <!-- Logo 4: Security -->
+                    <div class="cert-item" title="CompTIA Security+">
+                        <i class="fas fa-shield-alt"></i> <span>CompTIA Security+</span>
+                    </div>
+                    <!-- Logo 5: ServiceNow -->
+                    <div class="cert-item" title="ServiceNow Administrator">
+                        <i class="fas fa-ticket-alt"></i> <span>ServiceNow Admin</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Stats Counter Section -->
+            <div class="stats-container fade-in">
+                <div class="stat-item">
+                    <h3 class="counter" data-target="8">0</h3>
+                    <p>Years Experience</p>
+                </div>
+                <div class="divider"></div>
+                <div class="stat-item">
+                    <h3 class="counter" data-target="50">0</h3>
+                    <p>Projects Lead</p>
+                </div>
+                <div class="divider"></div>
+                <div class="stat-item">
+                    <h3><span class="counter" data-target="99">0</span>%</h3>
+                    <p>Uptime Delivered</p>
+                </div>
+                <div class="divider"></div>
+                <div class="stat-item">
+                    <h3>$<span class="counter" data-target="2">0</span>M+</h3>
+                    <p>Cost Saved</p>
+                </div>
+            </div>
+
+            <!-- Infinite Tech Marquee -->
+            <div class="marquee-section">
+                <div class="marquee-track">
+                    <!-- Duplicate items for seamless loop -->
+                    <span><i class="fab fa-microsoft"></i> Intune</span>
+                    <span><i class="fab fa-windows"></i> Azure AD</span>
+                    <span><i class="fas fa-server"></i> SCCM</span>
+                    <span><i class="fas fa-shield-alt"></i> Cybersecurity</span>
+                    <span><i class="fas fa-ticket-alt"></i> ServiceNow</span>
+                    <span><i class="fab fa-python"></i> Python Automation</span>
+                    <span><i class="fas fa-network-wired"></i> Cisco Networking</span>
+                    <!-- Set 2 -->
+                    <span><i class="fab fa-microsoft"></i> Intune</span>
+                    <span><i class="fab fa-windows"></i> Azure AD</span>
+                    <span><i class="fas fa-server"></i> SCCM</span>
+                    <span><i class="fas fa-shield-alt"></i> Cybersecurity</span>
+                    <span><i class="fas fa-ticket-alt"></i> ServiceNow</span>
+                    <span><i class="fab fa-python"></i> Python Automation</span>
+                    <span><i class="fas fa-network-wired"></i> Cisco Networking</span>
+                </div>
+            </div>
+
+            <!-- Bento Grid Expertise with Spotlight -->
+            <section id="expertise" class="section">
+                <div class="section-header fade-in">
+                    <h2>Core <span class="serif-italic">Competencies</span></h2>
+                </div>
+                <div class="bento-grid">
+                    <!-- Box 1 -->
+                    <div class="bento-box large-box fade-in">
+                        <div class="icon-circle"><i class="fas fa-chess-knight"></i></div>
+                        <h3>IT Strategy & Leadership</h3>
+                        <p>Aligning technology roadmaps with business goals to drive revenue and reduce technical debt.</p>
+                        <ul class="check-list">
+                            <li>Budget Planning</li>
+                            <li>Team Leadership</li>
+                            <li>Vendor Management</li>
+                        </ul>
+                    </div>
+                    <!-- Box 2 (Dark) -->
+                    <div class="bento-box tall-box dark-box fade-in">
+                        <div class="icon-circle dark-icon"><i class="fas fa-cogs"></i></div>
+                        <h3>Operations</h3>
+                        <p class="text-light">Ensuring 24/7 reliability across all systems.</p>
+                        <div class="mini-tag-cloud">
+                            <span>ITIL v4</span>
+                            <span>SLA Mgmt</span>
+                            <span>Helpdesk</span>
+                        </div>
+                    </div>
+                    <!-- Box 3 -->
+                    <div class="bento-box fade-in">
+                        <div class="icon-circle"><i class="fas fa-user-shield"></i></div>
+                        <h3>Security & IAM</h3>
+                        <p>Zero Trust implementation and Identity Management.</p>
+                    </div>
+                    <!-- Box 4 -->
+                    <div class="bento-box fade-in">
+                        <div class="icon-circle"><i class="fas fa-cloud"></i></div>
+                        <h3>Cloud Infra</h3>
+                        <p>Azure & M365 migration experts.</p>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Process Section -->
+            <section id="process" class="section process-bg">
+                <div class="section-header fade-in">
+                    <h2 style="color:white">My <span class="serif-italic">Workflow</span></h2>
+                </div>
+                <div class="process-steps">
+                    <div class="step fade-in">
+                        <span class="step-num">01</span>
+                        <h3>Audit & Analyze</h3>
+                        <p>I assess the current infrastructure to find bottlenecks and security gaps.</p>
+                    </div>
+                    <div class="step fade-in">
+                        <span class="step-num">02</span>
+                        <h3>Architect</h3>
+                        <p>Designing scalable solutions using industry best practices.</p>
+                    </div>
+                    <div class="step fade-in">
+                        <span class="step-num">03</span>
+                        <h3>Execute</h3>
+                        <p>Deployment with focus on minimal downtime and future automation.</p>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Projects Section -->
+<section id="projects" class="section">
+    <div class="section-header fade-in">
+        <h2>Featured <span class="serif-italic">Case Studies</span></h2>
+        <a href="https://github.com/mustaquim-ms" target="_blank" class="link-arrow">
+            GitHub Profile <i class="fas fa-arrow-right"></i>
+        </a>
+    </div>
+
+    <div class="project-list">
+        
+        <!-- Project 01 -->
+        <div class="project-item fade-in" data-img="https://images.unsplash.com/photo-1551288049-bebda4e38f71?auto=format&fit=crop&q=80&w=800">
+            <div class="p-index">01</div>
+            <div class="p-info">
+                <h3>Global Intune Rollout</h3>
+                <div class="tech-stack">
+                    <span>Migration</span>
+                    <span>Automation</span>
+                    <span>PowerShell</span>
+                </div>
+            </div>
+            <div class="p-desc">
+                Migrated 500+ devices to cloud-native management using Autopilot, reducing onboarding time by 70%.
+            </div>
+            <div class="p-action">
+                <div class="arrow-btn">
+                    <i class="fas fa-arrow-right"></i>
                 </div>
             </div>
         </div>
-    </section>
 
-    <!-- 7. SKILLS & CERTIFICATIONS -->
-    <section id="skills" class="section">
-        <div class="section-header">
-            <span class="sub-head">/// ARSENAL</span>
-            <h2>Tools & Certifications</h2>
-        </div>
-
-        <div class="skills-wrapper">
-            <!-- Cloud -->
-            <div class="skill-category">
-                <h3><i class="fab fa-windows"></i> Microsoft & Cloud</h3>
-                <div class="skill-list">
-                    <div class="skill"><span>Windows Server / Active Directory</span> <div class="bar"><div class="fill" style="width:95%"></div></div></div>
-                    <div class="skill"><span>Azure AD & Intune</span> <div class="bar"><div class="fill" style="width:90%"></div></div></div>
-                    <div class="skill"><span>SCCM / MECM</span> <div class="bar"><div class="fill" style="width:85%"></div></div></div>
+        <!-- Project 02 -->
+        <div class="project-item fade-in" data-img="https://images.unsplash.com/photo-1563986768609-322da13575f3?auto=format&fit=crop&q=80&w=800">
+            <div class="p-index">02</div>
+            <div class="p-info">
+                <h3>Secure Network Redesign</h3>
+                <div class="tech-stack">
+                    <span>Infrastructure</span>
+                    <span>Cisco</span>
+                    <span>Security</span>
                 </div>
             </div>
-            <!-- Network -->
-            <div class="skill-category">
-                <h3><i class="fas fa-network-wired"></i> Network & Sec</h3>
-                <div class="skill-list">
-                    <div class="skill"><span>PRTG / MRTG / Wireshark</span> <div class="bar"><div class="fill" style="width:90%"></div></div></div>
-                    <div class="skill"><span>Firewall / VPN / VLAN</span> <div class="bar"><div class="fill" style="width:88%"></div></div></div>
-                    <div class="skill"><span>Hardware Lifecycle</span> <div class="bar"><div class="fill" style="width:95%"></div></div></div>
+            <div class="p-desc">
+                Implemented VLANs and Zero Trust Firewall policies to secure internal data traffic across 3 offices.
+            </div>
+            <div class="p-action">
+                <div class="arrow-btn">
+                    <i class="fas fa-arrow-right"></i>
                 </div>
             </div>
         </div>
 
-        <!-- Badges -->
-        <h3 class="cert-title">Verified Credentials</h3>
-        <div class="cert-grid">
-            <div class="cert-badge">
-                <i class="fas fa-certificate"></i>
-                <div>
-                    <h4>MTCNA</h4>
-                    <small>MikroTik Certified Network Assoc.</small>
+        <!-- Project 03 -->
+        <div class="project-item fade-in" data-img="https://images.unsplash.com/photo-1551033406-611cf9a28f67?auto=format&fit=crop&q=80&w=800">
+            <div class="p-index">03</div>
+            <div class="p-info">
+                <h3>PowerBI Dashboarding</h3>
+                <div class="tech-stack">
+                    <span>Data Analytics</span>
+                    <span>Visualization</span>
                 </div>
             </div>
-            <div class="cert-badge">
-                <i class="fas fa-shield-alt"></i>
-                <div>
-                    <h4>CompTIA A+</h4>
-                    <small>1000 Part 1 & 2</small>
-                </div>
+            <div class="p-desc">
+                Visualizing IT asset inventory and ticketing metrics for C-level reporting and budget forecasting.
             </div>
-            <div class="cert-badge">
-                <i class="fab fa-google"></i>
-                <div>
-                    <h4>Google IT Support</h4>
-                    <small>Professional Certification</small>
+            <div class="p-action">
+                <div class="arrow-btn">
+                    <i class="fas fa-arrow-right"></i>
                 </div>
             </div>
         </div>
-    </section>
 
-    <!-- 8. FOOTER -->
-    <section id="contact" class="section contact-section">
-        <div class="glass-panel contact-box">
-            <h2>Let's Engineer Success</h2>
-            <p>Based in Dhaka, Bangladesh. Ready for local leadership or global remote roles.</p>
-            <div class="contact-details">
-                <a href="tel:+8801627562313"><i class="fas fa-phone"></i> +880 1627 562 313</a>
-                <a href="mailto:mustaquimmahmad@gmail.com"><i class="fas fa-envelope"></i> mustaquimmahmad@gmail.com</a>
+    </div>
+</section>
+
+<!-- Insights / Blog Section -->
+<section id="blog" class="section">
+    <div class="section-header fade-in">
+        <h2>Latest <span class="serif-italic">Insights</span></h2>
+        <a href="blog.html" class="link-arrow">Read All <i class="fas fa-arrow-right"></i></a>
+    </div>
+
+    <div class="blog-grid">
+        <!-- Article 1 -->
+        <article class="blog-card fade-in">
+            <div class="blog-date">Oct 24, 2025</div>
+            <h3 class="blog-title">Migrating Legacy Auth to Modern Auth: A survival guide</h3>
+            <p class="blog-excerpt">How to depreciate Basic Auth in Exchange Online without breaking your CEO's email access.</p>
+            <div class="blog-tags">
+                <span>#Security</span> <span>#Office365</span>
             </div>
-            <div class="social-row">
-                <a href="https://linkedin.com/in/mustaquimahmad" target="_blank"><i class="fab fa-linkedin"></i></a>
-                <a href="https://github.com/mustaquim-ms" target="_blank"><i class="fab fa-github"></i></a>
+            <a href="#" class="blog-link">Read Article</a>
+        </article>
+
+        <!-- Article 2 -->
+        <article class="blog-card fade-in">
+            <div class="blog-date">Sep 12, 2025</div>
+            <h3 class="blog-title">Automating Employee Onboarding with Logic Apps</h3>
+            <p class="blog-excerpt">Connecting HRIS to Active Directory to provision accounts in 0.5 seconds instead of 3 days.</p>
+            <div class="blog-tags">
+                <span>#Automation</span> <span>#Azure</span>
             </div>
+            <a href="#" class="blog-link">Read Article</a>
+        </article>
+
+        <!-- Article 3 -->
+        <article class="blog-card fade-in">
+            <div class="blog-date">Aug 05, 2025</div>
+            <h3 class="blog-title">Why "Zero Trust" is more than just a buzzword</h3>
+            <p class="blog-excerpt">Moving beyond the perimeter network: Implementing Identity as the new Firewall.</p>
+            <div class="blog-tags">
+                <span>#ZeroTrust</span> <span>#Strategy</span>
+            </div>
+            <a href="#" class="blog-link">Read Article</a>
+        </article>
+    </div>
+</section>
+
+<!-- Testimonials (Scrolling) -->
+<div class="marquee-section" style="border-top: none; background: transparent;">
+    <div class="marquee-track" style="gap: 100px; animation-duration: 40s;">
+        <!-- Testimonial 1 -->
+        <div class="test-card">
+            <p>"Mustaquim completely transformed our onboarding workflow. We saved 20 hours a week."</p>
+            <span>— CTO, TechCorp</span>
         </div>
-        <footer>
-            <p>© 2026 Mustaquim Ahmad. BSc in EEE (Major IT).</p>
-        </footer>
-    </section>
+        <!-- Testimonial 2 -->
+        <div class="test-card">
+            <p>"The network security overhaul was seamless. Zero downtime during the transition."</p>
+            <span>— IT Director, Global Inc</span>
+        </div>
+        <!-- Testimonial 3 -->
+        <div class="test-card">
+            <p>"A rare combination of strategic vision and hands-on technical excellence."</p>
+            <span>— Project Manager, FinTech Ltd</span>
+        </div>
+         <!-- Duplicate for loop -->
+         <div class="test-card">
+            <p>"Mustaquim completely transformed our onboarding workflow. We saved 20 hours a week."</p>
+            <span>— CTO, TechCorp</span>
+        </div>
+    </div>
+</div>
 
-    <!-- Scripts -->
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/vanilla-tilt/1.8.0/vanilla-tilt.min.js"></script>
+            <!-- Giant Footer -->
+            <footer class="big-footer" id="contact">
+                <div class="footer-top">
+                    <div class="footer-cta fade-in">
+                        <p>Have a challenge?</p>
+                        <a href="mailto:hello@mustaquim.tech" class="giant-link">Let's Connect</a>
+                    </div>
+                    <div class="footer-info fade-in">
+                        <div class="f-col">
+                            <h4>Socials</h4>
+                            <a href="#">LinkedIn</a>
+                            <a href="#">GitHub</a>
+                            <a href="#">Twitter</a>
+                        </div>
+                        <div class="f-col">
+                            <h4>Contact</h4>
+                            <p>Dhaka, Bangladesh</p>
+                            <p>hello@mustaquim.tech</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="footer-bottom">
+                    <h1 class="giant-name">MUSTAQUIM</h1>
+                </div>
+            </footer>
+
+        </div> <!-- End Main Container -->
+    </div> <!-- End Page Wrapper -->
+
+
+    <!-- Terminal Overlay -->
+            <div class="terminal-overlay" id="terminal">
+                <div class="terminal-window">
+                    <div class="terminal-header">
+                        <div class="term-dots">
+                            <span class="dot-red"></span>
+                            <span class="dot-yellow"></span>
+                            <span class="dot-green"></span>
+                        </div>
+                        <div class="term-title">mustaquim_admin@portfolio:~</div>
+                        <div class="term-close" id="close-term"><i class="fas fa-times"></i></div>
+                    </div>
+                    <div class="terminal-body" id="term-body">
+                        <div class="output">
+                            <span class="prompt">➜  ~</span> Welcome to Mustaquim's Terminal.<br>
+                            <span class="prompt">➜  ~</span> Type <span class="cmd-highlight">'help'</span> to see commands.<br><br>
+                        </div>
+                        <div class="input-line">
+                            <span class="prompt">➜  ~</span>
+                            <input type="text" id="term-input" autocomplete="off" autofocus>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
     <script src="assets/js/main.js"></script>
+    
+    <!-- 2. Toast Notification (Hidden by default) -->
+        <div class="toast-notification" id="toast">
+    <i class="fas fa-check-circle"></i> <span>Email Copied to Clipboard!</span>
+
+</div>
 </body>
 </html>
