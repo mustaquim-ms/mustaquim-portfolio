@@ -161,6 +161,15 @@ body {
     position: relative; overflow: hidden;
 }
 
+.hero-greeting {
+    font-family: 'Courier New', monospace;
+    color: var(--accent);
+    font-weight: 600;
+    margin-bottom: 15px;
+    font-size: 1rem;
+    opacity: 0;
+    animation: fadeIn 1s ease forwards 1s; /* Delays appearance */
+}
 /* Aurora Background */
 .hero::before {
     content: ''; position: absolute; top: -50%; left: -50%; width: 200%; height: 200%;
@@ -195,18 +204,79 @@ body {
     margin: 0 auto 40px; line-height: 1.6;
 }
 
-.hero-actions { display: flex; gap: 15px; justify-content: center; flex-wrap: wrap; }
-.primary-btn {
-    background: var(--accent); color: white; padding: 16px 36px;
-    border-radius: 50px; text-decoration: none; font-weight: 600; transition: 0.3s;
-}
-.primary-btn:hover { background: var(--text-primary); color: var(--bg-inner); }
+/* =========================================
+   MINIMAL & STABLE BUTTONS (No Glitches)
+   ========================================= */
 
-.secondary-btn {
-    color: var(--text-primary); padding: 16px 36px; border-radius: 50px;
-    text-decoration: none; font-weight: 600; border: 1px solid var(--border-color); transition: 0.3s;
+.hero-actions { 
+    display: flex; gap: 20px; justify-content: center; flex-wrap: wrap; 
 }
-.secondary-btn:hover { border-color: var(--text-primary); }
+
+/* Base styles for both buttons */
+.primary-btn, .secondary-btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px; /* Space between text and icon */
+    padding: 16px 36px;
+    border-radius: 50px;
+    text-decoration: none;
+    font-weight: 600;
+    font-size: 1rem;
+    transition: all 0.3s ease; /* Smooth unified transition */
+    cursor: pointer;
+    /* No overflow:hidden to prevent clipping bugs */
+}
+
+/* --- 1. Primary Button (View Work) --- */
+.primary-btn {
+    background-color: var(--accent);
+    color: white;
+    border: 1px solid var(--accent);
+    box-shadow: 0 4px 6px rgba(37, 99, 235, 0.2);
+}
+
+.primary-btn:hover {
+    background-color: #1E40AF; /* Deepen the blue */
+    border-color: #1E40AF;
+    box-shadow: 0 8px 15px rgba(37, 99, 235, 0.3); /* Expand shadow softly */
+    transform: translateY(-1px); /* Micro-lift for tactile feel */
+}
+
+/* --- 2. Secondary Button (Download CV) --- */
+.secondary-btn {
+    background-color: transparent;
+    color: var(--text-primary);
+    border: 1px solid var(--border-color);
+}
+
+.secondary-btn:hover {
+    background-color: #F3F4F6; /* Subtle Light Grey Fill */
+    border-color: #9CA3AF; /* Darken the border */
+    color: #111827; /* Ensure text stays dark and sharp */
+    transform: translateY(-1px);
+}
+
+/* --- Outstanding Icon Animation --- */
+/* This makes the icon inside the button move slightly on hover */
+.primary-btn i, .secondary-btn i {
+    transition: transform 0.3s ease;
+}
+
+.primary-btn:hover i {
+    transform: translateX(4px); /* Arrow moves right */
+}
+
+.secondary-btn:hover i {
+    transform: translateY(2px); /* Download arrow moves down */
+}
+
+/* --- Dark Mode Adjustments --- */
+body.dark-mode .secondary-btn:hover {
+    background-color: #1F2937; /* Dark Grey fill for dark mode */
+    border-color: #4B5563;
+    color: white;
+}
 
 /* =========================================
    5. STATS & COUNTERS
@@ -642,4 +712,23 @@ body.dark-mode .project-item:hover { background-color: rgba(255, 255, 255, 0.02)
 }
 .test-card span {
     font-size: 0.8rem; font-weight: 700; color: var(--accent); text-transform: uppercase;
+}
+
+.pdf-modal {
+    position: fixed; top: 0; left: 0; width: 100%; height: 100%;
+    background: rgba(0,0,0,0.8); z-index: 10000;
+    display: none; align-items: center; justify-content: center;
+    backdrop-filter: blur(5px);
+}
+.pdf-modal.open { display: flex; }
+.pdf-container {
+    width: 90%; height: 90%; background: white;
+    border-radius: 12px; overflow: hidden; display: flex; flex-direction: column;
+}
+.pdf-header {
+    padding: 15px; background: #333; color: white;
+    display: flex; justify-content: space-between; align-items: center;
+}
+.pdf-header button {
+    background: none; border: none; color: white; font-size: 1.2rem; cursor: pointer;
 }

@@ -66,6 +66,30 @@ document.addEventListener("DOMContentLoaded", () => {
         counterObserver.observe(counterSection);
     }
 
+    // Dynamic Greeting
+const greetingEl = document.getElementById('greeting');
+if(greetingEl) {
+    const hour = new Date().getHours();
+    let text = "Hello.";
+    
+    if (hour < 12) text = "Good Morning.";
+    else if (hour < 18) text = "Good Afternoon.";
+    else text = "Good Evening.";
+    
+    // Typewriter effect logic
+    let i = 0;
+    greetingEl.innerHTML = ""; // Clear
+    function typeWriter() {
+        if (i < text.length) {
+            greetingEl.innerHTML += text.charAt(i);
+            i++;
+            setTimeout(typeWriter, 100);
+        }
+    }
+    // Start typing after preloader
+    setTimeout(typeWriter, 1500);
+}
+
     // ==========================================
     // 4. Bento Box Spotlight Effect
     // ==========================================
@@ -286,3 +310,19 @@ termInput.addEventListener('keydown', (e) => {
             toast.classList.remove('show');
         }, 3000); // Hide after 3 seconds
     }
+
+    const pdfModal = document.getElementById('pdf-modal');
+const closePdf = document.getElementById('close-pdf');
+// Find your resume button and add class 'trigger-pdf' to it
+const resumeBtns = document.querySelectorAll('.trigger-pdf');
+
+resumeBtns.forEach(btn => {
+    btn.addEventListener('click', (e) => {
+        e.preventDefault(); // Stop download
+        pdfModal.classList.add('open');
+    });
+});
+
+if(closePdf) {
+    closePdf.addEventListener('click', () => pdfModal.classList.remove('open'));
+}
