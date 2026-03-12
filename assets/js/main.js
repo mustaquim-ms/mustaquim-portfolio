@@ -339,4 +339,7 @@ document.addEventListener("DOMContentLoaded", () => {
         closePdf.addEventListener('click', () => pdfModal.classList.remove('open'));
     }
 
+
+    
+
 });
