@@ -38,16 +38,8 @@
     <!-- CUSTOM STYLES FOR OUTRAGEOUS IT ENGINEER UPGRADES -->
     <style>
         /* System Telemetry Dashboard Vibe */
-        .metrics-dashboard {
-            display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 24px;
-            margin-top: 30px;
-        }
-        .metric-card {
-            background: #0F172A; color: white; padding: 25px; border-radius: 16px;
-            border: 1px solid #1E293B; position: relative; overflow: hidden;
-            box-shadow: 0 10px 30px rgba(0,0,0,0.15);
-            transition: transform 0.3s ease, border-color 0.3s ease;
-        }
+        .metrics-dashboard { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 24px; margin-top: 30px; }
+        .metric-card { background: #0F172A; color: white; padding: 25px; border-radius: 16px; border: 1px solid #1E293B; position: relative; overflow: hidden; box-shadow: 0 10px 30px rgba(0,0,0,0.15); transition: transform 0.3s ease, border-color 0.3s ease; }
         .metric-card:hover { transform: translateY(-5px); border-color: var(--accent); }
         .metric-header { display: flex; justify-content: space-between; color: #94A3B8; font-size: 0.85rem; text-transform: uppercase; letter-spacing: 1px; margin-bottom: 15px; font-weight: 600; }
         .metric-header i { color: var(--accent); font-size: 1.2rem; }
@@ -61,22 +53,14 @@
         @keyframes scan { 0% { left: -100%; } 100% { left: 200%; } }
 
         /* Enhanced Core Competencies (Bento Grid) Glow */
-        .bento-box::after {
-            content: ''; position: absolute; top: -50px; right: -50px; width: 150px; height: 150px;
-            background: radial-gradient(circle, rgba(37,99,235,0.1) 0%, transparent 70%);
-            border-radius: 50%; pointer-events: none; z-index: 0;
-        }
+        .bento-box::after { content: ''; position: absolute; top: -50px; right: -50px; width: 150px; height: 150px; background: radial-gradient(circle, rgba(37,99,235,0.1) 0%, transparent 70%); border-radius: 50%; pointer-events: none; z-index: 0; }
         .bento-box h3, .bento-box p, .bento-box ul, .bento-box div { position: relative; z-index: 1; }
         .dark-box::after { background: radial-gradient(circle, rgba(255,255,255,0.05) 0%, transparent 70%); }
-        .bento-box ul li { margin-bottom: 5px; font-size: 0.9rem; }
+        .bento-box ul li { margin-bottom: 8px; font-size: 0.95rem; }
 
         /* Modern Research Papers Section */
         .research-list { display: flex; flex-direction: column; gap: 20px; margin-top: 30px; }
-        .research-card {
-            background: #111827; border: 1px solid #1F2937; padding: 30px; border-radius: 16px;
-            text-decoration: none; color: white; display: block; position: relative; overflow: hidden;
-            transition: all 0.3s ease; box-shadow: 0 10px 30px rgba(0,0,0,0.2);
-        }
+        .research-card { background: #111827; border: 1px solid #1F2937; padding: 30px; border-radius: 16px; text-decoration: none; color: white; display: block; position: relative; overflow: hidden; transition: all 0.3s ease; box-shadow: 0 10px 30px rgba(0,0,0,0.2); }
         .research-card:hover { transform: translateY(-5px); border-color: var(--accent); background: #1F2937; }
         .r-badge { font-size: 0.75rem; background: rgba(37,99,235,0.15); color: #60A5FA; padding: 6px 12px; border-radius: 30px; display: inline-block; margin-bottom: 15px; font-weight: 700; letter-spacing: 1px; text-transform: uppercase;}
         .research-card h3 { font-size: 1.3rem; line-height: 1.5; margin-bottom: 15px; font-weight: 700; color: #F3F4F6; }
@@ -88,73 +72,111 @@
         .footer-bottom { display: flex; justify-content: center; width: 100%; overflow: hidden; padding-top: 20px;}
         
         /* THE GLITCH EFFECT FOR GIANT NAME */
-        .giant-name {
-            font-size: 9.5vw; line-height: 1; font-weight: 900; color: var(--border-color); text-align: center;
-            letter-spacing: -0.01em; user-select: none; width: 100%; white-space: nowrap;
-            position: relative; display: inline-block; transition: color 0.3s ease;
-        }
-        .giant-name:hover {
-            color: var(--text-primary);
-            animation: textGlitch 0.3s cubic-bezier(.25, .46, .45, .94) both infinite;
-        }
-        .giant-name:hover::before,
-        .giant-name:hover::after {
-            content: attr(data-text);
-            position: absolute; top: 0; left: 0; width: 100%; height: 100%;
-            opacity: 0.8;
-        }
-        .giant-name:hover::before {
-            color: #0ff; z-index: -1; left: 4px;
-            animation: glitch-anim-1 0.4s cubic-bezier(.25, .46, .45, .94) both infinite reverse;
-        }
-        .giant-name:hover::after {
-            color: #f0f; z-index: -2; left: -4px;
-            animation: glitch-anim-2 0.4s cubic-bezier(.25, .46, .45, .94) both infinite;
-        }
-        
-        @keyframes glitch-anim-1 {
-            0% { clip-path: inset(20% 0 80% 0); transform: translate(-2px, 1px); }
-            20% { clip-path: inset(60% 0 10% 0); transform: translate(2px, -1px); }
-            40% { clip-path: inset(40% 0 50% 0); transform: translate(-2px, 2px); }
-            60% { clip-path: inset(80% 0 5% 0); transform: translate(2px, -2px); }
-            80% { clip-path: inset(10% 0 70% 0); transform: translate(-1px, 1px); }
-            100% { clip-path: inset(30% 0 50% 0); transform: translate(1px, -1px); }
-        }
-        @keyframes glitch-anim-2 {
-            0% { clip-path: inset(10% 0 60% 0); transform: translate(2px, -1px); }
-            20% { clip-path: inset(30% 0 20% 0); transform: translate(-2px, 2px); }
-            40% { clip-path: inset(70% 0 10% 0); transform: translate(1px, -1px); }
-            60% { clip-path: inset(20% 0 50% 0); transform: translate(-1px, 1px); }
-            80% { clip-path: inset(50% 0 30% 0); transform: translate(2px, -2px); }
-            100% { clip-path: inset(5% 0 80% 0); transform: translate(-2px, 1px); }
-        }
-        @keyframes textGlitch {
-            0% { transform: translate(0) }
-            20% { transform: translate(-2px, 1px) }
-            40% { transform: translate(-1px, -1px) }
-            60% { transform: translate(2px, 1px) }
-            80% { transform: translate(1px, -1px) }
-            100% { transform: translate(0) }
-        }
+        .giant-name { font-size: 9.5vw; line-height: 1; font-weight: 900; color: var(--border-color); text-align: center; letter-spacing: -0.01em; user-select: none; width: 100%; white-space: nowrap; position: relative; display: inline-block; transition: color 0.3s ease; }
+        .giant-name:hover { color: var(--text-primary); animation: textGlitch 0.3s cubic-bezier(.25, .46, .45, .94) both infinite; }
+        .giant-name:hover::before, .giant-name:hover::after { content: attr(data-text); position: absolute; top: 0; left: 0; width: 100%; height: 100%; opacity: 0.8; }
+        .giant-name:hover::before { color: #0ff; z-index: -1; left: 4px; animation: glitch-anim-1 0.4s cubic-bezier(.25, .46, .45, .94) both infinite reverse; }
+        .giant-name:hover::after { color: #f0f; z-index: -2; left: -4px; animation: glitch-anim-2 0.4s cubic-bezier(.25, .46, .45, .94) both infinite; }
+        @keyframes glitch-anim-1 { 0% { clip-path: inset(20% 0 80% 0); transform: translate(-2px, 1px); } 20% { clip-path: inset(60% 0 10% 0); transform: translate(2px, -1px); } 40% { clip-path: inset(40% 0 50% 0); transform: translate(-2px, 2px); } 60% { clip-path: inset(80% 0 5% 0); transform: translate(2px, -2px); } 80% { clip-path: inset(10% 0 70% 0); transform: translate(-1px, 1px); } 100% { clip-path: inset(30% 0 50% 0); transform: translate(1px, -1px); } }
+        @keyframes glitch-anim-2 { 0% { clip-path: inset(10% 0 60% 0); transform: translate(2px, -1px); } 20% { clip-path: inset(30% 0 20% 0); transform: translate(-2px, 2px); } 40% { clip-path: inset(70% 0 10% 0); transform: translate(1px, -1px); } 60% { clip-path: inset(20% 0 50% 0); transform: translate(-1px, 1px); } 80% { clip-path: inset(50% 0 30% 0); transform: translate(2px, -2px); } 100% { clip-path: inset(5% 0 80% 0); transform: translate(-2px, 1px); } }
+        @keyframes textGlitch { 0% { transform: translate(0) } 20% { transform: translate(-2px, 1px) } 40% { transform: translate(-1px, -1px) } 60% { transform: translate(2px, 1px) } 80% { transform: translate(1px, -1px) } 100% { transform: translate(0) } }
 
         /* Modern Social Icon Grid */
         .s-icons-grid { display: flex; gap: 12px; flex-wrap: wrap; }
-        .s-icons-grid a {
-            width: 48px; height: 48px; border-radius: 50%; background: var(--bg-outer);
-            display: flex; align-items: center; justify-content: center; font-size: 1.4rem;
-            color: var(--text-primary); text-decoration: none; border: 1px solid var(--border-color);
-            transition: all 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
-        }
-        .s-icons-grid a:hover {
-            background: var(--accent); color: white; border-color: var(--accent); transform: translateY(-5px) scale(1.1);
-            box-shadow: 0 10px 20px rgba(37, 99, 235, 0.3);
-        }
-        
-        /* Footer Time & Status Styling */
+        .s-icons-grid a { width: 48px; height: 48px; border-radius: 50%; background: var(--bg-outer); display: flex; align-items: center; justify-content: center; font-size: 1.4rem; color: var(--text-primary); text-decoration: none; border: 1px solid var(--border-color); transition: all 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275); }
+        .s-icons-grid a:hover { background: var(--accent); color: white; border-color: var(--accent); transform: translateY(-5px) scale(1.1); box-shadow: 0 10px 20px rgba(37, 99, 235, 0.3); }
         #live-time { font-family: 'Courier New', monospace; font-weight: 700; color: var(--text-primary); font-size: 1.1rem; }
+
+        /* --- NEW OUTRAGEOUS FEATURES STYLES --- */
+
+        /* UI Sound Toggle */
+        .sound-toggle { position: fixed; bottom: 30px; left: 30px; width: 45px; height: 45px; background: var(--bg-inner); border: 1px solid var(--border-color); border-radius: 50%; display: flex; align-items: center; justify-content: center; z-index: 9999; cursor: pointer; color: var(--text-secondary); box-shadow: 0 4px 15px rgba(0,0,0,0.1); transition: 0.3s; }
+        .sound-toggle.active { color: var(--accent); border-color: var(--accent); }
+
+        /* Video Pitch Bento Box */
+        .video-pitch-box { background: url('https://images.unsplash.com/photo-1550751827-4bd374c3f58b?auto=format&fit=crop&q=80&w=800') center/cover; position: relative; overflow: hidden; color: white; cursor: pointer; border: none; display: flex; align-items: center; justify-content: center; text-align: center; }
+        .video-pitch-box::before { content: ''; position: absolute; top:0; left:0; width:100%; height:100%; background: rgba(15, 23, 42, 0.7); transition: 0.3s; }
+        .video-pitch-box:hover::before { background: rgba(37, 99, 235, 0.5); }
+        .video-overlay { position: relative; z-index: 2; }
+        .play-icon { font-size: 3rem; margin-bottom: 15px; color: white; transition: 0.3s; }
+        .video-pitch-box:hover .play-icon { transform: scale(1.1); color: #60A5FA; }
+
+        /* Video Modal */
+        .video-modal { position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: rgba(0,0,0,0.9); z-index: 10000; display: none; align-items: center; justify-content: center; backdrop-filter: blur(10px); }
+        .video-modal.open { display: flex; }
+        .video-container { width: 80%; max-width: 900px; position: relative; }
+        .video-container video { width: 100%; border-radius: 12px; box-shadow: 0 20px 50px rgba(0,0,0,0.5); }
+        #close-video { position: absolute; top: -40px; right: 0; background: none; border: none; color: white; font-size: 2rem; cursor: pointer; }
+
+        /* Interactive Architecture Map */
+        .arch-container { display: flex; gap: 40px; align-items: center; justify-content: center; flex-wrap: wrap; margin-top: 40px;}
+        .arch-map { position: relative; width: 400px; height: 300px; }
+        .node { position: absolute; background: #1E293B; color: white; padding: 10px 20px; border-radius: 8px; border: 1px solid #374151; font-size: 0.85rem; font-weight: 600; cursor: crosshair; transition: 0.3s; z-index: 2; box-shadow: 0 5px 15px rgba(0,0,0,0.2); }
+        .node:hover { border-color: var(--accent); transform: scale(1.05); box-shadow: 0 0 20px rgba(37,99,235,0.4); }
+        .central-node { top: 50%; left: 50%; transform: translate(-50%, -50%); background: var(--accent); border-color: var(--accent); }
+        .pos-left { top: 50%; left: 0; transform: translate(0, -50%); }
+        .pos-right { top: 50%; right: 0; transform: translate(0, -50%); }
+        .pos-bottom { bottom: 0; left: 50%; transform: translate(-50%, 0); }
+        .branch { position: absolute; background: #4B5563; z-index: 1; }
+        .left-branch { top: 50%; left: 25%; width: 25%; height: 2px; }
+        .right-branch { top: 50%; right: 25%; width: 25%; height: 2px; }
+        .bottom-branch { top: 50%; left: 50%; width: 2px; height: 40%; }
+        .arch-tooltip { background: #0F172A; border: 1px solid var(--accent); border-radius: 12px; padding: 25px; width: 300px; color: white; box-shadow: 0 20px 40px rgba(0,0,0,0.3); }
+        .arch-tooltip h4 { color: var(--accent); margin-bottom: 10px; font-family: 'Courier New', monospace; }
+        .arch-tooltip p { color: #9CA3AF; font-size: 0.9rem; line-height: 1.5; }
+
+        /* Before/After ROI Slider */
+        .slider-container { position: relative; width: 100%; max-width: 900px; height: 350px; margin: 40px auto 0; border-radius: 20px; overflow: hidden; background: #111827; box-shadow: 0 20px 40px rgba(0,0,0,0.1); cursor: ew-resize; border: 1px solid var(--border-color); }
+        .slider-layer { position: absolute; top: 0; left: 0; width: 100%; height: 100%; display: flex; align-items: center; }
+        .before-layer { background: #1F2937; color: white; }
+        .after-layer { background: #ECFDF5; color: #064E3B; clip-path: polygon(0 0, 50% 0, 50% 100%, 0 100%); }
+        .slider-content { padding: 40px 10%; width: 100%; }
+        .slider-content h3 { font-size: 1.5rem; margin-bottom: 20px; }
+        .slider-content ul li { margin-bottom: 12px; font-size: 1.05rem; font-weight: 500; line-height: 1.4;}
+        .slider-handle { position: absolute; top: 0; left: 50%; bottom: 0; width: 4px; background: var(--accent); transform: translateX(-50%); z-index: 3; display: flex; align-items: center; justify-content: center; }
+        .slider-handle i { background: var(--accent); color: white; padding: 10px; border-radius: 50%; font-size: 1.2rem; pointer-events: none;}
+
+        /* Career Timeline */
+        .timeline { position: relative; max-width: 800px; margin: 40px auto 0; padding: 40px 0; }
+        .timeline-line { position: absolute; left: 50%; top: 0; bottom: 0; width: 2px; background: var(--border-color); transform: translateX(-50%); }
+        .timeline-item { display: flex; justify-content: flex-end; padding-right: 50%; position: relative; margin-bottom: 40px; width: 100%; }
+        .timeline-item.right { justify-content: flex-start; padding-right: 0; padding-left: 50%; }
+        .tl-dot { position: absolute; right: -8px; top: 0; width: 16px; height: 16px; border-radius: 50%; background: var(--bg-inner); border: 4px solid var(--accent); z-index: 2; }
+        .timeline-item.right .tl-dot { left: -8px; right: auto; }
+        .tl-content { background: var(--card-bg); padding: 25px; border-radius: 16px; border: 1px solid var(--border-color); width: 90%; box-shadow: 0 10px 30px rgba(0,0,0,0.05); transition: 0.3s; }
+        .tl-content:hover { border-color: var(--accent); transform: translateY(-5px); }
+        .tl-date { color: var(--accent); font-weight: 700; font-size: 0.85rem; margin-bottom: 10px; display: block; font-family: 'Courier New', monospace;}
+        .tl-content h3 { margin-bottom: 5px; color: var(--text-primary); font-size: 1.3rem;}
+        .tl-content p { color: var(--text-secondary); font-size: 0.95rem; line-height: 1.5; }
+        
+        @media (max-width: 768px) {
+            .timeline-line { left: 20px; }
+            .timeline-item, .timeline-item.right { padding-left: 50px; padding-right: 0; justify-content: flex-start; }
+            .tl-dot, .timeline-item.right .tl-dot { left: 12px; }
+            .tl-content { width: 100%; }
+            .arch-container { flex-direction: column; }
+            .slider-container { height: 450px; } /* More height for mobile list */
+        }
     </style>
 </head>
 <body>
+
+    <!-- Sound Toggle Widget (Bottom Left) -->
+    <div class="sound-toggle" id="sound-toggle" title="Toggle UI Sounds">
+        <i class="fas fa-volume-mute"></i>
+    </div>
+
+    <!-- Video Pitch Modal -->
+    <div class="video-modal" id="video-modal">
+        <div class="video-container">
+            <button id="close-video"><i class="fas fa-times"></i></button>
+            <video id="pitch-video" controls>
+                <source src="https://www.w3schools.com/html/mov_bbb.mp4" type="video/mp4">
+                Your browser does not support HTML video.
+            </video>
+        </div>
+    </div>
+
     <!-- Unique Digital Shutter Preloader -->
     <div class="preloader-container" id="preloader">
         <div class="shutter-top"></div>
@@ -182,7 +204,7 @@
             
             <!-- Navbar -->
             <nav class="navbar">
-                <a href="#" class="brand-logo">
+                <a href="#" class="brand-logo ui-interact">
                     <div class="logo-icon"></div> 
                     <span class="logo-text">Mustaquim<span class="logo-dot">.</span></span>
                 </a>
@@ -190,19 +212,19 @@
                 <div class="nav-center">
                     <ul class="nav-links">
                         <div class="nav-slider"></div>
-                        <li><a href="#about">About</a></li>
-                        <li><a href="#expertise">Expertise</a></li>
-                        <li><a href="#research">Research</a></li>
-                        <li><a href="#projects">Work</a></li>
+                        <li><a href="#about" class="ui-interact">About</a></li>
+                        <li><a href="#expertise" class="ui-interact">Expertise</a></li>
+                        <li><a href="#architecture" class="ui-interact">Architecture</a></li>
+                        <li><a href="#projects" class="ui-interact">Work</a></li>
                     </ul>
 
                     <div class="nav-divider"></div>
 
                     <div class="nav-utils">
-                        <div class="theme-toggle" id="theme-btn" title="Toggle Theme">
+                        <div class="theme-toggle ui-interact" id="theme-btn" title="Toggle Theme">
                             <i class="fas fa-moon"></i>
                         </div>
-                        <div class="terminal-trigger" id="term-btn" title="Command Line">
+                        <div class="terminal-trigger ui-interact" id="term-btn" title="Command Line">
                             <i class="fas fa-terminal"></i>
                         </div>
                     </div>
@@ -213,7 +235,7 @@
                     </div>
                 </div>
                 
-                <a href="javascript:void(0)" class="cta-button magnetic-btn" onclick="Calendly.initPopupWidget({url: 'https://calendly.com/YOUR_LINK'});return false;">
+                <a href="javascript:void(0)" class="cta-button magnetic-btn ui-interact" onclick="Calendly.initPopupWidget({url: 'https://calendly.com/YOUR_LINK'});return false;">
                     <span>Book Consultation</span> <i class="fas fa-calendar-check"></i>
                 </a>
             </nav>
@@ -240,10 +262,10 @@
                     </p>
 
                     <div class="hero-actions fade-in">
-                        <a href="#projects" class="primary-btn">
+                        <a href="#projects" class="primary-btn ui-interact">
                             <span>View My Work</span> <i class="fas fa-arrow-right"></i>
                         </a>
-                        <a href="assets/pdf/resume.pdf" class="secondary-btn trigger-pdf">
+                        <a href="assets/pdf/resume.pdf" class="secondary-btn trigger-pdf ui-interact">
                             <span>Download CV</span> <i class="fas fa-download"></i>
                         </a>
                     </div>
@@ -295,69 +317,70 @@
                 </div>
             </div>
 
-            <!-- Bento Grid Expertise (EXPANDED BASED ON RESUME) -->
+            <!-- Bento Grid Expertise (ENHANCED FROM RESUME) -->
             <section id="expertise" class="section">
                 <div class="section-header fade-in">
                     <h2>Core <span class="serif-italic">Competencies</span></h2>
                 </div>
                 <div class="bento-grid">
-                    <!-- Box 1: Strategy (Expanded) -->
-                    <div class="bento-box large-box fade-in">
+                    
+                    <!-- Box 1: Strategy -->
+                    <div class="bento-box large-box fade-in ui-interact">
                         <div class="icon-circle"><i class="fas fa-chess-knight"></i></div>
                         <h3>IT Strategy & Leadership</h3>
-                        <p>Aligning technology roadmaps with business goals to drive revenue, optimize processes, and reduce technical debt.</p>
+                        <p>Aligning technology roadmaps with business goals to drive revenue and process efficiency. Expertise in ITIL-based change management and business continuity.</p>
                         <ul class="check-list">
-                            <li>Business Process Improvement</li>
-                            <li>Technical Talent Hunt & Team Leadership</li>
-                            <li>Vendor & Budget Management</li>
+                            <li>Strategic Planning & Process Improvement</li>
+                            <li>Vendor, Budget & Stakeholder Coordination</li>
+                            <li>Technical Training & Mentoring</li>
                         </ul>
                     </div>
                     
                     <!-- Box 2: Operations (Dark) -->
-                    <div class="bento-box tall-box dark-box fade-in">
+                    <div class="bento-box tall-box dark-box fade-in ui-interact">
                         <div class="icon-circle dark-icon"><i class="fas fa-cogs"></i></div>
                         <h3>Operations & ITSM</h3>
-                        <p class="text-light">Ensuring 24/7 reliability across all systems with data-driven service management.</p>
+                        <p class="text-light">Ensuring 24/7 reliability with proactive network monitoring and SLA-driven service delivery.</p>
                         <div class="mini-tag-cloud">
-                            <span>ITIL v4</span>
-                            <span>ServiceNow</span>
-                            <span>SCCM</span>
-                            <span>SLA Mgmt</span>
-                            <span>Inventory</span>
+                            <span>ITIL v4</span><span>ServiceNow</span><span>PRTG/MRTG</span><span>SLA Mgmt</span><span>Wireshark</span>
                         </div>
-                    </div>
-                    
-                    <!-- Box 3: Security -->
-                    <div class="bento-box fade-in">
-                        <div class="icon-circle"><i class="fas fa-user-shield"></i></div>
-                        <h3>Security & Identity</h3>
-                        <p>Zero Trust architecture, Active Directory, and Role-Based Access Control integration.</p>
-                    </div>
-                    
-                    <!-- Box 4: Cloud & Endpoints -->
-                    <div class="bento-box fade-in">
-                        <div class="icon-circle"><i class="fas fa-cloud"></i></div>
-                        <h3>Endpoints & Cloud</h3>
-                        <p>Microsoft Intune, Autopilot, and seamless M365 infrastructure migrations.</p>
-                    </div>
-
-                    <!-- Box 5: Data Analysis (NEW) -->
-                    <div class="bento-box large-box fade-in">
-                        <div class="icon-circle"><i class="fas fa-chart-pie"></i></div>
-                        <h3>Data Analysis & Automation</h3>
-                        <p>Leveraging telemetry data and analytics to solve complex challenges with practical, data-driven decisions.</p>
-                        <ul class="check-list">
-                            <li>Microsoft Office Suite Automation</li>
-                            <li>AIOps & Log Analytics</li>
-                            <li>Performance Dashboards</li>
+                        <ul class="check-list" style="margin-top: 15px;">
+                            <li style="color: #94A3B8; font-size: 0.85rem;">Root Cause Analysis (RCA)</li>
+                            <li style="color: #94A3B8; font-size: 0.85rem;">High-Frequency Incident Escalation</li>
                         </ul>
                     </div>
 
-                    <!-- Box 6: Hardware (NEW) -->
-                    <div class="bento-box fade-in">
+                    <!-- Box 3: Security -->
+                    <div class="bento-box fade-in ui-interact">
+                        <div class="icon-circle"><i class="fas fa-user-shield"></i></div>
+                        <h3>Security & Identity</h3>
+                        <p>Zero Trust architecture, Azure AD, Conditional Access, Multi-Factor Authentication (MFA), and disaster recovery planning.</p>
+                    </div>
+                    
+                    <!-- Box 4: Cloud & Endpoints -->
+                    <div class="bento-box fade-in ui-interact">
+                        <div class="icon-circle"><i class="fas fa-cloud"></i></div>
+                        <h3>Endpoints & Cloud</h3>
+                        <p>Microsoft Intune, Autopilot deployments, SCCM / MECM, and complete Windows Server Administration (AD, DNS, DHCP).</p>
+                    </div>
+
+                    <!-- Box 5: Automation -->
+                    <div class="bento-box large-box fade-in ui-interact">
+                        <div class="icon-circle"><i class="fas fa-terminal"></i></div>
+                        <h3>Data Analysis & Scripting</h3>
+                        <p>Streamlining operational workflows and solving complex challenges by leveraging infrastructure telemetry and log data.</p>
+                        <ul class="check-list">
+                            <li>Automation Scripting (PowerShell, Bash)</li>
+                            <li>AIOps & Performance Metric Analytics</li>
+                            <li>Microsoft Power Automate Workflows</li>
+                        </ul>
+                    </div>
+
+                    <!-- Box 6: Hardware -->
+                    <div class="bento-box fade-in ui-interact">
                         <div class="icon-circle"><i class="fas fa-server"></i></div>
-                        <h3>Hardware Mgmt</h3>
-                        <p>End-to-end lifecycle management, procurement, and hardware/software provisioning.</p>
+                        <h3>Hardware & Assets</h3>
+                        <p>Full IT asset lifecycle management for 500+ devices, procurement, CCTV, and biometric attendance integrations.</p>
                     </div>
                 </div>
             </section>
@@ -368,23 +391,135 @@
                     <h2>Live <span class="serif-italic">Telemetry</span></h2>
                 </div>
                 <div class="metrics-dashboard fade-in">
-                    <div class="metric-card">
+                    <div class="metric-card ui-interact">
                         <div class="metric-header"><span>Global Server Load</span> <i class="fas fa-microchip"></i></div>
                         <div class="metric-value"><span id="live-cpu">14</span><span class="unit">%</span></div>
                         <div class="metric-status"><span class="status-dot"></span> Optimal</div>
                         <div class="metric-chart-line"></div>
                     </div>
-                    <div class="metric-card">
+                    <div class="metric-card ui-interact">
                         <div class="metric-header"><span>Network Throughput</span> <i class="fas fa-network-wired"></i></div>
                         <div class="metric-value"><span id="live-net">842</span><span class="unit">Mbps</span></div>
                         <div class="metric-status"><span class="status-dot"></span> Secure Encrypted</div>
                         <div class="metric-chart-line" style="border-top-color: #8B5CF6; background: linear-gradient(180deg, rgba(139,92,246,0.2) 0%, rgba(139,92,246,0) 100%);"></div>
                     </div>
-                    <div class="metric-card">
+                    <div class="metric-card ui-interact">
                         <div class="metric-header"><span>Managed Endpoints</span> <i class="fas fa-laptop-code"></i></div>
                         <div class="metric-value">5,000<span class="unit">+</span></div>
                         <div class="metric-status"><span class="status-dot"></span> Fully Compliant via Intune</div>
                         <div class="metric-chart-line" style="border-top-color: #10B981; background: linear-gradient(180deg, rgba(16,185,129,0.2) 0%, rgba(16,185,129,0) 100%);"></div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Interactive Architecture Diagram -->
+            <section id="architecture" class="section process-bg">
+                <div class="section-header fade-in"><h2 style="color:white">Enterprise <span class="serif-italic">Architecture</span></h2></div>
+                <p style="color: #9CA3AF; text-align: center; margin-bottom: 40px;">Hover over nodes to view deployment strategies.</p>
+                
+                <div class="arch-container fade-in">
+                    <div class="arch-map">
+                        <div class="node central-node ui-interact" data-info="Centralized Azure Active Directory ensuring Single Sign-On (SSO) and Conditional Access across the globe.">Azure AD Identity</div>
+                        <div class="branch left-branch"></div>
+                        <div class="branch right-branch"></div>
+                        <div class="branch bottom-branch"></div>
+                        
+                        <div class="node secondary-node pos-left ui-interact" data-info="Microsoft Intune and SCCM managing 500+ Win/Mac endpoints with Autopilot zero-touch provisioning.">Endpoint Mgmt</div>
+                        <div class="node secondary-node pos-right ui-interact" data-info="Cisco Meraki & Fortinet firewalls enforcing Zero-Trust network perimeters and VPN tunnels.">Network Security</div>
+                        <div class="node secondary-node pos-bottom ui-interact" data-info="ServiceNow integrated for automated incident resolution and hardware lifecycle tracking.">ITSM Automation</div>
+                    </div>
+                    <!-- Tooltip Display -->
+                    <div class="arch-tooltip" id="arch-tooltip">
+                        <h4>System Node</h4>
+                        <p>Hover over a node in the diagram to inspect the infrastructure strategy.</p>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Before/After ROI Slider (PROFESSIONALIZED) -->
+            <section class="section">
+                <div class="section-header fade-in"><h2>Business <span class="serif-italic">Transformation</span></h2></div>
+                <div class="slider-container fade-in ui-interact" id="roi-slider">
+                    <!-- Before Layer -->
+                    <div class="slider-layer before-layer">
+                        <div class="slider-content">
+                            <h3><i class="fas fa-exclamation-triangle" style="color:#EF4444"></i> The Chaos (Before)</h3>
+                            <ul>
+                                <li>Reactive network monitoring resulting in unpredictable downtime.</li>
+                                <li>Fragmented endpoint provisioning (3+ hours manual setup per device).</li>
+                                <li>High volume of recurring incidents without Root Cause Analysis (RCA).</li>
+                                <li>Manual asset tracking lacking 100% compliance documentation.</li>
+                            </ul>
+                        </div>
+                    </div>
+                    <!-- After Layer -->
+                    <div class="slider-layer after-layer" id="after-layer">
+                        <div class="slider-content">
+                            <h3><i class="fas fa-check-circle" style="color:#10B981"></i> The Optimization (After)</h3>
+                            <ul>
+                                <li>Proactive PRTG/MRTG alerts slashing network downtime incidents by 20%.</li>
+                                <li>Intune Autopilot zero-touch deployments shrinking onboarding to 15 mins.</li>
+                                <li>ITIL-compliant RCA implementations reducing ticket backlog by 25%.</li>
+                                <li>Centralized lifecycle management for 500+ devices with full vendor coordination.</li>
+                            </ul>
+                        </div>
+                    </div>
+                    <!-- Slider Handle -->
+                    <div class="slider-handle" id="slider-handle">
+                        <i class="fas fa-arrows-alt-h"></i>
+                    </div>
+                </div>
+            </section>
+
+            <!-- EXACT CAREER TIMELINE BASED ON RESUME -->
+            <section class="section">
+                <div class="section-header fade-in"><h2>Career <span class="serif-italic">Evolution</span></h2></div>
+                <div class="timeline">
+                    <div class="timeline-line"></div>
+                    
+                    <div class="timeline-item left fade-in">
+                        <div class="tl-dot"></div>
+                        <div class="tl-content ui-interact">
+                            <span class="tl-date">Jan 2025 - Present</span>
+                            <h3>Information Technology Officer</h3>
+                            <p><strong>Omnicare Diagnostic Ltd.</strong><br>Managing full IT asset lifecycle (500+ devices), administering HMS systems, maintaining dual WAN connectivity, and overseeing vendor relationships to reduce procurement turnaround by 30%.</p>
+                        </div>
+                    </div>
+                    
+                    <div class="timeline-item right fade-in">
+                        <div class="tl-dot"></div>
+                        <div class="tl-content ui-interact">
+                            <span class="tl-date">Jan 2024 - Jul 2024</span>
+                            <h3>Technical Support Specialist</h3>
+                            <p><strong>1000fix Services Ltd. (Arla Foods Project)</strong><br>Administered Azure AD, Intune, and SCCM. Conducted proactive network monitoring via PRTG and MRTG, identifying anomalies and reducing downtime incidents by 20%.</p>
+                        </div>
+                    </div>
+                    
+                    <div class="timeline-item left fade-in">
+                        <div class="tl-dot"></div>
+                        <div class="tl-content ui-interact">
+                            <span class="tl-date">Feb 2021 - Dec 2023</span>
+                            <h3>Sr. IT Support Engineer</h3>
+                            <p><strong>Entrust Global Ltd. / e-TEK Solutions</strong><br>Supported a critical Government-to-Government (UAE) project. Resolved complex escalations via ServiceNow and led Root Cause Analysis (RCA) reducing recurring issues by 30%.</p>
+                        </div>
+                    </div>
+                    
+                    <div class="timeline-item right fade-in">
+                        <div class="tl-dot"></div>
+                        <div class="tl-content ui-interact">
+                            <span class="tl-date">Dec 2017 - Dec 2020</span>
+                            <h3>IT Engineer</h3>
+                            <p><strong>M/S Shahin International</strong><br>Diagnosed hardware and network issues maintaining 98% system uptime. Monitored traffic logs, analyzed bottlenecks, and supported CCTV/biometric integrations.</p>
+                        </div>
+                    </div>
+                    
+                    <div class="timeline-item left fade-in">
+                        <div class="tl-dot"></div>
+                        <div class="tl-content ui-interact">
+                            <span class="tl-date">Jan 2016 - Jan 2017</span>
+                            <h3>Assistant IT Engineer</h3>
+                            <p><strong>GrameenPhone Ltd.</strong><br>Installed and configured core hardware. Provided robust technical support to end-users, consistently maintaining a 90% satisfaction rate.</p>
+                        </div>
                     </div>
                 </div>
             </section>
@@ -396,13 +531,13 @@
                 </div>
                 <div class="research-list">
                     <!-- Paper 1 -->
-                    <a href="https://zenodo.org/records/18813175" target="_blank" rel="noopener noreferrer" class="research-card fade-in">
+                    <a href="https://zenodo.org/records/18813175" target="_blank" rel="noopener noreferrer" class="research-card fade-in ui-interact">
                         <div class="r-badge">AIOps / Machine Learning</div>
                         <h3>Automated Anomaly Detection in Cloud Microservices Using LSTM Autoencoders: A Practical AIOps Approach</h3>
                         <div class="r-meta"><i class="fas fa-external-link-alt"></i> Zenodo Repository <span>• Peer Reviewed</span></div>
                     </a>
                     <!-- Paper 2 -->
-                    <a href="https://zenodo.org/records/18477902" target="_blank" rel="noopener noreferrer" class="research-card fade-in">
+                    <a href="https://zenodo.org/records/18477902" target="_blank" rel="noopener noreferrer" class="research-card fade-in ui-interact">
                         <div class="r-badge">Microservice Telemetry</div>
                         <h3>Unsupervised Anomaly Detection in Microservice Telemetry: Identifying Silent Failures via LSTM Autoencoder Reconstruction Errors</h3>
                         <div class="r-meta"><i class="fas fa-external-link-alt"></i> Zenodo Repository <span>• Peer Reviewed</span></div>
@@ -415,14 +550,14 @@
                 <div class="section-header fade-in">
                     <h2>Featured <span class="serif-italic">Case Studies</span></h2>
                     <!-- Fixed GitHub Repo link -->
-                    <a href="https://github.com/mustaquim-ms?tab=repositories" target="_blank" rel="noopener noreferrer" class="link-arrow">
+                    <a href="https://github.com/mustaquim-ms?tab=repositories" target="_blank" rel="noopener noreferrer" class="link-arrow ui-interact">
                         GitHub Profile <i class="fas fa-arrow-right"></i>
                     </a>
                 </div>
 
                 <div class="project-list">
                     <!-- Project 01: Octate Odyssey -->
-                    <div class="project-item fade-in" data-img="assets/images/projects/1.jpg">
+                    <div class="project-item fade-in ui-interact" data-img="assets/images/projects/1.jpg">
                         <div class="p-index">01</div>
                         <div class="p-info">
                             <h3>Octate Odyssey LMS</h3>
@@ -432,9 +567,7 @@
                                 <span>Framer Motion</span>
                             </div>
                         </div>
-                        <div class="p-desc">
-                            Gamified Network Engineering platform featuring a virtual terminal emulator for real-world Cisco IOS & MikroTik simulation.
-                        </div>
+                        <div class="p-desc">Gamified Network Engineering platform featuring a virtual terminal emulator for real-world Cisco IOS & MikroTik simulation.</div>
                         <div class="p-action">
                             <a href="https://github.com/mustaquim-ms/octate-odyssey" target="_blank" rel="noopener noreferrer" class="arrow-btn">
                                 <i class="fas fa-arrow-right"></i>
@@ -442,30 +575,9 @@
                         </div>
                     </div>
 
-                    <!-- Project 02: NetArt -->
-                    <div class="project-item fade-in" data-img="assets/images/projects/2.jpg">
+                    <!-- Project 02: Digital Signage -->
+                    <div class="project-item fade-in ui-interact" data-img="assets/images/projects/2.jpg">
                         <div class="p-index">02</div>
-                        <div class="p-info">
-                            <h3>NetArt Architecture</h3>
-                            <div class="tech-stack">
-                                <span>Electron</span>
-                                <span>React</span>
-                                <span>Python Flask</span>
-                            </div>
-                        </div>
-                        <div class="p-desc">
-                            Intelligent desktop app that auto-generates layered network architecture diagrams directly from JSON/CSV data.
-                        </div>
-                        <div class="p-action">
-                            <a href="https://github.com/mustaquim-ms/netart" target="_blank" rel="noopener noreferrer" class="arrow-btn">
-                                <i class="fas fa-arrow-right"></i>
-                            </a>
-                        </div>
-                    </div>
-
-                    <!-- Project 03: Digital Signage -->
-                    <div class="project-item fade-in" data-img="assets/images/projects/3.jpg">
-                        <div class="p-index">03</div>
                         <div class="p-info">
                             <h3>OmniCare Signage</h3>
                             <div class="tech-stack">
@@ -474,9 +586,7 @@
                                 <span>FFmpeg</span>
                             </div>
                         </div>
-                        <div class="p-desc">
-                            Architected a centralized broadcasting system for 10+ Smart TVs over hybrid LAN/Wi-Fi using multi-threaded Python servers.
-                        </div>
+                        <div class="p-desc">Architected a centralized broadcasting system for 10+ Smart TVs over hybrid LAN/Wi-Fi using multi-threaded Python servers.</div>
                         <div class="p-action">
                             <a href="https://github.com/mustaquim-ms/omnicare-signage" target="_blank" rel="noopener noreferrer" class="arrow-btn">
                                 <i class="fas fa-arrow-right"></i>
@@ -484,9 +594,9 @@
                         </div>
                     </div>
 
-                    <!-- Project 04: Sabrihin AI -->
-                    <div class="project-item fade-in" data-img="assets/images/projects/4.jpg">
-                        <div class="p-index">04</div>
+                    <!-- Project 03: Sabrihin AI -->
+                    <div class="project-item fade-in ui-interact" data-img="assets/images/projects/3.jpg">
+                        <div class="p-index">03</div>
                         <div class="p-info">
                             <h3>Sabrihin AI Assistant</h3>
                             <div class="tech-stack">
@@ -495,9 +605,7 @@
                                 <span>EdTech</span>
                             </div>
                         </div>
-                        <div class="p-desc">
-                            AI-powered study assistant converting raw PDF inputs into interactive flashcards, quizzes, and vocabulary modules.
-                        </div>
+                        <div class="p-desc">AI-powered study assistant converting raw PDF inputs into interactive flashcards, quizzes, and vocabulary modules.</div>
                         <div class="p-action">
                             <a href="https://github.com/mustaquim-ms/sabrihin-ai" target="_blank" rel="noopener noreferrer" class="arrow-btn">
                                 <i class="fas fa-arrow-right"></i>
@@ -505,22 +613,20 @@
                         </div>
                     </div>
 
-                    <!-- Project 05: Taammul Quran -->
-                    <div class="project-item fade-in" data-img="assets/images/projects/5.jpg">
-                        <div class="p-index">05</div>
+                    <!-- Project 04: Raudatul Quran -->
+                    <div class="project-item fade-in ui-interact" data-img="assets/images/projects/4.jpg">
+                        <div class="p-index">04</div>
                         <div class="p-info">
-                            <h3>Taammul Quran</h3>
+                            <h3>Raudatul Quran</h3>
                             <div class="tech-stack">
                                 <span>Web App</span>
                                 <span>UI/UX</span>
                                 <span>Typography</span>
                             </div>
                         </div>
-                        <div class="p-desc">
-                            A minimal, immersive digital platform designed for deep Quranic reflection and linguistic study.
-                        </div>
+                        <div class="p-desc">A minimal, immersive digital platform designed for deep Quranic reflection and linguistic study.</div>
                         <div class="p-action">
-                            <a href="https://github.com/mustaquim-ms/taammul-quran" target="_blank" rel="noopener noreferrer" class="arrow-btn">
+                            <a href="https://github.com/mustaquim-ms/raudatul-quran" target="_blank" rel="noopener noreferrer" class="arrow-btn">
                                 <i class="fas fa-arrow-right"></i>
                             </a>
                         </div>
@@ -533,11 +639,11 @@
                 <div class="section-header fade-in">
                     <h2>Latest <span class="serif-italic">Insights</span></h2>
                     <!-- Fixed Medium Profile link -->
-                    <a href="https://medium.com/@mustaquim" target="_blank" rel="noopener noreferrer" class="link-arrow">Read All <i class="fas fa-arrow-right"></i></a>
+                    <a href="https://medium.com/@mustaquim" target="_blank" rel="noopener noreferrer" class="link-arrow ui-interact">Read All <i class="fas fa-arrow-right"></i></a>
                 </div>
 
                 <div class="blog-grid">
-                    <article class="blog-card fade-in">
+                    <article class="blog-card fade-in ui-interact">
                         <div class="blog-date">Oct 24, 2025</div>
                         <h3 class="blog-title">Migrating Legacy Auth to Modern Auth: A survival guide</h3>
                         <p class="blog-excerpt">How to depreciate Basic Auth in Exchange Online without breaking your CEO's email access.</p>
@@ -547,7 +653,7 @@
                         <a href="https://medium.com/@mustaquim" target="_blank" rel="noopener noreferrer" class="blog-link">Read Article</a>
                     </article>
 
-                    <article class="blog-card fade-in">
+                    <article class="blog-card fade-in ui-interact">
                         <div class="blog-date">Sep 12, 2025</div>
                         <h3 class="blog-title">Automating Employee Onboarding with Logic Apps</h3>
                         <p class="blog-excerpt">Connecting HRIS to Active Directory to provision accounts in 0.5 seconds instead of 3 days.</p>
@@ -557,7 +663,7 @@
                         <a href="https://medium.com/@mustaquim" target="_blank" rel="noopener noreferrer" class="blog-link">Read Article</a>
                     </article>
 
-                    <article class="blog-card fade-in">
+                    <article class="blog-card fade-in ui-interact">
                         <div class="blog-date">Aug 05, 2025</div>
                         <h3 class="blog-title">Why "Zero Trust" is more than just a buzzword</h3>
                         <p class="blog-excerpt">Moving beyond the perimeter network: Implementing Identity as the new Firewall.</p>
@@ -572,22 +678,10 @@
             <!-- Testimonials (Scrolling) -->
             <div class="marquee-section" style="border-top: none; background: transparent;">
                 <div class="marquee-track" style="gap: 100px; animation-duration: 40s;">
-                    <div class="test-card">
-                        <p>"Mustaquim completely transformed our onboarding workflow. We saved 20 hours a week."</p>
-                        <span>— CTO, TechCorp</span>
-                    </div>
-                    <div class="test-card">
-                        <p>"The network security overhaul was seamless. Zero downtime during the transition."</p>
-                        <span>— IT Director, Global Inc</span>
-                    </div>
-                    <div class="test-card">
-                        <p>"A rare combination of strategic vision and hands-on technical excellence."</p>
-                        <span>— Project Manager, FinTech Ltd</span>
-                    </div>
-                    <div class="test-card">
-                        <p>"Mustaquim completely transformed our onboarding workflow. We saved 20 hours a week."</p>
-                        <span>— CTO, TechCorp</span>
-                    </div>
+                    <div class="test-card"><p>"Mustaquim completely transformed our onboarding workflow. We saved 20 hours a week."</p><span>— CTO, TechCorp</span></div>
+                    <div class="test-card"><p>"The network security overhaul was seamless. Zero downtime during the transition."</p><span>— IT Director, Global Inc</span></div>
+                    <div class="test-card"><p>"A rare combination of strategic vision and hands-on technical excellence."</p><span>— Project Manager, FinTech Ltd</span></div>
+                    <div class="test-card"><p>"Mustaquim completely transformed our onboarding workflow. We saved 20 hours a week."</p><span>— CTO, TechCorp</span></div>
                 </div>
             </div>
 
@@ -596,7 +690,7 @@
                 <div class="footer-top">
                     <div class="footer-cta fade-in">
                         <p>Have a challenge?</p>
-                        <a href="mailto:mustaquimmahmad@gmail.com" class="giant-link">Let's Connect</a>
+                        <a href="mailto:mustaquimmahmad@gmail.com" class="giant-link ui-interact">Let's Connect</a>
                     </div>
                     
                     <!-- ENHANCED FOOTER INFO: 3 Columns -->
@@ -605,10 +699,10 @@
                         <div class="f-col">
                             <h4>Connect</h4>
                             <div class="s-icons-grid">
-                                <a href="https://www.linkedin.com/in/mustaquimahmad/" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
-                                <a href="https://github.com/mustaquim-ms?tab=repositories" target="_blank" rel="noopener noreferrer" aria-label="GitHub"><i class="fab fa-github"></i></a>
-                                <a href="https://medium.com/@mustaquim" target="_blank" rel="noopener noreferrer" aria-label="Medium"><i class="fab fa-medium-m"></i></a>
-                                <a href="mailto:mustaquimmahmad@gmail.com" aria-label="Email"><i class="fas fa-envelope"></i></a>
+                                <a href="https://www.linkedin.com/in/mustaquimahmad/" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn" class="ui-interact"><i class="fab fa-linkedin-in"></i></a>
+                                <a href="https://github.com/mustaquim-ms?tab=repositories" target="_blank" rel="noopener noreferrer" aria-label="GitHub" class="ui-interact"><i class="fab fa-github"></i></a>
+                                <a href="https://medium.com/@mustaquim" target="_blank" rel="noopener noreferrer" aria-label="Medium" class="ui-interact"><i class="fab fa-medium-m"></i></a>
+                                <a href="mailto:mustaquimmahmad@gmail.com" aria-label="Email" class="ui-interact"><i class="fas fa-envelope"></i></a>
                             </div>
                         </div>
                         
@@ -632,30 +726,28 @@
                 
                 <!-- GLITCHING GIANT NAME OVERFLOW FIX -->
                 <div class="footer-bottom">
-                    <h1 class="giant-name" data-text="MUSTAQUIM">MUSTAQUIM</h1>
+                    <h1 class="giant-name ui-interact" data-text="MUSTAQUIM">MUSTAQUIM</h1>
                 </div>
             </footer>
 
         </div> <!-- End Main Container -->
     </div> <!-- End Page Wrapper -->
 
-    <!-- Terminal Overlay -->
+    <!-- Draggable Terminal Overlay -->
     <div class="terminal-overlay" id="terminal">
-        <div class="terminal-window">
-            <div class="terminal-header">
+        <div class="terminal-window" id="term-window">
+            <!-- Grab Handle -->
+            <div class="terminal-header" id="term-header" style="cursor: grab;">
                 <div class="term-dots">
-                    <span class="dot-red"></span>
-                    <span class="dot-yellow"></span>
-                    <span class="dot-green"></span>
+                    <span class="dot-red"></span><span class="dot-yellow"></span><span class="dot-green"></span>
                 </div>
-                <div class="term-title">mustaquim_admin@portfolio:~</div>
-                <div class="term-close" id="close-term"><i class="fas fa-times"></i></div>
+                <div class="term-title">mustaquim_admin@os:~ (Drag Me)</div>
+                <div class="term-close ui-interact" id="close-term"><i class="fas fa-times"></i></div>
             </div>
             <div class="terminal-body" id="term-body">
-                <div class="output">
+                <div class="output" id="term-output">
                     <span class="prompt">➜  ~</span> Welcome to Mustaquim's Terminal.<br>
-                    <span class="prompt">➜  ~</span> Type <span class="cmd-highlight">'help'</span> to see commands.<br><br>
-                    <!-- Social Links inside Terminal for extra flair -->
+                    <span class="prompt">➜  ~</span> Type <span class="cmd-highlight">'help'</span> to see commands. There might be hidden ones...<br><br>
                     <span class="prompt">➜  ~</span> Or execute: 
                     <a href="https://github.com/mustaquim-ms?tab=repositories" target="_blank" rel="noopener noreferrer" style="color:#569CD6;text-decoration:none;">./github.sh</a> | 
                     <a href="https://www.linkedin.com/in/mustaquimahmad/" target="_blank" rel="noopener noreferrer" style="color:#569CD6;text-decoration:none;">./linkedin.sh</a><br><br>
@@ -680,14 +772,11 @@
             
             if(cpuEl && netEl) {
                 setInterval(() => {
-                    // Randomize CPU between 11% and 18%
                     const newCpu = Math.floor(Math.random() * (18 - 11 + 1) + 11);
                     cpuEl.innerText = newCpu;
-                    
-                    // Randomize Network Speed between 750 and 950 Mbps
                     const newNet = Math.floor(Math.random() * (950 - 750 + 1) + 750);
                     netEl.innerText = newNet;
-                }, 2500); // Updates every 2.5 seconds
+                }, 2500); 
             }
 
             // Live Time Clock for Footer (Asia/Dhaka)

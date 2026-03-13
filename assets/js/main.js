@@ -1,5 +1,5 @@
 document.addEventListener("DOMContentLoaded", () => {
-    
+
     // ==========================================
     // 1. Lenis Smooth Scroll
     // ==========================================
@@ -16,7 +16,41 @@ document.addEventListener("DOMContentLoaded", () => {
     }
 
     // ==========================================
-    // 2. Intersection Observer (Fade In Animation)
+    // 2. UI Sound Design (Synth Audio)
+    // ==========================================
+    let soundEnabled = false;
+    const soundBtn = document.getElementById('sound-toggle');
+    const AudioContext = window.AudioContext || window.webkitAudioContext;
+    let audioCtx;
+
+    if (soundBtn) {
+        soundBtn.addEventListener('click', () => {
+            soundEnabled = !soundEnabled;
+            soundBtn.classList.toggle('active');
+            soundBtn.innerHTML = soundEnabled ? '<i class="fas fa-volume-up"></i>' : '<i class="fas fa-volume-mute"></i>';
+            if (soundEnabled && !audioCtx) audioCtx = new AudioContext();
+        });
+    }
+
+    function playTick() {
+        if (!soundEnabled || !audioCtx) return;
+        if (audioCtx.state === 'suspended') audioCtx.resume();
+        const osc = audioCtx.createOscillator();
+        const gain = audioCtx.createGain();
+        osc.connect(gain); gain.connect(audioCtx.destination);
+        osc.type = 'sine'; osc.frequency.setValueAtTime(800, audioCtx.currentTime);
+        gain.gain.setValueAtTime(0.05, audioCtx.currentTime);
+        gain.gain.exponentialRampToValueAtTime(0.001, audioCtx.currentTime + 0.05);
+        osc.start(); osc.stop(audioCtx.currentTime + 0.05);
+    }
+
+    // Attach sound to elements with the class 'ui-interact'
+    document.querySelectorAll('.ui-interact').forEach(el => {
+        el.addEventListener('mouseenter', playTick);
+    });
+
+    // ==========================================
+    // 3. Intersection Observer (Fade In Animation)
     // ==========================================
     const observer = new IntersectionObserver((entries) => {
         entries.forEach(entry => {
@@ -26,15 +60,13 @@ document.addEventListener("DOMContentLoaded", () => {
             }
         });
     }, { threshold: 0.1 });
-
     document.querySelectorAll('.fade-in').forEach(el => observer.observe(el));
 
     // ==========================================
-    // 3. Stats Number Counter
+    // 4. Stats Number Counter
     // ==========================================
     const counters = document.querySelectorAll('.counter');
     const speed = 200;
-
     const animateCounters = () => {
         counters.forEach(counter => {
             const updateCount = () => {
@@ -51,7 +83,6 @@ document.addEventListener("DOMContentLoaded", () => {
             updateCount();
         });
     };
-
     let counterSection = document.querySelector('.stats-container');
     if (counterSection) {
         let counterObserver = new IntersectionObserver((entries, obs) => {
@@ -63,32 +94,6 @@ document.addEventListener("DOMContentLoaded", () => {
             });
         }, { threshold: 0.5 });
         counterObserver.observe(counterSection);
-    }
-
-    // ==========================================
-    // 4. Dynamic Time-Based Greeting
-    // ==========================================
-    const greetingEl = document.getElementById('greeting');
-    if(greetingEl) {
-        const hour = new Date().getHours();
-        let text = "Hello.";
-        
-        if (hour < 12) text = "Good Morning.";
-        else if (hour < 18) text = "Good Afternoon.";
-        else text = "Good Evening.";
-        
-        // Typewriter effect
-        let i = 0;
-        greetingEl.innerHTML = ""; 
-        function typeWriter() {
-            if (i < text.length) {
-                greetingEl.innerHTML += text.charAt(i);
-                i++;
-                setTimeout(typeWriter, 100);
-            }
-        }
-        // Start typing after preloader finishes (approx 2.5s delay)
-        setTimeout(typeWriter, 2500);
     }
 
     // ==========================================
@@ -121,15 +126,12 @@ document.addEventListener("DOMContentLoaded", () => {
                     revealEl.classList.add('active');
                 }
             });
-
             item.addEventListener('mouseleave', () => {
                 revealEl.classList.remove('active');
             });
-
             item.addEventListener('mousemove', (e) => {
                 revealEl.style.left = `${e.clientX}px`;
                 revealEl.style.top = `${e.clientY}px`;
-                
                 revealEl.animate({
                     left: `${e.clientX}px`,
                     top: `${e.clientY}px`
@@ -160,7 +162,6 @@ document.addEventListener("DOMContentLoaded", () => {
     const themeBtn = document.getElementById('theme-btn');
     const body = document.body;
 
-    // Check saved preference
     if (localStorage.getItem('theme') === 'dark') {
         body.classList.add('dark-mode');
         if (themeBtn) themeBtn.innerHTML = '<i class="fas fa-sun"></i>';
@@ -180,7 +181,7 @@ document.addEventListener("DOMContentLoaded", () => {
     }
 
     // ==========================================
-    // 9. NAVBAR SLIDING BACKDROP (NEW)
+    // 9. NAVBAR SLIDING BACKDROP
     // ==========================================
     const navLinksContainer = document.querySelector('.nav-links');
     const navItems = document.querySelectorAll('.nav-links a');
@@ -192,32 +193,118 @@ document.addEventListener("DOMContentLoaded", () => {
                 const target = e.target;
                 const rect = target.getBoundingClientRect();
                 const containerRect = navLinksContainer.getBoundingClientRect();
-
-                // Calculate relative position
                 const left = rect.left - containerRect.left;
                 const width = rect.width;
-
-                // Apply styles
                 navSlider.style.width = `${width}px`;
                 navSlider.style.transform = `translateX(${left}px)`;
                 navSlider.style.opacity = '1';
             });
         });
-
         navLinksContainer.addEventListener('mouseleave', () => {
             navSlider.style.opacity = '0';
         });
     }
 
     // ==========================================
-    // 10. INTERACTIVE TERMINAL LOGIC
+    // 10. Interactive Architecture Map
+    // ==========================================
+    const archNodes = document.querySelectorAll('.node');
+    const archTooltip = document.getElementById('arch-tooltip');
+
+    if(archTooltip) {
+        archNodes.forEach(node => {
+            node.addEventListener('mouseenter', (e) => {
+                const info = e.target.getAttribute('data-info');
+                const title = e.target.innerText;
+                archTooltip.innerHTML = `<h4>${title}</h4><p>${info}</p>`;
+            });
+        });
+    }
+
+    // ==========================================
+    // 11. Before/After ROI Slider
+    // ==========================================
+    const slider = document.getElementById('roi-slider');
+    const afterLayer = document.getElementById('after-layer');
+    const handle = document.getElementById('slider-handle');
+
+    if (slider && afterLayer && handle) {
+        let isDragging = false;
+        
+        slider.addEventListener('mousedown', () => isDragging = true);
+        window.addEventListener('mouseup', () => isDragging = false);
+        
+        window.addEventListener('mousemove', (e) => {
+            if (!isDragging) return;
+            const rect = slider.getBoundingClientRect();
+            let x = e.clientX - rect.left;
+            if (x < 0) x = 0;
+            if (x > rect.width) x = rect.width;
+            
+            const percent = (x / rect.width) * 100;
+            afterLayer.style.clipPath = `polygon(0 0, ${percent}% 0, ${percent}% 100%, 0 100%)`;
+            handle.style.left = `${percent}%`;
+        });
+    }
+
+    // ==========================================
+    // 12. Video Pitch Modal
+    // ==========================================
+    const openVideo = document.getElementById('open-video');
+    const videoModal = document.getElementById('video-modal');
+    const closeVideo = document.getElementById('close-video');
+    const pitchVideo = document.getElementById('pitch-video');
+
+    if(openVideo && videoModal) {
+        openVideo.addEventListener('click', () => {
+            videoModal.classList.add('open');
+            if(pitchVideo) pitchVideo.play();
+        });
+        closeVideo.addEventListener('click', () => {
+            videoModal.classList.remove('open');
+            if(pitchVideo) pitchVideo.pause();
+        });
+    }
+
+    // ==========================================
+    // 13. Draggable Terminal & CTF Easter Egg
     // ==========================================
     const termBtn = document.getElementById('term-btn');
     const termOverlay = document.getElementById('terminal');
     const closeTerm = document.getElementById('close-term');
     const termInput = document.getElementById('term-input');
-    const termBody = document.querySelector('.output');
+    const termBody = document.getElementById('term-output');
+    
+    // Draggable Logic
+    const termWindow = document.getElementById('term-window');
+    const termHeader = document.getElementById('term-header');
 
+    if (termWindow && termHeader) {
+        let isDraggingTerm = false;
+        let offsetX, offsetY;
+
+        termHeader.addEventListener('mousedown', (e) => {
+            isDraggingTerm = true;
+            offsetX = e.clientX - termWindow.getBoundingClientRect().left;
+            offsetY = e.clientY - termWindow.getBoundingClientRect().top;
+            termWindow.style.transition = 'none'; // Disable transition while dragging
+        });
+
+        window.addEventListener('mouseup', () => {
+            isDraggingTerm = false;
+            termWindow.style.transition = '0.3s cubic-bezier(0.18, 0.89, 0.32, 1.28)';
+        });
+
+        window.addEventListener('mousemove', (e) => {
+            if (!isDraggingTerm) return;
+            termWindow.style.transform = 'none'; // Overrides initial scale
+            termWindow.style.left = `${e.clientX - offsetX}px`;
+            termWindow.style.top = `${e.clientY - offsetY}px`;
+            termWindow.style.position = 'absolute';
+        });
+    }
+
+    // Terminal Open/Close & CTF Commands
     if(termBtn && termOverlay) {
         termBtn.addEventListener('click', () => {
             termOverlay.classList.add('open');
@@ -226,34 +313,36 @@ document.addEventListener("DOMContentLoaded", () => {
         
         closeTerm.addEventListener('click', () => termOverlay.classList.remove('open'));
 
-        const commands = {
-            help: "Available commands: <br> - about <br> - skills <br> - email <br> - clear",
-            about: "Mustaquim Ahmad. IT Strategist. Results-oriented.",
-            skills: "Intune, Azure, SCCM, Cisco, Python, ITIL.",
-            email: "Opening mail client...",
-            clear: "clear"
+        const ctfCommands = {
+            "help": "Available: about, clear, ls, skills",
+            "about": "Mustaquim Ahmad. Architecting Digital Resilience.",
+            "skills": "Intune, Azure, SCCM, Cisco, Python, ITIL.",
+            "ls": "Documents/  Downloads/  .secret_config",
+            "ls -a": "Documents/  Downloads/  .secret_config  .flag.txt",
+            "cat .flag.txt": "Base64: Q29uZ3JhdHMgRW5naW5lZXIhIFlvdSBmb3VuZCBpdC4gRW1haWwgbWUgZm9yIGFuIGludGVydmlldy4=",
+            "decode": "Use format: decode[base64_string]",
+            "decode Q29uZ3JhdHMgRW5naW5lZXIhIFlvdSBmb3VuZCBpdC4gRW1haWwgbWUgZm9yIGFuIGludGVydmlldy4=": "<span style='color:#10B981'>DECODED: Congrats Engineer! You found it. Email me for an interview.</span>",
+            "sudo": "Nice try. This incident will be reported."
         };
 
         termInput.addEventListener('keydown', (e) => {
             if (e.key === 'Enter') {
-                const input = termInput.value.toLowerCase().trim();
+                const input = termInput.value.trim();
                 let response = `<span style='color: #FF5F56;'>Command not found: ${input}</span>`;
 
-                if (commands[input]) {
-                    response = commands[input];
-                    if (input === 'email') {
-                        setTimeout(() => window.location.href = "mailto:hello@mustaquim.tech", 1000);
-                    }
-                }
-                
                 if (input === 'clear') {
                     termBody.innerHTML = "";
-                } else {
-                    const oldLine = `<div><span class="prompt">➜  ~</span> ${input}</div>`;
-                    const newLine = `<div style="margin-bottom: 10px; color: #CE9178;">${response}</div>`;
-                    termBody.innerHTML += oldLine + newLine;
+                    termInput.value = "";
+                    return;
                 }
-                
+
+                if (ctfCommands[input]) {
+                    response = ctfCommands[input];
+                }
+
+                const oldLine = `<div><span class="prompt">➜  ~</span> ${input}</div>`;
+                const newLine = `<div style="margin-bottom: 10px; color: #CE9178;">${response}</div>`;
+                termBody.innerHTML += oldLine + newLine;
                 termInput.value = "";
                 document.getElementById('term-body').scrollTop = document.getElementById('term-body').scrollHeight;
             }
@@ -261,14 +350,14 @@ document.addEventListener("DOMContentLoaded", () => {
     }
 
     // ==========================================
-    // 11. Unique Shutter Preloader Logic
+    // 14. Unique Shutter Preloader Logic
     // ==========================================
     const preloader = document.getElementById('preloader');
     const counterEl = document.getElementById('loader-counter');
     const statusEl = document.getElementById('loader-status');
     
     if (preloader && counterEl && statusEl) {
-        const techWords = [
+        const techWords =[
             "Initializing", "Verifying Integrity", "Loading Assets", 
             "Securing Connection", "Optimizing", "Ready"
         ];
@@ -280,7 +369,6 @@ document.addEventListener("DOMContentLoaded", () => {
             loadValue += Math.floor(Math.random() * 5) + 1;
             
             if (loadValue > 100) loadValue = 100;
-            
             counterEl.innerText = loadValue;
             
             if (loadValue % 20 === 0 && wordIndex < techWords.length) {
@@ -300,7 +388,7 @@ document.addEventListener("DOMContentLoaded", () => {
     }
 
     // ==========================================
-    // 12. Smart Copy-to-Clipboard
+    // 15. Smart Copy-to-Clipboard & PDF Modal
     // ==========================================
     const emailLinks = document.querySelectorAll('a[href^="mailto:"]');
     const toast = document.getElementById('toast');
@@ -320,13 +408,8 @@ document.addEventListener("DOMContentLoaded", () => {
         });
     }
 
-    // ==========================================
-    // 13. PDF Modal Logic
-    // ==========================================
     const pdfModal = document.getElementById('pdf-modal');
     const closePdf = document.getElementById('close-pdf');
-    // Note: Ensure your resume buttons have the class 'secondary-btn' or a specific ID if you want to trigger this. 
-    // Or you can add 'trigger-pdf' class to your specific Download CV button.
     const resumeBtns = document.querySelectorAll('.trigger-pdf'); 
 
     if (pdfModal && closePdf) {
@@ -338,8 +421,5 @@ document.addEventListener("DOMContentLoaded", () => {
         });
         closePdf.addEventListener('click', () => pdfModal.classList.remove('open'));
     }
-
-
-    
 
 });
