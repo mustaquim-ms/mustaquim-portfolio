@@ -60,3 +60,13 @@ To run this portfolio locally, no package managers (NPM/Yarn) are required. Simp
 git clone [https://github.com/mustaquim-ms/portfolio.git](https://github.com/mustaquim-ms/portfolio.git)
 cd portfolio
 open index.html
+
+📬 Initiate Connection
+Whether you are looking to overhaul your enterprise infrastructure, migrate to modern endpoint management, or implement Zero-Trust security, let's talk.
+
+Bash
+➜  ~ contact --protocol email
+Opening secure channel to: mustaquimmahmad@gmail.com...
+Email: mustaquimmahmad@gmail.com
+LinkedIn: /in/mustaquimahmad
+GitHub: @mustaquim-ms
