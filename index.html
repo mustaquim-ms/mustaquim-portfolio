@@ -1,25 +1,25 @@
 <!doctype html>
-<html lang="en">
+<html lang="en" class="dark">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Mustaquim Ahmad | IT Strategy & Operations</title>
-    <!-- Icons -->
+    <title>
+      Mustaquim Ahmad | IT Strategy & Operations | Cybersecurity Analyst
+    </title>
+
+    <!-- Icons & Fonts -->
     <link
       rel="stylesheet"
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
     />
     <link rel="icon" type="image/png" href="assets/images/favicon.png" />
-    <!-- Google Fonts -->
     <link
-      href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;800;900&family=Playfair+Display:ital,wght@0,400;1,400;1,600&display=swap"
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;800;900&family=Playfair+Display:ital,wght@0,400;1,400;1,600&family=JetBrains+Mono:wght@400;700&display=swap"
       rel="stylesheet"
     />
-    <!-- Lenis Smooth Scroll -->
-    <script src="https://cdn.jsdelivr.net/gh/studio-freight/lenis@1.0.29/bundled/lenis.min.js"></script>
-    <!-- Main CSS -->
-    <link rel="stylesheet" href="assets/css/style.css" />
 
+    <!-- External Scripts -->
+    <script src="https://cdn.jsdelivr.net/gh/studio-freight/lenis@1.0.29/bundled/lenis.min.js"></script>
     <link
       href="https://assets.calendly.com/assets/external/widget.css"
       rel="stylesheet"
@@ -30,10 +30,10 @@
       async
     ></script>
 
-    <!-- SEO & Social Media Tags -->
+    <!-- SEO Tags -->
     <meta
       name="description"
-      content="Mustaquim Ahmad - IT Strategist & Operations Specialist. Architecting intelligent, Zero-Trust IT environments and AIOps solutions."
+      content="Mustaquim Ahmad - Architecting intelligent, Zero-Trust IT environments and AIOps solutions."
     />
     <meta
       name="keywords"
@@ -41,232 +41,1139 @@
     />
     <meta name="author" content="Mustaquim Ahmad" />
 
-    <!-- Open Graph / Facebook / LinkedIn -->
-    <meta property="og:type" content="website" />
-    <meta property="og:url" content="https://mustaquim.tech/" />
-    <meta
-      property="og:title"
-      content="Mustaquim Ahmad | IT Strategy & Operations"
-    />
-    <meta
-      property="og:description"
-      content="Architecting intelligent, Zero-Trust IT environments. Explore my enterprise infrastructure deployments, AIOps research, and automation case studies."
-    />
-    <meta property="og:image" content="assets/images/og-preview.png" />
-
-    <!-- Twitter -->
-    <meta property="twitter:card" content="summary_large_image" />
-    <meta property="twitter:title" content="Mustaquim Ahmad | IT Strategist" />
-    <meta
-      property="twitter:description"
-      content="Architecting intelligent, Zero-Trust IT environments. Explore my enterprise infrastructure deployments, AIOps research, and automation case studies."
-    />
-    <meta property="twitter:image" content="assets/images/og-preview.png" />
-
-    <!-- CUSTOM STYLES FOR OUTRAGEOUS IT ENGINEER UPGRADES -->
     <style>
-      /* System Telemetry Dashboard Vibe */
-      .metrics-dashboard {
-        display: grid;
-        grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-        gap: 24px;
-        margin-top: 30px;
-      }
-      .metric-card {
-        background: #0f172a;
-        color: white;
-        padding: 25px;
-        border-radius: 16px;
-        border: 1px solid #1e293b;
-        position: relative;
-        overflow: hidden;
-        box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15);
-        transition:
-          transform 0.3s ease,
-          border-color 0.3s ease;
-      }
-      .metric-card:hover {
-        transform: translateY(-5px);
-        border-color: var(--accent);
-      }
-      .metric-header {
-        display: flex;
-        justify-content: space-between;
-        color: #94a3b8;
-        font-size: 0.85rem;
-        text-transform: uppercase;
-        letter-spacing: 1px;
-        margin-bottom: 15px;
-        font-weight: 600;
-      }
-      .metric-header i {
-        color: var(--accent);
-        font-size: 1.2rem;
-      }
-      .metric-value {
-        font-size: 3rem;
-        font-weight: 900;
-        font-family: "Courier New", Courier, monospace;
-        line-height: 1;
-      }
-      .metric-value .unit {
-        font-size: 1.2rem;
-        color: #64748b;
-        margin-left: 5px;
-        font-weight: 600;
-      }
-      .metric-status {
-        margin-top: 20px;
-        font-size: 0.8rem;
-        color: #10b981;
-        display: flex;
-        align-items: center;
-        gap: 8px;
-        font-family: "Courier New", Courier, monospace;
-        background: rgba(16, 185, 129, 0.1);
-        padding: 5px 10px;
-        border-radius: 5px;
-        width: fit-content;
+      /* =========================================
+           DEEP CYBER DESIGN SYSTEM (NO GRID)
+           ========================================= */
+      :root {
+        --bg-base: #030712; /* Deep Solid Cyber Navy */
+        --bg-glass: rgba(10, 15, 30, 0.65);
+        --bg-card: #0b1120;
+        --border-glass: rgba(0, 240, 255, 0.15);
+        --text-main: #f8fafc;
+        --text-muted: #8b9bb4;
+        --accent-cyan: #00f0ff;
+        --accent-purple: #b026ff;
+        --accent-emerald: #00ff88;
+        --font-sans: "Inter", sans-serif;
+        --font-serif: "Playfair Display", serif;
+        --font-mono: "JetBrains Mono", monospace;
       }
 
-      /* Animated Scanning Line in Telemetry */
-      .metric-chart-line {
-        position: absolute;
-        bottom: 0;
-        left: 0;
-        width: 100%;
-        height: 40px;
-        background: linear-gradient(
-          180deg,
-          rgba(37, 99, 235, 0.2) 0%,
-          rgba(37, 99, 235, 0) 100%
-        );
-        border-top: 2px solid var(--accent);
-        opacity: 0.5;
-        overflow: hidden;
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
       }
-      .metric-chart-line::before {
-        content: "";
-        position: absolute;
+      html {
+        scroll-behavior: auto;
+        background: var(--bg-base);
+      }
+
+      /* Pure, deep background without harsh grids */
+      body {
+        background-color: var(--bg-base);
+        color: var(--text-main);
+        font-family: var(--font-sans);
+        overflow-x: hidden;
+        background-image:
+          radial-gradient(
+            circle at 10% 20%,
+            rgba(0, 240, 255, 0.04),
+            transparent 30%
+          ),
+          radial-gradient(
+            circle at 90% 80%,
+            rgba(176, 38, 255, 0.03),
+            transparent 30%
+          );
+      }
+
+      ::-webkit-scrollbar {
+        width: 6px;
+      }
+      ::-webkit-scrollbar-track {
+        background: var(--bg-base);
+      }
+      ::-webkit-scrollbar-thumb {
+        background: rgba(0, 240, 255, 0.3);
+        border-radius: 10px;
+      }
+      ::-webkit-scrollbar-thumb:hover {
+        background: var(--accent-cyan);
+      }
+
+      /* --- ENHANCED DYNAMIC MOUSE LIGHTING --- */
+      .ambient-glow {
+        position: fixed;
         top: 0;
-        left: -100%;
-        width: 50%;
-        height: 100%;
-        background: linear-gradient(
-          90deg,
-          transparent,
-          rgba(255, 255, 255, 0.4),
-          transparent
-        );
-        animation: scan 3s infinite linear;
-      }
-      @keyframes scan {
-        0% {
-          left: -100%;
-        }
-        100% {
-          left: 200%;
-        }
-      }
-
-      /* Enhanced Core Competencies (Bento Grid) Glow */
-      .bento-box::after {
-        content: "";
-        position: absolute;
-        top: -50px;
-        right: -50px;
-        width: 150px;
-        height: 150px;
+        left: 0;
+        width: 700px;
+        height: 700px;
         background: radial-gradient(
           circle,
-          rgba(37, 99, 235, 0.1) 0%,
+          rgba(0, 240, 255, 0.05) 0%,
+          rgba(176, 38, 255, 0.02) 40%,
           transparent 70%
         );
         border-radius: 50%;
         pointer-events: none;
         z-index: 0;
+        mix-blend-mode: screen;
+        will-change: transform;
       }
-      .bento-box h3,
-      .bento-box p,
-      .bento-box ul,
-      .bento-box div {
+      .ambient-glow-core {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 120px;
+        height: 120px;
+        background: radial-gradient(
+          circle,
+          rgba(0, 240, 255, 0.15) 0%,
+          transparent 70%
+        );
+        border-radius: 50%;
+        pointer-events: none;
+        z-index: 1;
+        mix-blend-mode: screen;
+        will-change: transform;
+      }
+
+      /* --- CYBER PRELOADER --- */
+      .cyber-loader-wrapper {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100vw;
+        height: 100vh;
+        background: #02040a;
+        z-index: 99999;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        transition:
+          opacity 1s ease,
+          visibility 1s ease;
+      }
+      .cyber-core-container {
+        position: relative;
+        width: 120px;
+        height: 120px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+      }
+      .cyber-core {
+        width: 30px;
+        height: 30px;
+        background: var(--accent-cyan);
+        border-radius: 50%;
+        box-shadow:
+          0 0 40px var(--accent-cyan),
+          0 0 80px var(--accent-cyan);
+        animation: corePulse 1s infinite alternate;
+      }
+      .cyber-ring-1,
+      .cyber-ring-2 {
+        position: absolute;
+        border-radius: 50%;
+        border: 1px solid transparent;
+      }
+      .cyber-ring-1 {
+        width: 80px;
+        height: 80px;
+        border-top: 2px solid var(--accent-cyan);
+        border-bottom: 2px solid var(--accent-cyan);
+        animation: spin 2s linear infinite;
+      }
+      .cyber-ring-2 {
+        width: 120px;
+        height: 120px;
+        border-left: 2px solid var(--accent-purple);
+        border-right: 2px solid var(--accent-purple);
+        animation: spin 3s linear infinite reverse;
+      }
+      .cyber-status-text {
+        margin-top: 40px;
+        font-family: var(--font-mono);
+        color: var(--accent-cyan);
+        font-size: 0.9rem;
+        letter-spacing: 2px;
+        text-transform: uppercase;
+        height: 20px;
+      }
+
+      @keyframes corePulse {
+        0% {
+          transform: scale(0.8);
+          opacity: 0.8;
+        }
+        100% {
+          transform: scale(1.2);
+          opacity: 1;
+        }
+      }
+      @keyframes spin {
+        100% {
+          transform: rotate(360deg);
+        }
+      }
+
+      /* --- SHRINKING GLASS NAVBAR --- */
+      .navbar {
+        position: fixed;
+        top: 20px;
+        left: 50%;
+        transform: translateX(-50%);
+        width: 95%;
+        max-width: 1300px;
+        padding: 12px 24px;
+        z-index: 1000;
+        background: var(--bg-glass);
+        backdrop-filter: blur(20px);
+        -webkit-backdrop-filter: blur(20px);
+        border: 1px solid var(--border-glass);
+        border-radius: 100px;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        box-shadow: 0 10px 40px rgba(0, 240, 255, 0.05);
+        transition: all 0.5s cubic-bezier(0.16, 1, 0.3, 1);
+      }
+      .nav-logo {
+        font-weight: 900;
+        color: var(--text-main);
+        text-decoration: none;
+        font-size: 1.2rem;
+        display: flex;
+        align-items: center;
+        gap: 8px;
+        letter-spacing: -0.5px;
+        transition: 0.3s;
+      }
+      .nav-logo i {
+        color: var(--accent-cyan);
+      }
+
+      .nav-content-wrapper {
+        display: flex;
+        gap: 20px;
+        align-items: center;
+        transition: all 0.5s ease;
+        overflow: hidden;
+      }
+      .nav-links {
+        display: flex;
+        gap: 20px;
+        list-style: none;
+        position: relative;
+      }
+      .nav-slider {
+        position: absolute;
+        height: 100%;
+        top: 0;
+        left: 0;
+        background: rgba(0, 240, 255, 0.1);
+        border: 1px solid rgba(0, 240, 255, 0.3);
+        border-radius: 50px;
+        z-index: 0;
+        opacity: 0;
+        transition: all 0.3s cubic-bezier(0.25, 1, 0.5, 1);
+        pointer-events: none;
+      }
+      .nav-links a {
+        color: var(--text-muted);
+        text-decoration: none;
+        font-size: 0.9rem;
+        font-weight: 500;
+        transition: 0.3s;
+        padding: 8px 16px;
         position: relative;
         z-index: 1;
       }
-      .dark-box::after {
-        background: radial-gradient(
-          circle,
-          rgba(255, 255, 255, 0.05) 0%,
-          transparent 70%
-        );
-      }
-      .bento-box ul li {
-        margin-bottom: 8px;
-        font-size: 0.95rem;
+      .nav-links a:hover {
+        color: var(--text-main);
       }
 
-      /* Modern Research Papers Section */
-      .research-list {
+      .nav-right {
+        display: flex;
+        align-items: center;
+        gap: 20px;
+      }
+      .nav-status {
+        display: flex;
+        align-items: center;
+        gap: 8px;
+        font-family: var(--font-mono);
+        font-size: 0.75rem;
+        color: var(--accent-emerald);
+        background: rgba(0, 255, 136, 0.05);
+        padding: 6px 12px;
+        border-radius: 20px;
+        border: 1px solid rgba(0, 255, 136, 0.2);
+      }
+      .nav-status .dot {
+        width: 6px;
+        height: 6px;
+        background: var(--accent-emerald);
+        border-radius: 50%;
+        box-shadow: 0 0 10px var(--accent-emerald);
+        animation: blink 2s infinite;
+      }
+      @keyframes blink {
+        0%,
+        100% {
+          opacity: 1;
+        }
+        50% {
+          opacity: 0.3;
+        }
+      }
+
+      /* Navbar Scrolled State */
+      .navbar.scrolled {
+        max-width: 200px; /* Shrinks to fit just the logo */
+        padding: 10px 20px;
+        background: rgba(5, 9, 20, 0.85);
+        box-shadow: 0 10px 30px rgba(0, 240, 255, 0.15);
+        border-color: rgba(0, 240, 255, 0.3);
+      }
+      .navbar.scrolled .nav-content-wrapper {
+        opacity: 0;
+        max-width: 0;
+        transform: scale(0.8);
+        pointer-events: none;
+      }
+      .navbar.scrolled .nav-logo {
+        font-size: 1.1rem;
+      }
+
+      /* --- Hero Section --- */
+      .hero {
+        min-height: 100vh;
         display: flex;
         flex-direction: column;
-        gap: 20px;
-        margin-top: 30px;
+        justify-content: center;
+        align-items: center;
+        text-align: center;
+        padding: 0 20px;
+        position: relative;
+        z-index: 1;
       }
-      .research-card {
-        background: #111827;
-        border: 1px solid #1f2937;
+      .hero-glow-orb {
+        position: absolute;
+        top: 40%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        width: 600px;
+        height: 600px;
+        background: radial-gradient(
+          circle,
+          rgba(0, 240, 255, 0.1) 0%,
+          transparent 60%
+        );
+        filter: blur(60px);
+        z-index: -1;
+      }
+      .hero-badge {
+        background: rgba(0, 240, 255, 0.05);
+        border: 1px solid var(--border-glass);
+        color: var(--accent-cyan);
+        padding: 8px 20px;
+        border-radius: 50px;
+        font-family: var(--font-mono);
+        font-size: 0.8rem;
+        margin-bottom: 30px;
+        display: inline-flex;
+        align-items: center;
+        gap: 8px;
+      }
+      .hero-title {
+        font-size: clamp(3rem, 8vw, 6rem);
+        font-weight: 900;
+        line-height: 1.1;
+        letter-spacing: -2px;
+        margin-bottom: 25px;
+      }
+      .hero-title .gradient {
+        background: linear-gradient(to right, #ffffff, #8b9bb4);
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+      }
+      .hero-title .serif {
+        font-family: var(--font-serif);
+        font-style: italic;
+        font-weight: 400;
+        color: var(--accent-cyan);
+        text-shadow: 0 0 30px rgba(0, 240, 255, 0.3);
+      }
+      .hero-desc {
+        color: var(--text-muted);
+        font-size: 1.25rem;
+        max-width: 650px;
+        line-height: 1.6;
+        margin-bottom: 40px;
+      }
+
+      .btn-glow {
+        background: var(--accent-cyan);
+        color: #000;
+        padding: 16px 36px;
+        border-radius: 50px;
+        text-decoration: none;
+        font-weight: 800;
+        display: inline-flex;
+        align-items: center;
+        gap: 10px;
+        transition: 0.3s;
+        box-shadow: 0 0 20px rgba(0, 240, 255, 0.4);
+      }
+      .btn-glow:hover {
+        transform: translateY(-2px);
+        box-shadow: 0 10px 30px rgba(0, 240, 255, 0.6);
+        background: #fff;
+      }
+      .btn-outline {
+        background: transparent;
+        color: var(--text-main);
+        padding: 16px 36px;
+        border-radius: 50px;
+        text-decoration: none;
+        font-weight: 600;
+        border: 1px solid var(--border-glass);
+        margin-left: 15px;
+        transition: 0.3s;
+        backdrop-filter: blur(10px);
+      }
+      .btn-outline:hover {
+        border-color: var(--accent-cyan);
+        background: rgba(0, 240, 255, 0.05);
+      }
+
+      /* --- Sections Base --- */
+      .section {
+        padding: 120px 5%;
+        max-width: 1400px;
+        margin: 0 auto;
+        position: relative;
+        z-index: 1;
+      }
+      .section-title {
+        font-size: 3rem;
+        font-weight: 800;
+        margin-bottom: 60px;
+        letter-spacing: -1px;
+        display: flex;
+        align-items: center;
+        gap: 15px;
+      }
+      .section-title span {
+        color: var(--accent-cyan);
+        font-family: var(--font-serif);
+        font-style: italic;
+        font-weight: 400;
+      }
+      .section-title::after {
+        content: "";
+        flex-grow: 1;
+        height: 1px;
+        background: linear-gradient(90deg, var(--border-glass), transparent);
+        margin-left: 20px;
+      }
+
+      /* --- Live Telemetry (Stats) --- */
+      .telemetry-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+        gap: 24px;
+        margin-top: -50px;
+        padding: 0 5%;
+        max-width: 1400px;
+        margin-left: auto;
+        margin-right: auto;
+        position: relative;
+        z-index: 2;
+      }
+      .tel-card {
+        background: var(--bg-glass);
+        border: 1px solid var(--border-glass);
         padding: 30px;
         border-radius: 16px;
-        text-decoration: none;
-        color: white;
-        display: block;
+        backdrop-filter: blur(10px);
         position: relative;
         overflow: hidden;
-        transition: all 0.3s ease;
-        box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+        transition: 0.3s;
       }
-      .research-card:hover {
+      .tel-card:hover {
+        border-color: var(--accent-cyan);
         transform: translateY(-5px);
-        border-color: var(--accent);
-        background: #1f2937;
+        box-shadow: 0 10px 30px rgba(0, 240, 255, 0.1);
       }
-      .r-badge {
-        font-size: 0.75rem;
-        background: rgba(37, 99, 235, 0.15);
-        color: #60a5fa;
-        padding: 6px 12px;
-        border-radius: 30px;
-        display: inline-block;
+      .tel-header {
+        display: flex;
+        justify-content: space-between;
+        color: var(--text-muted);
+        font-family: var(--font-mono);
+        font-size: 0.8rem;
+        text-transform: uppercase;
         margin-bottom: 15px;
+      }
+      .tel-value {
+        font-size: 3rem;
+        font-weight: 900;
+        line-height: 1;
+        margin-bottom: 5px;
+        color: var(--text-main);
+      }
+      .tel-value span {
+        font-size: 1.2rem;
+        color: var(--accent-cyan);
+      }
+
+      /* --- TECHNICAL CAPABILITIES (CIRCULAR RINGS) --- */
+      .capabilities-matrix {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+        gap: 30px;
+      }
+      .cap-node {
+        background: var(--bg-card);
+        border: 1px solid var(--border-glass);
+        border-radius: 24px;
+        padding: 40px 20px;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+        transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+        box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+        position: relative;
+        overflow: hidden;
+      }
+      .cap-node::before {
+        content: "";
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 2px;
+        background: linear-gradient(
+          90deg,
+          transparent,
+          var(--accent-cyan),
+          transparent
+        );
+        opacity: 0.3;
+        transition: 0.4s;
+      }
+      .cap-node:hover {
+        border-color: var(--accent-cyan);
+        transform: translateY(-5px);
+        box-shadow: 0 15px 40px rgba(0, 240, 255, 0.15);
+      }
+      .cap-node:hover::before {
+        opacity: 1;
+      }
+
+      .cap-ring-wrapper {
+        position: relative;
+        width: 140px;
+        height: 140px;
+        margin-bottom: 25px;
+      }
+      .cap-ring {
+        width: 100%;
+        height: 100%;
+        transform: rotate(-90deg);
+        filter: drop-shadow(0 0 8px rgba(0, 240, 255, 0.4));
+      }
+      .cap-bg {
+        fill: none;
+        stroke: rgba(255, 255, 255, 0.05);
+        stroke-width: 4;
+      }
+      .cap-progress {
+        fill: none;
+        stroke: url(#cap-gradient);
+        stroke-width: 6;
+        stroke-dasharray: 283;
+        stroke-dashoffset: 283;
+        stroke-linecap: round;
+        transition: stroke-dashoffset 1.5s cubic-bezier(0.16, 1, 0.3, 1) 0.3s;
+      }
+      .reveal-up.active .cap-progress {
+        stroke-dashoffset: var(--target-offset);
+      }
+      .cap-percent {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        font-family: var(--font-mono);
+        font-size: 1.8rem;
+        font-weight: 800;
+        color: var(--text-main);
+      }
+      .cap-percent span {
+        font-size: 1rem;
+        color: var(--accent-cyan);
+      }
+
+      .cap-title {
+        font-size: 1.25rem;
         font-weight: 700;
-        letter-spacing: 1px;
+        color: var(--text-main);
+        margin-bottom: 15px;
+      }
+      .cap-tags {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 8px;
+        justify-content: center;
+      }
+      .cap-tags span {
+        background: rgba(0, 240, 255, 0.05);
+        border: 1px solid rgba(0, 240, 255, 0.2);
+        color: var(--text-muted);
+        font-family: var(--font-mono);
+        font-size: 0.75rem;
+        padding: 6px 12px;
+        border-radius: 50px;
+        transition: 0.3s;
+      }
+      .cap-node:hover .cap-tags span {
+        color: var(--text-main);
+        border-color: var(--accent-cyan);
+        background: rgba(0, 240, 255, 0.15);
+      }
+
+      /* --- STICKY PROJECT CARDS --- */
+      .projects-wrapper {
+        position: relative;
+        padding-bottom: 50px;
+      }
+      .project-card {
+        position: sticky;
+        background: var(--bg-card);
+        border: 1px solid var(--border-glass);
+        border-top: 2px solid rgba(0, 240, 255, 0.3);
+        border-radius: 24px;
+        padding: 50px;
+        margin-bottom: 40px;
+        display: grid;
+        grid-template-columns: 1.2fr 1fr;
+        gap: 50px;
+        box-shadow: 0 -10px 40px rgba(0, 0, 0, 0.5);
+        transition: transform 0.3s;
+        overflow: hidden;
+      }
+
+      .project-card:nth-child(1) {
+        top: 100px;
+      }
+      .project-card:nth-child(2) {
+        top: 130px;
+      }
+      .project-card:nth-child(3) {
+        top: 160px;
+      }
+      .project-card:nth-child(4) {
+        top: 190px;
+      }
+
+      .project-index {
+        font-family: var(--font-mono);
+        font-size: 5rem;
+        font-weight: 900;
+        color: rgba(255, 255, 255, 0.03);
+        position: absolute;
+        right: 40px;
+        top: 20px;
+        line-height: 1;
+      }
+      .p-content {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        z-index: 2;
+      }
+      .p-content h3 {
+        font-size: 2.2rem;
+        font-weight: 800;
+        margin-bottom: 20px;
+        letter-spacing: -1px;
+        color: var(--text-main);
+      }
+      .p-content p {
+        color: var(--text-muted);
+        font-size: 1.1rem;
+        line-height: 1.6;
+        margin-bottom: 35px;
+        font-weight: 400;
+      }
+      .p-tags {
+        display: flex;
+        gap: 10px;
+        flex-wrap: wrap;
+        margin-bottom: 30px;
+      }
+      .p-tags span {
+        background: rgba(0, 240, 255, 0.05);
+        color: var(--accent-cyan);
+        border: 1px solid rgba(0, 240, 255, 0.2);
+        padding: 6px 16px;
+        border-radius: 50px;
+        font-size: 0.8rem;
+        font-family: var(--font-mono);
+      }
+      .p-image {
+        border-radius: 16px;
+        overflow: hidden;
+        border: 1px solid var(--border-glass);
+        height: 100%;
+        min-height: 350px;
+        box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3);
+      }
+      .p-image img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        filter: grayscale(10%);
+        transition: 0.7s cubic-bezier(0.16, 1, 0.3, 1);
+      }
+      .project-card:hover .p-image img {
+        filter: grayscale(0%);
+        transform: scale(1.03);
+      }
+
+      /* --- Hologram Research Cards --- */
+      .research-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+        gap: 30px;
+      }
+      .research-hologram {
+        background: var(--bg-card);
+        border: 1px solid var(--border-glass);
+        border-top: 2px solid var(--accent-cyan);
+        border-radius: 16px;
+        padding: 35px 30px;
+        text-decoration: none;
+        color: white;
+        display: flex;
+        flex-direction: column;
+        position: relative;
+        overflow: hidden;
+        transition: all 0.4s ease;
+      }
+      .holo-grid {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background-image:
+          linear-gradient(rgba(0, 240, 255, 0.05) 1px, transparent 1px),
+          linear-gradient(90deg, rgba(0, 240, 255, 0.05) 1px, transparent 1px);
+        background-size: 20px 20px;
+        z-index: 0;
+        opacity: 0.5;
+        pointer-events: none;
+      }
+      .research-hologram:hover {
+        transform: translateY(-10px);
+        border-color: var(--accent-cyan);
+        box-shadow: 0 15px 40px rgba(0, 240, 255, 0.15);
+      }
+      .research-hologram > * {
+        position: relative;
+        z-index: 1;
+      }
+      .rh-badge {
+        align-self: flex-start;
+        background: rgba(176, 38, 255, 0.1);
+        color: #d8b4fe;
+        border: 1px solid rgba(176, 38, 255, 0.3);
+        font-family: var(--font-mono);
+        font-size: 0.75rem;
+        padding: 6px 12px;
+        border-radius: 4px;
+        margin-bottom: 20px;
         text-transform: uppercase;
       }
-      .research-card h3 {
-        font-size: 1.3rem;
-        line-height: 1.5;
-        margin-bottom: 15px;
-        font-weight: 700;
-        color: #f3f4f6;
+      .research-hologram h3 {
+        font-size: 1.25rem;
+        line-height: 1.6;
+        margin-bottom: 20px;
+        font-weight: 600;
+        flex-grow: 1;
       }
-      .r-meta {
-        color: #9ca3af;
+      .rh-link {
+        display: flex;
+        align-items: center;
+        gap: 8px;
+        color: var(--accent-cyan);
+        font-family: var(--font-mono);
+        font-size: 0.85rem;
+        font-weight: 700;
+      }
+      .research-hologram:hover .rh-link i {
+        transform: translateX(5px);
+        transition: 0.3s;
+      }
+
+      /* --- ACTIVE DEFENSE MESH --- */
+      .global-mesh-wrapper {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 40px;
+        background: var(--bg-card);
+        border: 1px solid var(--border-glass);
+        border-radius: 24px;
+        padding: 40px;
+        margin-top: 20px;
+      }
+      .mesh-visual {
+        position: relative;
+        height: 300px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        background: radial-gradient(
+          circle,
+          rgba(0, 240, 255, 0.05),
+          transparent
+        );
+        border-radius: 16px;
+        border: 1px dashed rgba(0, 240, 255, 0.1);
+        overflow: hidden;
+      }
+      .globe-spinner {
+        width: 200px;
+        height: 200px;
+        border-radius: 50%;
+        border: 1px solid rgba(0, 240, 255, 0.2);
+        border-top-color: var(--accent-cyan);
+        border-bottom-color: var(--accent-purple);
+        animation: spinGlobe 10s linear infinite;
+        position: relative;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+      }
+      .globe-spinner::before {
+        content: "";
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        border-radius: 50%;
+        border: 1px dashed rgba(176, 38, 255, 0.4);
+        animation: spinGlobe 15s linear infinite reverse;
+      }
+      .node-pulse {
+        position: absolute;
+        width: 8px;
+        height: 8px;
+        background: var(--accent-cyan);
+        border-radius: 50%;
+        box-shadow: 0 0 15px var(--accent-cyan);
+        animation: pulse 2s infinite;
+      }
+      .n1 {
+        top: 20%;
+        left: 30%;
+      }
+      .n2 {
+        bottom: 30%;
+        right: 20%;
+        animation-delay: 1s;
+      }
+      .n3 {
+        top: 50%;
+        right: 40%;
+        animation-delay: 0.5s;
+      }
+      .mesh-logs {
+        font-family: var(--font-mono);
+        font-size: 0.85rem;
+        background: #02040a;
+        padding: 20px;
+        border-radius: 12px;
+        border: 1px solid var(--border-glass);
+        height: 300px;
+        overflow: hidden;
+        position: relative;
+        color: var(--text-muted);
+      }
+      .log-stream {
+        display: flex;
+        flex-direction: column;
+        gap: 10px;
+        position: absolute;
+        bottom: 20px;
+        width: calc(100% - 40px);
+      }
+      .log-item {
+        display: flex;
+        gap: 10px;
+        animation: slideUpLog 0.3s ease-out forwards;
+      }
+      .log-time {
+        color: var(--accent-purple);
+        min-width: 80px;
+      }
+      .log-status.ok {
+        color: var(--accent-emerald);
+      }
+      .log-status.warn {
+        color: #f59e0b;
+      }
+      .log-status.block {
+        color: #ef4444;
+      }
+      @keyframes spinGlobe {
+        100% {
+          transform: rotate(360deg);
+        }
+      }
+      @keyframes slideUpLog {
+        from {
+          opacity: 0;
+          transform: translateY(10px);
+        }
+        to {
+          opacity: 1;
+          transform: translateY(0);
+        }
+      }
+
+      /* --- Career Timeline (Linear Track) --- */
+      .cyber-timeline {
+        position: relative;
+        max-width: 900px;
+        margin: 0 auto;
+        padding: 20px 0;
+      }
+      .ct-item {
+        display: flex;
+        gap: 30px;
+        margin-bottom: 40px;
+        position: relative;
+      }
+      .ct-track {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        width: 24px;
+        flex-shrink: 0;
+      }
+      .ct-node {
+        width: 16px;
+        height: 16px;
+        background: var(--bg-base);
+        border: 2px solid var(--accent-cyan);
+        border-radius: 50%;
+        z-index: 2;
+        margin-top: 30px;
+        box-shadow: 0 0 15px rgba(0, 240, 255, 0.5);
+        transition: 0.3s;
+      }
+      .ct-line {
+        width: 2px;
+        background: linear-gradient(
+          to bottom,
+          var(--accent-cyan),
+          var(--accent-purple)
+        );
+        flex-grow: 1;
+        margin-top: 10px;
+        margin-bottom: -40px;
+        opacity: 0.5;
+      }
+      .ct-item:last-child .ct-line {
+        background: linear-gradient(to bottom, var(--accent-cyan), transparent);
+      }
+      .ct-content {
+        background: var(--bg-card);
+        border: 1px solid var(--border-glass);
+        padding: 30px;
+        border-radius: 16px;
+        flex-grow: 1;
+        transition: 0.3s;
+        position: relative;
+        overflow: hidden;
+        backdrop-filter: blur(10px);
+      }
+      .ct-content::before {
+        content: "";
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 4px;
+        height: 100%;
+        background: var(--accent-cyan);
+        opacity: 0;
+        transition: 0.3s;
+      }
+      .ct-item:hover .ct-content {
+        transform: translateX(10px);
+        border-color: rgba(0, 240, 255, 0.3);
+        box-shadow: 0 10px 30px rgba(0, 240, 255, 0.1);
+      }
+      .ct-item:hover .ct-content::before {
+        opacity: 1;
+      }
+      .ct-item:hover .ct-node {
+        background: var(--accent-cyan);
+        transform: scale(1.3);
+      }
+      .ct-header {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        margin-bottom: 10px;
+        flex-wrap: wrap;
+        gap: 10px;
+      }
+      .ct-date {
+        font-family: var(--font-mono);
+        color: var(--accent-emerald);
+        font-size: 0.85rem;
+        background: rgba(0, 255, 136, 0.1);
+        padding: 4px 12px;
+        border-radius: 50px;
+        border: 1px solid rgba(0, 255, 136, 0.2);
+      }
+      .ct-company {
+        color: var(--text-muted);
+        font-size: 0.85rem;
+        text-transform: uppercase;
+        letter-spacing: 1px;
+        font-weight: 700;
+      }
+      .ct-role {
+        font-size: 1.5rem;
+        color: var(--text-main);
+        margin-bottom: 10px;
+        font-weight: 800;
+      }
+      .ct-desc {
+        color: var(--text-muted);
+        font-size: 1rem;
+        line-height: 1.6;
+      }
+
+      /* --- Certifications --- */
+      .cert-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+        gap: 30px;
+      }
+      .cert-card {
+        display: flex;
+        flex-direction: column;
+        text-decoration: none;
+        padding: 25px;
+        background: var(--bg-card);
+        border: 1px solid var(--border-glass);
+        border-radius: 16px;
+        transition: 0.3s;
+      }
+      .cert-card:hover {
+        border-color: var(--accent-cyan);
+        transform: translateY(-10px);
+        box-shadow: 0 20px 40px rgba(0, 0, 0, 0.4);
+      }
+      .cert-img-wrap {
+        width: 100%;
+        height: 200px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        margin-bottom: 25px;
+        border-radius: 12px;
+        background: #000;
+        padding: 15px;
+      }
+      .cert-img-wrap img {
+        max-width: 100%;
+        max-height: 100%;
+        object-fit: contain;
+        filter: grayscale(20%);
+        transition: 0.5s;
+      }
+      .cert-card:hover .cert-img-wrap img {
+        filter: grayscale(0%);
+        transform: scale(1.05);
+      }
+      .cert-info h3 {
+        color: var(--text-main);
+        font-size: 1.1rem;
+        margin-bottom: 10px;
+        line-height: 1.4;
+        font-weight: 600;
+      }
+      .cert-issuer {
+        color: var(--text-muted);
+        font-size: 0.8rem;
+        font-family: var(--font-mono);
+        margin-bottom: 20px;
+      }
+      .verify-btn {
+        color: var(--accent-cyan);
+        font-weight: 600;
         font-size: 0.85rem;
         display: flex;
         align-items: center;
         gap: 8px;
-        font-family: "Courier New", monospace;
-      }
-      .r-meta i {
-        color: #10b981;
+        margin-top: auto;
+        font-family: var(--font-mono);
       }
 
-      /* Footer Customizations */
-      .footer-info {
-        display: flex;
-        gap: 50px;
-        flex-wrap: wrap;
+      /* --- Footer (UNTOUCHED GLITCH EFFECT) --- */
+      .footer {
+        padding: 100px 5% 20px;
+        border-top: 1px solid var(--border-glass);
+        margin-top: 80px;
+        position: relative;
+        overflow: hidden;
       }
+      .footer-grid {
+        display: flex;
+        justify-content: space-between;
+        flex-wrap: wrap;
+        gap: 40px;
+        margin-bottom: 80px;
+        z-index: 2;
+        position: relative;
+      }
+      .social-icons {
+        display: flex;
+        gap: 15px;
+      }
+      .social-icons a {
+        width: 55px;
+        height: 55px;
+        border-radius: 50%;
+        background: var(--bg-card);
+        border: 1px solid var(--border-glass);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        color: white;
+        font-size: 1.3rem;
+        transition: 0.3s;
+      }
+      .social-icons a:hover {
+        background: var(--text-main);
+        color: var(--bg-base);
+        border-color: var(--text-main);
+        transform: translateY(-5px);
+        box-shadow: 0 10px 30px rgba(255, 255, 255, 0.2);
+      }
+
       .footer-bottom {
         display: flex;
         justify-content: center;
@@ -274,13 +1181,11 @@
         overflow: hidden;
         padding-top: 20px;
       }
-
-      /* THE GLITCH EFFECT FOR GIANT NAME */
       .giant-name {
         font-size: 9.5vw;
         line-height: 1;
         font-weight: 900;
-        color: var(--border-color);
+        color: var(--border-glass);
         text-align: center;
         letter-spacing: -0.01em;
         user-select: none;
@@ -291,7 +1196,7 @@
         transition: color 0.3s ease;
       }
       .giant-name:hover {
-        color: var(--text-primary);
+        color: var(--text-main);
         animation: textGlitch 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94) both
           infinite;
       }
@@ -319,6 +1224,7 @@
         animation: glitch-anim-2 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94) both
           infinite;
       }
+
       @keyframes glitch-anim-1 {
         0% {
           clip-path: inset(20% 0 80% 0);
@@ -392,1653 +1298,883 @@
         }
       }
 
-      /* Modern Social Icon Grid */
-      .s-icons-grid {
-        display: flex;
-        gap: 12px;
-        flex-wrap: wrap;
+      /* --- Reveals --- */
+      .reveal-up {
+        opacity: 0;
+        transform: translateY(40px);
+        transition: all 1s cubic-bezier(0.16, 1, 0.3, 1);
       }
-      .s-icons-grid a {
-        width: 48px;
-        height: 48px;
-        border-radius: 50%;
-        background: var(--bg-outer);
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        font-size: 1.4rem;
-        color: var(--text-primary);
-        text-decoration: none;
-        border: 1px solid var(--border-color);
-        transition: all 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+      .reveal-up.active {
+        opacity: 1;
+        transform: translateY(0);
       }
-      .s-icons-grid a:hover {
-        background: var(--accent);
-        color: white;
-        border-color: var(--accent);
-        transform: translateY(-5px) scale(1.1);
-        box-shadow: 0 10px 20px rgba(37, 99, 235, 0.3);
-      }
-      #live-time {
-        font-family: "Courier New", monospace;
-        font-weight: 700;
-        color: var(--text-primary);
-        font-size: 1.1rem;
+      .reveal-graph.active .cap-progress {
+        stroke-dashoffset: var(--target-offset);
       }
 
-      /* --- NEW OUTRAGEOUS FEATURES STYLES --- */
-
-      /* UI Sound Toggle */
-      .sound-toggle {
-        position: fixed;
-        bottom: 30px;
-        left: 30px;
-        width: 45px;
-        height: 45px;
-        background: var(--bg-inner);
-        border: 1px solid var(--border-color);
-        border-radius: 50%;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        z-index: 9999;
-        cursor: pointer;
-        color: var(--text-secondary);
-        box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
-        transition: 0.3s;
-      }
-      .sound-toggle.active {
-        color: var(--accent);
-        border-color: var(--accent);
-      }
-
-      /* Video Pitch Bento Box */
-      .video-pitch-box {
-        background: url("https://images.unsplash.com/photo-1550751827-4bd374c3f58b?auto=format&fit=crop&q=80&w=800")
-          center/cover;
-        position: relative;
-        overflow: hidden;
-        color: white;
-        cursor: pointer;
-        border: none;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        text-align: center;
-      }
-      .video-pitch-box::before {
-        content: "";
-        position: absolute;
-        top: 0;
-        left: 0;
-        width: 100%;
-        height: 100%;
-        background: rgba(15, 23, 42, 0.7);
-        transition: 0.3s;
-      }
-      .video-pitch-box:hover::before {
-        background: rgba(37, 99, 235, 0.5);
-      }
-      .video-overlay {
-        position: relative;
-        z-index: 2;
-      }
-      .play-icon {
-        font-size: 3rem;
-        margin-bottom: 15px;
-        color: white;
-        transition: 0.3s;
-      }
-      .video-pitch-box:hover .play-icon {
-        transform: scale(1.1);
-        color: #60a5fa;
-      }
-
-      /* Video Modal */
-      .video-modal {
-        position: fixed;
-        top: 0;
-        left: 0;
-        width: 100%;
-        height: 100%;
-        background: rgba(0, 0, 0, 0.9);
-        z-index: 10000;
-        display: none;
-        align-items: center;
-        justify-content: center;
-        backdrop-filter: blur(10px);
-      }
-      .video-modal.open {
-        display: flex;
-      }
-      .video-container {
-        width: 80%;
-        max-width: 900px;
-        position: relative;
-      }
-      .video-container video {
-        width: 100%;
-        border-radius: 12px;
-        box-shadow: 0 20px 50px rgba(0, 0, 0, 0.5);
-      }
-      #close-video {
-        position: absolute;
-        top: -40px;
-        right: 0;
-        background: none;
-        border: none;
-        color: white;
-        font-size: 2rem;
-        cursor: pointer;
-      }
-
-      /* Interactive Architecture Map */
-      .arch-container {
-        display: flex;
-        gap: 40px;
-        align-items: center;
-        justify-content: center;
-        flex-wrap: wrap;
-        margin-top: 40px;
-      }
-      .arch-map {
-        position: relative;
-        width: 400px;
-        height: 300px;
-      }
-      .node {
-        position: absolute;
-        background: #1e293b;
-        color: white;
-        padding: 10px 20px;
-        border-radius: 8px;
-        border: 1px solid #374151;
-        font-size: 0.85rem;
-        font-weight: 600;
-        cursor: crosshair;
-        transition: 0.3s;
-        z-index: 2;
-        box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
-      }
-      .node:hover {
-        border-color: var(--accent);
-        transform: scale(1.05);
-        box-shadow: 0 0 20px rgba(37, 99, 235, 0.4);
-      }
-      .central-node {
-        top: 50%;
-        left: 50%;
-        transform: translate(-50%, -50%);
-        background: var(--accent);
-        border-color: var(--accent);
-      }
-      .pos-left {
-        top: 50%;
-        left: 0;
-        transform: translate(0, -50%);
-      }
-      .pos-right {
-        top: 50%;
-        right: 0;
-        transform: translate(0, -50%);
-      }
-      .pos-bottom {
-        bottom: 0;
-        left: 50%;
-        transform: translate(-50%, 0);
-      }
-      .branch {
-        position: absolute;
-        background: #4b5563;
-        z-index: 1;
-      }
-      .left-branch {
-        top: 50%;
-        left: 25%;
-        width: 25%;
-        height: 2px;
-      }
-      .right-branch {
-        top: 50%;
-        right: 25%;
-        width: 25%;
-        height: 2px;
-      }
-      .bottom-branch {
-        top: 50%;
-        left: 50%;
-        width: 2px;
-        height: 40%;
-      }
-      .arch-tooltip {
-        background: #0f172a;
-        border: 1px solid var(--accent);
-        border-radius: 12px;
-        padding: 25px;
-        width: 300px;
-        color: white;
-        box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3);
-      }
-      .arch-tooltip h4 {
-        color: var(--accent);
-        margin-bottom: 10px;
-        font-family: "Courier New", monospace;
-      }
-      .arch-tooltip p {
-        color: #9ca3af;
-        font-size: 0.9rem;
-        line-height: 1.5;
-      }
-
-      /* Before/After ROI Slider */
-      .slider-container {
-        position: relative;
-        width: 100%;
-        max-width: 900px;
-        height: 350px;
-        margin: 40px auto 0;
-        border-radius: 20px;
-        overflow: hidden;
-        background: #111827;
-        box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
-        cursor: ew-resize;
-        border: 1px solid var(--border-color);
-      }
-      .slider-layer {
-        position: absolute;
-        top: 0;
-        left: 0;
-        width: 100%;
-        height: 100%;
-        display: flex;
-        align-items: center;
-      }
-      .before-layer {
-        background: #1f2937;
-        color: white;
-      }
-      .after-layer {
-        background: #ecfdf5;
-        color: #064e3b;
-        clip-path: polygon(0 0, 50% 0, 50% 100%, 0 100%);
-      }
-      .slider-content {
-        padding: 40px 10%;
-        width: 100%;
-      }
-      .slider-content h3 {
-        font-size: 1.5rem;
-        margin-bottom: 20px;
-      }
-      .slider-content ul li {
-        margin-bottom: 12px;
-        font-size: 1.05rem;
-        font-weight: 500;
-        line-height: 1.4;
-      }
-      .slider-handle {
-        position: absolute;
-        top: 0;
-        left: 50%;
-        bottom: 0;
-        width: 4px;
-        background: var(--accent);
-        transform: translateX(-50%);
-        z-index: 3;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-      }
-      .slider-handle i {
-        background: var(--accent);
-        color: white;
-        padding: 10px;
-        border-radius: 50%;
-        font-size: 1.2rem;
-        pointer-events: none;
-      }
-
-      /* Career Timeline */
-      .timeline {
-        position: relative;
-        max-width: 800px;
-        margin: 40px auto 0;
-        padding: 40px 0;
-      }
-      .timeline-line {
-        position: absolute;
-        left: 50%;
-        top: 0;
-        bottom: 0;
-        width: 2px;
-        background: var(--border-color);
-        transform: translateX(-50%);
-      }
-      .timeline-item {
-        display: flex;
-        justify-content: flex-end;
-        padding-right: 50%;
-        position: relative;
-        margin-bottom: 40px;
-        width: 100%;
-      }
-      .timeline-item.right {
-        justify-content: flex-start;
-        padding-right: 0;
-        padding-left: 50%;
-      }
-      .tl-dot {
-        position: absolute;
-        right: -8px;
-        top: 0;
-        width: 16px;
-        height: 16px;
-        border-radius: 50%;
-        background: var(--bg-inner);
-        border: 4px solid var(--accent);
-        z-index: 2;
-      }
-      .timeline-item.right .tl-dot {
-        left: -8px;
-        right: auto;
-      }
-      .tl-content {
-        background: var(--card-bg);
-        padding: 25px;
-        border-radius: 16px;
-        border: 1px solid var(--border-color);
-        width: 90%;
-        box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
-        transition: 0.3s;
-      }
-      .tl-content:hover {
-        border-color: var(--accent);
-        transform: translateY(-5px);
-      }
-      .tl-date {
-        color: var(--accent);
-        font-weight: 700;
-        font-size: 0.85rem;
-        margin-bottom: 10px;
-        display: block;
-        font-family: "Courier New", monospace;
-      }
-      .tl-content h3 {
-        margin-bottom: 5px;
-        color: var(--text-primary);
-        font-size: 1.3rem;
-      }
-      .tl-content p {
-        color: var(--text-secondary);
-        font-size: 0.95rem;
-        line-height: 1.5;
-      }
-
-      @media (max-width: 768px) {
-        .timeline-line {
-          left: 20px;
+      @media (max-width: 900px) {
+        .hero-title {
+          font-size: 3rem;
         }
-        .timeline-item,
-        .timeline-item.right {
-          padding-left: 50px;
-          padding-right: 0;
-          justify-content: flex-start;
+        .project-card {
+          grid-template-columns: 1fr;
+          padding: 30px;
+          position: relative;
+          top: 0 !important;
+          margin-bottom: 30px;
         }
-        .tl-dot,
-        .timeline-item.right .tl-dot {
-          left: 12px;
+        .p-image {
+          min-height: 250px;
+          order: -1;
         }
-        .tl-content {
-          width: 100%;
+        .global-mesh-wrapper {
+          grid-template-columns: 1fr;
         }
-        .arch-container {
-          flex-direction: column;
-        }
-        .slider-container {
-          height: 450px;
-        } /* More height for mobile list */
       }
     </style>
   </head>
   <body>
-    <!-- Sound Toggle Widget (Bottom Left) -->
-    <div class="sound-toggle" id="sound-toggle" title="Toggle UI Sounds">
-      <i class="fas fa-volume-mute"></i>
-    </div>
+    <!-- Invisible SVG for Circular Gradients -->
+    <svg
+      style="width: 0; height: 0; position: absolute"
+      aria-hidden="true"
+      focusable="false"
+    >
+      <defs>
+        <linearGradient id="cap-gradient" x1="0%" y1="100%" x2="100%" y2="0%">
+          <stop offset="0%" stop-color="#00F0FF" />
+          <stop offset="100%" stop-color="#B026FF" />
+        </linearGradient>
+      </defs>
+    </svg>
 
-    <!-- Video Pitch Modal -->
-    <div class="video-modal" id="video-modal">
-      <div class="video-container">
-        <button id="close-video"><i class="fas fa-times"></i></button>
-        <video id="pitch-video" controls>
-          <source
-            src="https://www.w3schools.com/html/mov_bbb.mp4"
-            type="video/mp4"
-          />
-          Your browser does not support HTML video.
-        </video>
+    <!-- Smooth Ambient Mouse Glow -->
+    <div class="ambient-glow" id="ambient-glow"></div>
+    <div class="ambient-glow-core" id="ambient-glow-core"></div>
+
+    <!-- ABSTRACT CYBER PRELOADER -->
+    <div class="cyber-loader-wrapper" id="preloader">
+      <div class="cyber-core-container">
+        <div class="cyber-ring-1"></div>
+        <div class="cyber-ring-2"></div>
+        <div class="cyber-core"></div>
       </div>
+      <div class="cyber-status-text" id="loader-text">Initializing Systems</div>
     </div>
 
-    <!-- Unique Digital Shutter Preloader -->
-    <div class="preloader-container" id="preloader">
-      <div class="shutter-top"></div>
-      <div class="shutter-bottom"></div>
-      <div class="loader-content">
-        <h1 class="loader-counter" id="loader-counter">0</h1>
-        <div class="loader-text-wrapper">
-          <span class="loader-status" id="loader-status">System Check</span>
-        </div>
-      </div>
-    </div>
-
-    <!-- Floating Image Reveal -->
-    <div class="hover-reveal">
-      <div class="reveal-inner">
-        <img src="" class="reveal-img" id="reveal-img" alt="Project Preview" />
-      </div>
-    </div>
-
-    <!-- Outer Background Wrapper -->
-    <div class="page-wrapper">
-      <!-- White Rounded "Card" Container -->
-      <div class="main-container">
-        <!-- Navbar -->
-        <nav class="navbar">
-          <a href="#" class="brand-logo ui-interact">
-            <div class="logo-icon"></div>
-            <span class="logo-text"
-              >Mustaquim<span class="logo-dot">.</span></span
-            >
-          </a>
-
-          <div class="nav-center">
-            <ul class="nav-links">
-              <div class="nav-slider"></div>
-              <li><a href="#about" class="ui-interact">About</a></li>
-              <li><a href="#expertise" class="ui-interact">Expertise</a></li>
-              <li>
-                <a href="#architecture" class="ui-interact">Architecture</a>
-              </li>
-              <li><a href="#projects" class="ui-interact">Work</a></li>
-            </ul>
-
-            <div class="nav-divider"></div>
-
-            <div class="nav-utils">
-              <div
-                class="theme-toggle ui-interact"
-                id="theme-btn"
-                title="Toggle Theme"
-              >
-                <i class="fas fa-moon"></i>
-              </div>
-              <div
-                class="terminal-trigger ui-interact"
-                id="term-btn"
-                title="Command Line"
-              >
-                <i class="fas fa-terminal"></i>
-              </div>
-            </div>
-
-            <div class="system-status-pill">
-              <span class="status-dot"></span>
-              <span class="status-text">Operational</span>
-            </div>
+    <!-- Shrinking Navbar -->
+    <nav class="navbar" id="navbar">
+      <a href="#" class="nav-logo"
+        ><i class="fas fa-satellite-dish"></i> Mustaquim.</a
+      >
+      <div class="nav-content-wrapper" id="nav-content">
+        <ul class="nav-links">
+          <div class="nav-slider"></div>
+          <li><a href="#about">Home</a></li>
+          <li><a href="#skills">Arsenal</a></li>
+          <li><a href="#projects">Deployments</a></li>
+          <li><a href="#experience">Logs</a></li>
+        </ul>
+        <div class="nav-right">
+          <div class="nav-status">
+            <div class="dot"></div>
+            Telemetry Active
           </div>
-
           <a
-            href="javascript:void(0)"
-            class="cta-button magnetic-btn ui-interact"
-            onclick="
-              Calendly.initPopupWidget({
-                url: 'https://calendly.com/YOUR_LINK',
-              });
-              return false;
-            "
+            href="mailto:mustaquimmahmad@gmail.com"
+            class="btn-outline"
+            style="padding: 8px 20px; margin: 0; font-size: 0.85rem"
+            >Contact</a
           >
-            <span>Book Consultation</span> <i class="fas fa-calendar-check"></i>
-          </a>
-        </nav>
+        </div>
+      </div>
+    </nav>
 
-        <!-- Hero Section -->
-        <header class="hero" id="about">
-          <div class="hero-grid"></div>
-          <div class="hero-glow"></div>
+    <!-- Hero Section -->
+    <header class="hero" id="about">
+      <div class="hero-glow-orb"></div>
+      <div class="hero-badge reveal-up">
+        <i class="fas fa-shield-alt"></i> Systems Engineer & Strategist
+      </div>
+      <h1 class="hero-title reveal-up" style="transition-delay: 0.1s">
+        Architecting <span class="gradient">Intelligent</span><br />
+        <span class="serif">Digital Resilience.</span>
+      </h1>
+      <p class="hero-desc reveal-up" style="transition-delay: 0.2s">
+        I bridge the gap between enterprise IT and automation. Specializing in
+        Zero-Trust architecture, AIOps telemetry, and seamless infrastructure
+        integrations.
+      </p>
+      <div class="reveal-up" style="transition-delay: 0.3s">
+        <a href="#projects" class="btn-glow"
+          >View Deployments <i class="fas fa-arrow-down"></i
+        ></a>
+        <a href="assets/pdf/resume.pdf" class="btn-outline" target="_blank"
+          >Download CV</a
+        >
+      </div>
+    </header>
 
-          <div class="hero-content">
-            <div class="status-badge fade-in">
-              <span class="status-dot"></span>
-              <span>Available for New Opportunities</span>
+    <!-- Live Telemetry Stats -->
+    <div class="telemetry-grid reveal-up">
+      <div class="tel-card">
+        <div class="tel-header">
+          <span>Sys Experience</span> <i class="fas fa-clock"></i>
+        </div>
+        <div class="tel-value">8<span>+ Yrs</span></div>
+        <div class="tel-wave"></div>
+      </div>
+      <div class="tel-card">
+        <div class="tel-header">
+          <span>Projects Lead</span> <i class="fas fa-network-wired"></i>
+        </div>
+        <div class="tel-value">50<span>+ Nodes</span></div>
+        <div class="tel-wave" style="filter: hue-rotate(90deg)"></div>
+      </div>
+      <div class="tel-card">
+        <div class="tel-header">
+          <span>Service Uptime</span> <i class="fas fa-shield-check"></i>
+        </div>
+        <div class="tel-value">99.9<span>%</span></div>
+        <div class="tel-wave" style="filter: hue-rotate(180deg)"></div>
+      </div>
+    </div>
+
+    <!-- NEW: TECHNICAL CAPABILITIES (TELEMETRY NODES) -->
+    <section class="section" id="skills">
+      <h2 class="section-title reveal-up">
+        Technical <span>Capabilities</span>
+      </h2>
+
+      <div class="capabilities-matrix">
+        <!-- Node 1: 95% = 14.15 -->
+        <div class="cap-node reveal-up reveal-graph">
+          <div class="cap-ring-wrapper">
+            <svg class="cap-ring" viewBox="0 0 100 100">
+              <circle class="cap-bg" cx="50" cy="50" r="45"></circle>
+              <circle
+                class="cap-progress"
+                cx="50"
+                cy="50"
+                r="45"
+                style="--target-offset: 14.15"
+              ></circle>
+            </svg>
+            <div class="cap-percent">95<span>%</span></div>
+          </div>
+          <h3 class="cap-title">Cloud & Endpoint</h3>
+          <div class="cap-tags">
+            <span>Azure AD</span><span>Intune</span><span>Autopilot</span>
+          </div>
+        </div>
+
+        <!-- Node 2: 90% = 28.3 -->
+        <div
+          class="cap-node reveal-up reveal-graph"
+          style="transition-delay: 0.1s"
+        >
+          <div class="cap-ring-wrapper">
+            <svg class="cap-ring" viewBox="0 0 100 100">
+              <circle class="cap-bg" cx="50" cy="50" r="45"></circle>
+              <circle
+                class="cap-progress"
+                cx="50"
+                cy="50"
+                r="45"
+                style="--target-offset: 28.3"
+              ></circle>
+            </svg>
+            <div class="cap-percent">90<span>%</span></div>
+          </div>
+          <h3 class="cap-title">Network & Security</h3>
+          <div class="cap-tags">
+            <span>Cisco</span><span>Zero-Trust</span><span>Firewalls</span>
+          </div>
+        </div>
+
+        <!-- Node 3: 92% = 22.64 -->
+        <div
+          class="cap-node reveal-up reveal-graph"
+          style="transition-delay: 0.2s"
+        >
+          <div class="cap-ring-wrapper">
+            <svg class="cap-ring" viewBox="0 0 100 100">
+              <circle class="cap-bg" cx="50" cy="50" r="45"></circle>
+              <circle
+                class="cap-progress"
+                cx="50"
+                cy="50"
+                r="45"
+                style="--target-offset: 22.64"
+              ></circle>
+            </svg>
+            <div class="cap-percent">92<span>%</span></div>
+          </div>
+          <h3 class="cap-title">ITSM & Operations</h3>
+          <div class="cap-tags">
+            <span>ServiceNow</span><span>ITIL v4</span><span>SLA Mgmt</span>
+          </div>
+        </div>
+
+        <!-- Node 4: 85% = 42.45 -->
+        <div class="cap-node reveal-up reveal-graph">
+          <div class="cap-ring-wrapper">
+            <svg class="cap-ring" viewBox="0 0 100 100">
+              <circle class="cap-bg" cx="50" cy="50" r="45"></circle>
+              <circle
+                class="cap-progress"
+                cx="50"
+                cy="50"
+                r="45"
+                style="--target-offset: 42.45"
+              ></circle>
+            </svg>
+            <div class="cap-percent">85<span>%</span></div>
+          </div>
+          <h3 class="cap-title">Automation & Scripting</h3>
+          <div class="cap-tags">
+            <span>Python</span><span>PowerShell</span><span>Bash</span>
+          </div>
+        </div>
+
+        <!-- Node 5: 95% = 14.15 -->
+        <div
+          class="cap-node reveal-up reveal-graph"
+          style="transition-delay: 0.1s"
+        >
+          <div class="cap-ring-wrapper">
+            <svg class="cap-ring" viewBox="0 0 100 100">
+              <circle class="cap-bg" cx="50" cy="50" r="45"></circle>
+              <circle
+                class="cap-progress"
+                cx="50"
+                cy="50"
+                r="45"
+                style="--target-offset: 14.15"
+              ></circle>
+            </svg>
+            <div class="cap-percent">95<span>%</span></div>
+          </div>
+          <h3 class="cap-title">Infrastructure Mgmt</h3>
+          <div class="cap-tags">
+            <span>Windows Server</span><span>SCCM</span><span>Procurement</span>
+          </div>
+        </div>
+
+        <!-- Node 6: 88% = 33.96 -->
+        <div
+          class="cap-node reveal-up reveal-graph"
+          style="transition-delay: 0.2s"
+        >
+          <div class="cap-ring-wrapper">
+            <svg class="cap-ring" viewBox="0 0 100 100">
+              <circle class="cap-bg" cx="50" cy="50" r="45"></circle>
+              <circle
+                class="cap-progress"
+                cx="50"
+                cy="50"
+                r="45"
+                style="--target-offset: 33.96"
+              ></circle>
+            </svg>
+            <div class="cap-percent">88<span>%</span></div>
+          </div>
+          <h3 class="cap-title">Monitoring & Telemetry</h3>
+          <div class="cap-tags">
+            <span>PRTG</span><span>MRTG</span><span>Log Analytics</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- STICKY PROJECTS SECTION -->
+    <section id="projects" class="section">
+      <h2 class="section-title reveal-up">
+        Featured <span>Case Studies</span>
+      </h2>
+
+      <div class="projects-wrapper">
+        <!-- Project 01: Raudatul Quran -->
+        <article class="project-card reveal-up">
+          <div class="project-index">01</div>
+          <div class="p-content">
+            <h3>Raudatul Quran</h3>
+            <div class="p-tags">
+              <span>Web App</span> <span>UI/UX</span> <span>Typography</span>
             </div>
-
-            <h1 class="hero-title fade-in">
-              Architecting
-              <span class="highlight-text">Intelligent Infrastructure</span
-              ><br />
-              for
-              <span class="serif-italic gradient-text">Business Velocity.</span>
-            </h1>
-
-            <p class="hero-subtitle fade-in">
-              I bridge the gap between enterprise IT and intelligent automation.
-              Specializing in
-              <strong>Zero-Trust architecture</strong>,
-              <strong>AIOps telemetry</strong>, and
-              <strong>seamless cloud migrations</strong>.
+            <p>
+              A minimal, immersive digital platform designed for deep Quranic
+              reflection and linguistic study. Engineered with focus on fluid
+              typography and a distraction-free user experience.
             </p>
-
-            <div class="hero-actions fade-in">
-              <a href="#projects" class="primary-btn ui-interact">
-                <span>View My Work</span> <i class="fas fa-arrow-right"></i>
-              </a>
-              <a
-                href="assets/pdf/resume.pdf"
-                class="secondary-btn trigger-pdf ui-interact"
-              >
-                <span>Download CV</span> <i class="fas fa-download"></i>
-              </a>
-            </div>
-          </div>
-        </header>
-
-        <!-- Certifications Strip -->
-        <div class="cert-strip fade-in">
-          <p class="cert-label">Industry Certifications & Standards</p>
-          <div class="cert-logos">
-            <div class="cert-item" title="Microsoft Certified">
-              <i class="fab fa-microsoft"></i> <span>Microsoft Certified</span>
-            </div>
-            <div class="cert-item" title="CCNA/CCNP">
-              <i class="fas fa-network-wired"></i> <span>Cisco Certified</span>
-            </div>
-            <div class="cert-item" title="ITIL v4">
-              <i class="fas fa-book-reader"></i> <span>ITIL v4 Foundation</span>
-            </div>
-            <div class="cert-item" title="CompTIA Security+">
-              <i class="fas fa-shield-alt"></i> <span>CompTIA Security+</span>
-            </div>
-            <div class="cert-item" title="ServiceNow Administrator">
-              <i class="fas fa-ticket-alt"></i> <span>ServiceNow Admin</span>
-            </div>
-          </div>
-        </div>
-
-        <!-- Stats Counter Section -->
-        <div class="stats-container fade-in">
-          <div class="stat-item">
-            <h3 class="counter" data-target="8">0</h3>
-            <p>Years Experience</p>
-          </div>
-          <div class="divider"></div>
-          <div class="stat-item">
-            <h3 class="counter" data-target="10">0</h3>
-            <p>Projects Lead</p>
-          </div>
-          <div class="divider"></div>
-          <div class="stat-item">
-            <h3><span class="counter" data-target="99">0</span>%</h3>
-            <p>Uptime Delivered</p>
-          </div>
-          <div class="divider"></div>
-          <div class="stat-item">
-            <h3>$<span class="counter" data-target="1.5">0</span>M+</h3>
-            <p>Cost Saved</p>
-          </div>
-        </div>
-
-        <!-- Bento Grid Expertise (ENHANCED FROM RESUME) -->
-        <section id="expertise" class="section">
-          <div class="section-header fade-in">
-            <h2>Core <span class="serif-italic">Competencies</span></h2>
-          </div>
-          <div class="bento-grid">
-            <!-- Box 1: Strategy -->
-            <div class="bento-box large-box fade-in ui-interact">
-              <div class="icon-circle"><i class="fas fa-chess-knight"></i></div>
-              <h3>IT Strategy & Leadership</h3>
-              <p>
-                Aligning technology roadmaps with business goals to drive
-                revenue and process efficiency. Expertise in ITIL-based change
-                management and business continuity.
-              </p>
-              <ul class="check-list">
-                <li>Strategic Planning & Process Improvement</li>
-                <li>Vendor, Budget & Stakeholder Coordination</li>
-                <li>Technical Training & Mentoring</li>
-              </ul>
-            </div>
-
-            <!-- Box 2: Operations (Dark) -->
-            <div class="bento-box tall-box dark-box fade-in ui-interact">
-              <div class="icon-circle dark-icon">
-                <i class="fas fa-cogs"></i>
-              </div>
-              <h3>Operations & ITSM</h3>
-              <p class="text-light">
-                Ensuring 24/7 reliability with proactive network monitoring and
-                SLA-driven service delivery.
-              </p>
-              <div class="mini-tag-cloud">
-                <span>ITIL v4</span><span>ServiceNow</span><span>PRTG/MRTG</span
-                ><span>SLA Mgmt</span><span>Wireshark</span>
-              </div>
-              <ul class="check-list" style="margin-top: 15px">
-                <li style="color: #94a3b8; font-size: 0.85rem">
-                  Root Cause Analysis (RCA)
-                </li>
-                <li style="color: #94a3b8; font-size: 0.85rem">
-                  High-Frequency Incident Escalation
-                </li>
-              </ul>
-            </div>
-
-            <!-- Box 3: Security -->
-            <div class="bento-box fade-in ui-interact">
-              <div class="icon-circle"><i class="fas fa-user-shield"></i></div>
-              <h3>Security & Identity</h3>
-              <p>
-                Zero Trust architecture, Azure AD, Conditional Access,
-                Multi-Factor Authentication (MFA), and disaster recovery
-                planning.
-              </p>
-            </div>
-
-            <!-- Box 4: Cloud & Endpoints -->
-            <div class="bento-box fade-in ui-interact">
-              <div class="icon-circle"><i class="fas fa-cloud"></i></div>
-              <h3>Endpoints & Cloud</h3>
-              <p>
-                Microsoft Intune, Autopilot deployments, SCCM / MECM, and
-                complete Windows Server Administration (AD, DNS, DHCP).
-              </p>
-            </div>
-
-            <!-- Box 5: Automation -->
-            <div class="bento-box large-box fade-in ui-interact">
-              <div class="icon-circle"><i class="fas fa-terminal"></i></div>
-              <h3>Data Analysis & Scripting</h3>
-              <p>
-                Streamlining operational workflows and solving complex
-                challenges by leveraging infrastructure telemetry and log data.
-              </p>
-              <ul class="check-list">
-                <li>Automation Scripting (PowerShell, Bash)</li>
-                <li>AIOps & Performance Metric Analytics</li>
-                <li>Microsoft Power Automate Workflows</li>
-              </ul>
-            </div>
-
-            <!-- Box 6: Hardware -->
-            <div class="bento-box fade-in ui-interact">
-              <div class="icon-circle"><i class="fas fa-server"></i></div>
-              <h3>Hardware & Assets</h3>
-              <p>
-                Full IT asset lifecycle management for 500+ devices,
-                procurement, CCTV, and biometric attendance integrations.
-              </p>
-            </div>
-          </div>
-        </section>
-
-        <!-- OUTRAGEOUS IT METRICS DASHBOARD -->
-        <section id="telemetry" class="section" style="padding-top: 20px">
-          <div class="section-header fade-in">
-            <h2>Live <span class="serif-italic">Telemetry</span></h2>
-          </div>
-          <div class="metrics-dashboard fade-in">
-            <div class="metric-card ui-interact">
-              <div class="metric-header">
-                <span>Global Server Load</span> <i class="fas fa-microchip"></i>
-              </div>
-              <div class="metric-value">
-                <span id="live-cpu">14</span><span class="unit">%</span>
-              </div>
-              <div class="metric-status">
-                <span class="status-dot"></span> Optimal
-              </div>
-              <div class="metric-chart-line"></div>
-            </div>
-            <div class="metric-card ui-interact">
-              <div class="metric-header">
-                <span>Network Throughput</span>
-                <i class="fas fa-network-wired"></i>
-              </div>
-              <div class="metric-value">
-                <span id="live-net">842</span><span class="unit">Mbps</span>
-              </div>
-              <div class="metric-status">
-                <span class="status-dot"></span> Secure Encrypted
-              </div>
-              <div
-                class="metric-chart-line"
-                style="
-                  border-top-color: #8b5cf6;
-                  background: linear-gradient(
-                    180deg,
-                    rgba(139, 92, 246, 0.2) 0%,
-                    rgba(139, 92, 246, 0) 100%
-                  );
-                "
-              ></div>
-            </div>
-            <div class="metric-card ui-interact">
-              <div class="metric-header">
-                <span>Managed Endpoints</span>
-                <i class="fas fa-laptop-code"></i>
-              </div>
-              <div class="metric-value">5,000<span class="unit">+</span></div>
-              <div class="metric-status">
-                <span class="status-dot"></span> Fully Compliant via Intune
-              </div>
-              <div
-                class="metric-chart-line"
-                style="
-                  border-top-color: #10b981;
-                  background: linear-gradient(
-                    180deg,
-                    rgba(16, 185, 129, 0.2) 0%,
-                    rgba(16, 185, 129, 0) 100%
-                  );
-                "
-              ></div>
-            </div>
-          </div>
-        </section>
-
-        <!-- Interactive Architecture Diagram -->
-        <section id="architecture" class="section process-bg">
-          <div class="section-header fade-in">
-            <h2 style="color: white">
-              Enterprise <span class="serif-italic">Architecture</span>
-            </h2>
-          </div>
-          <p style="color: #9ca3af; text-align: center; margin-bottom: 40px">
-            Hover over nodes to view deployment strategies.
-          </p>
-
-          <div class="arch-container fade-in">
-            <div class="arch-map">
-              <div
-                class="node central-node ui-interact"
-                data-info="Centralized Azure Active Directory ensuring Single Sign-On (SSO) and Conditional Access across the globe."
-              >
-                Azure AD Identity
-              </div>
-              <div class="branch left-branch"></div>
-              <div class="branch right-branch"></div>
-              <div class="branch bottom-branch"></div>
-
-              <div
-                class="node secondary-node pos-left ui-interact"
-                data-info="Microsoft Intune and SCCM managing 500+ Win/Mac endpoints with Autopilot zero-touch provisioning."
-              >
-                Endpoint Mgmt
-              </div>
-              <div
-                class="node secondary-node pos-right ui-interact"
-                data-info="Cisco Meraki & Fortinet firewalls enforcing Zero-Trust network perimeters and VPN tunnels."
-              >
-                Network Security
-              </div>
-              <div
-                class="node secondary-node pos-bottom ui-interact"
-                data-info="ServiceNow integrated for automated incident resolution and hardware lifecycle tracking."
-              >
-                ITSM Automation
-              </div>
-            </div>
-            <!-- Tooltip Display -->
-            <div class="arch-tooltip" id="arch-tooltip">
-              <h4>System Node</h4>
-              <p>
-                Hover over a node in the diagram to inspect the infrastructure
-                strategy.
-              </p>
-            </div>
-          </div>
-        </section>
-
-        <!-- Before/After ROI Slider (PROFESSIONALIZED) -->
-        <section class="section">
-          <div class="section-header fade-in">
-            <h2>Business <span class="serif-italic">Transformation</span></h2>
-          </div>
-          <div class="slider-container fade-in ui-interact" id="roi-slider">
-            <!-- Before Layer -->
-            <div class="slider-layer before-layer">
-              <div class="slider-content">
-                <h3>
-                  <i
-                    class="fas fa-exclamation-triangle"
-                    style="color: #ef4444"
-                  ></i>
-                  The Chaos (Before)
-                </h3>
-                <ul>
-                  <li>
-                    Reactive network monitoring resulting in unpredictable
-                    downtime.
-                  </li>
-                  <li>
-                    Fragmented endpoint provisioning (3+ hours manual setup per
-                    device).
-                  </li>
-                  <li>
-                    High volume of recurring incidents without Root Cause
-                    Analysis (RCA).
-                  </li>
-                  <li>
-                    Manual asset tracking lacking 100% compliance documentation.
-                  </li>
-                </ul>
-              </div>
-            </div>
-            <!-- After Layer -->
-            <div class="slider-layer after-layer" id="after-layer">
-              <div class="slider-content">
-                <h3>
-                  <i class="fas fa-check-circle" style="color: #10b981"></i> The
-                  Optimization (After)
-                </h3>
-                <ul>
-                  <li>
-                    Proactive PRTG/MRTG alerts slashing network downtime
-                    incidents by 20%.
-                  </li>
-                  <li>
-                    Intune Autopilot zero-touch deployments shrinking onboarding
-                    to 15 mins.
-                  </li>
-                  <li>
-                    ITIL-compliant RCA implementations reducing ticket backlog
-                    by 25%.
-                  </li>
-                  <li>
-                    Centralized lifecycle management for 500+ devices with full
-                    vendor coordination.
-                  </li>
-                </ul>
-              </div>
-            </div>
-            <!-- Slider Handle -->
-            <div class="slider-handle" id="slider-handle">
-              <i class="fas fa-arrows-alt-h"></i>
-            </div>
-          </div>
-        </section>
-
-        <!-- EXACT CAREER TIMELINE BASED ON RESUME (REDESIGNED UI/UX) -->
-        <section class="section">
-          <div class="section-header fade-in">
-            <h2>Career <span class="serif-italic">Evolution</span></h2>
-          </div>
-
-          <style>
-            /* Modern System-Track Timeline Styles */
-            .modern-timeline {
-              display: flex;
-              flex-direction: column;
-              max-width: 900px;
-              margin: 0 auto;
-            }
-
-            .mt-item {
-              display: flex;
-              gap: 30px;
-              position: relative;
-            }
-
-            /* The Continuous Glowing Track */
-            .mt-track {
-              display: flex;
-              flex-direction: column;
-              align-items: center;
-              width: 20px;
-              flex-shrink: 0;
-            }
-
-            .mt-dot {
-              width: 16px;
-              height: 16px;
-              border-radius: 50%;
-              border: 3px solid var(--accent);
-              background: var(--bg-outer);
-              margin-top: 35px; /* Aligns dot with the top of the card */
-              z-index: 2;
-              transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
-            }
-
-            .mt-line {
-              width: 2px;
-              background: var(--border-color);
-              flex-grow: 1;
-              margin-top: 10px;
-              margin-bottom: -35px; /* Connects to the next item seamlessly */
-              transition: background 0.3s ease;
-            }
-
-            /* Fades out the very last line */
-            .mt-item:last-child .mt-line {
-              background: linear-gradient(
-                to bottom,
-                var(--border-color),
-                transparent
-              );
-            }
-
-            /* The Content Cards */
-            .mt-content {
-              background: var(--card-bg);
-              border: 1px solid var(--border-color);
-              padding: 30px 35px;
-              border-radius: 16px;
-              margin-bottom: 25px;
-              flex-grow: 1;
-              transition: all 0.3s ease;
-              box-shadow: 0 10px 30px rgba(0, 0, 0, 0.02);
-              position: relative;
-              overflow: hidden;
-            }
-
-            .mt-header {
-              display: flex;
-              justify-content: space-between;
-              align-items: center;
-              margin-bottom: 12px;
-              flex-wrap: wrap;
-              gap: 10px;
-            }
-
-            .mt-date {
-              font-family: "Courier New", monospace;
-              color: #10b981;
-              font-weight: 700;
-              font-size: 0.85rem;
-              background: rgba(16, 185, 129, 0.1);
-              padding: 4px 12px;
-              border-radius: 20px;
-              border: 1px solid rgba(16, 185, 129, 0.2);
-            }
-
-            .mt-company {
-              color: var(--text-secondary);
-              font-weight: 700;
-              font-size: 0.85rem;
-              text-transform: uppercase;
-              letter-spacing: 1px;
-            }
-
-            .mt-role {
-              color: var(--text-primary);
-              font-size: 1.4rem;
-              margin-bottom: 10px;
-              font-weight: 800;
-              transition: color 0.3s ease;
-            }
-
-            .mt-desc {
-              color: var(--text-secondary);
-              line-height: 1.6;
-              font-size: 0.95rem;
-            }
-
-            /* Hover Interactions (The Magic) */
-            .mt-item:hover .mt-content {
-              border-color: var(--accent);
-              transform: translateX(10px); /* Slides right slightly */
-              background: var(--bg-inner);
-              box-shadow: 0 15px 35px rgba(0, 0, 0, 0.08);
-            }
-
-            .mt-item:hover .mt-role {
-              color: var(--accent);
-            }
-
-            .mt-item:hover .mt-dot {
-              background: var(--accent);
-              box-shadow: 0 0 15px var(--accent);
-              transform: scale(1.3);
-            }
-
-            .mt-item:hover .mt-line {
-              background: var(--accent); /* Illuminates the path downwards */
-            }
-
-            /* Responsive Fixes */
-            @media (max-width: 768px) {
-              .mt-item {
-                gap: 15px;
-              }
-              .mt-content {
-                padding: 25px 20px;
-              }
-              .mt-header {
-                flex-direction: column;
-                align-items: flex-start;
-                gap: 8px;
-              }
-            }
-          </style>
-
-          <div class="modern-timeline">
-            <!-- Item 1 -->
-            <div class="mt-item fade-in ui-interact">
-              <div class="mt-track">
-                <div class="mt-dot"></div>
-                <div class="mt-line"></div>
-              </div>
-              <div class="mt-content">
-                <div class="mt-header">
-                  <span class="mt-date">Jan 2025 - Present</span>
-                  <span class="mt-company">Omnicare Diagnostic Ltd.</span>
-                </div>
-                <h3 class="mt-role">Information Technology Officer</h3>
-                <p class="mt-desc">
-                  Managing full IT asset lifecycle (500+ devices), administering
-                  HMS systems, maintaining dual WAN connectivity, and overseeing
-                  vendor relationships to reduce procurement turnaround by 30%.
-                </p>
-              </div>
-            </div>
-
-            <!-- Item 2 -->
-            <div class="mt-item fade-in ui-interact">
-              <div class="mt-track">
-                <div class="mt-dot"></div>
-                <div class="mt-line"></div>
-              </div>
-              <div class="mt-content">
-                <div class="mt-header">
-                  <span class="mt-date">Jan 2024 - Jul 2024</span>
-                  <span class="mt-company">1000fix Services Ltd.</span>
-                </div>
-                <h3 class="mt-role">Technical Support Specialist</h3>
-                <p class="mt-desc">
-                  Administered Azure AD, Intune, and SCCM for the Arla Foods
-                  Project. Conducted proactive network monitoring via PRTG and
-                  MRTG, identifying anomalies and reducing downtime incidents by
-                  20%.
-                </p>
-              </div>
-            </div>
-
-            <!-- Item 3 -->
-            <div class="mt-item fade-in ui-interact">
-              <div class="mt-track">
-                <div class="mt-dot"></div>
-                <div class="mt-line"></div>
-              </div>
-              <div class="mt-content">
-                <div class="mt-header">
-                  <span class="mt-date">Feb 2021 - Dec 2023</span>
-                  <span class="mt-company">Entrust Global Ltd.</span>
-                </div>
-                <h3 class="mt-role">Sr. IT Support Engineer</h3>
-                <p class="mt-desc">
-                  Supported a critical Government-to-Government (UAE) project.
-                  Resolved complex escalations via ServiceNow and led Root Cause
-                  Analysis (RCA) reducing recurring issues by 30%.
-                </p>
-              </div>
-            </div>
-
-            <!-- Item 4 -->
-            <div class="mt-item fade-in ui-interact">
-              <div class="mt-track">
-                <div class="mt-dot"></div>
-                <div class="mt-line"></div>
-              </div>
-              <div class="mt-content">
-                <div class="mt-header">
-                  <span class="mt-date">Dec 2017 - Dec 2020</span>
-                  <span class="mt-company">M/S Shahin International</span>
-                </div>
-                <h3 class="mt-role">IT Engineer</h3>
-                <p class="mt-desc">
-                  Diagnosed hardware and network issues maintaining 98% system
-                  uptime. Monitored traffic logs, analyzed bottlenecks, and
-                  supported CCTV and biometric integrations.
-                </p>
-              </div>
-            </div>
-
-            <!-- Item 5 -->
-            <div class="mt-item fade-in ui-interact">
-              <div class="mt-track">
-                <div class="mt-dot"></div>
-                <div class="mt-line"></div>
-              </div>
-              <div class="mt-content">
-                <div class="mt-header">
-                  <span class="mt-date">Jan 2016 - Jan 2017</span>
-                  <span class="mt-company">GrameenPhone Ltd.</span>
-                </div>
-                <h3 class="mt-role">Assistant IT Engineer</h3>
-                <p class="mt-desc">
-                  Installed and configured core hardware. Provided robust
-                  technical support to end-users, consistently maintaining a 90%
-                  satisfaction rate across the infrastructure.
-                </p>
-              </div>
-            </div>
-          </div>
-        </section>
-
-        <!-- PUBLISHED RESEARCH SECTION -->
-        <section id="research" class="section process-bg">
-          <div class="section-header fade-in">
-            <h2 style="color: white">
-              Published <span class="serif-italic">Research</span>
-            </h2>
-          </div>
-          <div class="research-list">
-            <!-- Paper 1 -->
             <a
-              href="https://zenodo.org/records/18813175"
+              href="https://raudatul-quran-silk.vercel.app/"
               target="_blank"
               rel="noopener noreferrer"
-              class="research-card fade-in ui-interact"
-            >
-              <div class="r-badge">AIOps / Machine Learning</div>
-              <h3>
-                Automated Anomaly Detection in Cloud Microservices Using LSTM
-                Autoencoders: A Practical AIOps Approach
-              </h3>
-              <div class="r-meta">
-                <i class="fas fa-external-link-alt"></i> Zenodo Repository
-                <span>• Peer Reviewed</span>
-              </div>
-            </a>
-            <!-- Paper 2 -->
-            <a
-              href="https://zenodo.org/records/18477902"
-              target="_blank"
-              rel="noopener noreferrer"
-              class="research-card fade-in ui-interact"
-            >
-              <div class="r-badge">Microservice Telemetry</div>
-              <h3>
-                Unsupervised Anomaly Detection in Microservice Telemetry:
-                Identifying Silent Failures via LSTM Autoencoder Reconstruction
-                Errors
-              </h3>
-              <div class="r-meta">
-                <i class="fas fa-external-link-alt"></i> Zenodo Repository
-                <span>• Peer Reviewed</span>
-              </div>
-            </a>
-            <!-- Paper 3 -->
-            <a
-              href="https://doi.org/10.5281/zenodo.19229515"
-              target="_blank"
-              rel="noopener noreferrer"
-              class="research-card fade-in ui-interact"
-            >
-              <div class="r-badge">Hardware Maintenance</div>
-              <h3>
-                Leveraging Acoustic Side-Channel Analysis for Predictive
-                Hardware Maintenance in Critical Computing Infrastructure
-              </h3>
-              <div class="r-meta">
-                <i class="fas fa-external-link-alt"></i> Zenodo Repository
-                <span>• Peer Reviewed</span>
-              </div>
-            </a>
-          </div>
-        </section>
-
-        <!-- Projects Section -->
-        <section id="projects" class="section">
-          <div class="section-header fade-in">
-            <h2>Featured <span class="serif-italic">Case Studies</span></h2>
-            <!-- Fixed GitHub Repo link -->
-            <a
-              href="https://github.com/mustaquim-ms?tab=repositories"
-              target="_blank"
-              rel="noopener noreferrer"
-              class="link-arrow ui-interact"
-            >
-              GitHub Profile <i class="fas fa-arrow-right"></i>
-            </a>
-          </div>
-
-          <div class="project-list">
-            <!-- Project 01: Octate Odyssey -->
-            <div
-              class="project-item fade-in ui-interact"
-              data-img="assets/images/projects/1.jpg"
-            >
-              <div class="p-index">01</div>
-              <div class="p-info">
-                <h3>Octate Odyssey LMS</h3>
-                <div class="tech-stack">
-                  <span>Next.js 15</span>
-                  <span>Tailwind 4</span>
-                  <span>Framer Motion</span>
-                </div>
-              </div>
-              <div class="p-desc">
-                Gamified Network Engineering platform featuring a virtual
-                terminal emulator for real-world Cisco IOS & MikroTik
-                simulation.
-              </div>
-              <div class="p-action">
-                <a
-                  href="https://github.com/mustaquim-ms/octate-odyssey"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  class="arrow-btn"
-                >
-                  <i class="fas fa-arrow-right"></i>
-                </a>
-              </div>
-            </div>
-
-            <!-- Project 02: Digital Signage -->
-            <div
-              class="project-item fade-in ui-interact"
-              data-img="assets/images/projects/2.jpg"
-            >
-              <div class="p-index">02</div>
-              <div class="p-info">
-                <h3>OmniCare Signage</h3>
-                <div class="tech-stack">
-                  <span>Python</span>
-                  <span>HTTP Server</span>
-                  <span>FFmpeg</span>
-                </div>
-              </div>
-              <div class="p-desc">
-                Architected a centralized broadcasting system for 10+ Smart TVs
-                over hybrid LAN/Wi-Fi using multi-threaded Python servers.
-              </div>
-              <div class="p-action">
-                <a
-                  href="https://github.com/mustaquim-ms/omnicare-signage"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  class="arrow-btn"
-                >
-                  <i class="fas fa-arrow-right"></i>
-                </a>
-              </div>
-            </div>
-
-            <!-- Project 03: Raudatul Quran -->
-            <div
-              class="project-item fade-in ui-interact"
-              data-img="assets/images/projects/3.jpg"
-            >
-              <div class="p-index">03</div>
-              <div class="p-info">
-                <h3>Raudatul Quran</h3>
-                <div class="tech-stack">
-                  <span>Web App</span>
-                  <span>UI/UX</span>
-                  <span>Typography</span>
-                </div>
-              </div>
-              <div class="p-desc">
-                A minimal, immersive digital platform designed for deep Quranic
-                reflection and linguistic study.
-              </div>
-              <div class="p-action">
-                <a
-                  href="https://github.com/mustaquim-ms/raudatul-quran"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  class="arrow-btn"
-                >
-                  <i class="fas fa-arrow-right"></i>
-                </a>
-              </div>
-            </div>
-
-            <!-- Project 04: Clinic Management Software -->
-            <div
-              class="project-item fade-in ui-interact"
-              data-img="assets/images/projects/4.jpg"
-            >
-              <div class="p-index">04</div>
-              <div class="p-info">
-                <h3>Clinic Management Software</h3>
-                <div class="tech-stack">
-                  <span>Desktop App</span>
-                  <span>Database</span>
-                  <span>UI/UX</span>
-                </div>
-              </div>
-              <div class="p-desc">
-                A comprehensive solution for managing clinic operations,
-                including patient records,prescriptions, user/staff management,
-                and billing.
-              </div>
-              <div class="p-action">
-                <a
-                  href="https://github.com/mustaquim-ms/goodness-dental-system"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  class="arrow-btn"
-                >
-                  <i class="fas fa-arrow-right"></i>
-                </a>
-              </div>
-            </div>
-          </div>
-        </section>
-
-        <!-- Insights / Blog Section -->
-        <section id="blog" class="section">
-          <div class="section-header fade-in">
-            <h2>Latest <span class="serif-italic">Insights</span></h2>
-            <!-- Fixed Medium Profile link -->
-            <a
-              href="https://medium.com/@mustaquim"
-              target="_blank"
-              rel="noopener noreferrer"
-              class="link-arrow ui-interact"
-              >Read All <i class="fas fa-arrow-right"></i
+              class="btn-outline"
+              style="margin-left: 0; padding: 12px 24px; display: inline-flex"
+              >Visit Live Site
+              <i class="fas fa-external-link-alt" style="margin-left: 8px"></i
             ></a>
           </div>
-
-          <div class="blog-grid">
-            <article class="blog-card fade-in ui-interact">
-              <div class="blog-date">Oct 24, 2025</div>
-              <h3 class="blog-title">
-                Migrating Legacy Auth to Modern Auth: A survival guide
-              </h3>
-              <p class="blog-excerpt">
-                How to depreciate Basic Auth in Exchange Online without breaking
-                your CEO's email access.
-              </p>
-              <div class="blog-tags">
-                <span>#Security</span> <span>#Office365</span>
-              </div>
-              <a
-                href="https://medium.com/@mustaquim"
-                target="_blank"
-                rel="noopener noreferrer"
-                class="blog-link"
-                >Read Article</a
-              >
-            </article>
-
-            <article class="blog-card fade-in ui-interact">
-              <div class="blog-date">Sep 12, 2025</div>
-              <h3 class="blog-title">
-                Automating Employee Onboarding with Logic Apps
-              </h3>
-              <p class="blog-excerpt">
-                Connecting HRIS to Active Directory to provision accounts in 0.5
-                seconds instead of 3 days.
-              </p>
-              <div class="blog-tags">
-                <span>#Automation</span> <span>#Azure</span>
-              </div>
-              <a
-                href="https://medium.com/@mustaquim"
-                target="_blank"
-                rel="noopener noreferrer"
-                class="blog-link"
-                >Read Article</a
-              >
-            </article>
-
-            <article class="blog-card fade-in ui-interact">
-              <div class="blog-date">Aug 05, 2025</div>
-              <h3 class="blog-title">
-                Why "Zero Trust" is more than just a buzzword
-              </h3>
-              <p class="blog-excerpt">
-                Moving beyond the perimeter network: Implementing Identity as
-                the new Firewall.
-              </p>
-              <div class="blog-tags">
-                <span>#ZeroTrust</span> <span>#Strategy</span>
-              </div>
-              <a
-                href="https://medium.com/@mustaquim"
-                target="_blank"
-                rel="noopener noreferrer"
-                class="blog-link"
-                >Read Article</a
-              >
-            </article>
+          <div class="p-image">
+            <img
+              src="assets/images/projects/1.jpg"
+              alt="Raudatul Quran Interface"
+            />
           </div>
-        </section>
+        </article>
 
-        <!-- Testimonials (Scrolling) -->
-        <div
-          class="marquee-section"
-          style="border-top: none; background: transparent"
+        <!-- Project 02: Octate Odyssey Company Webpage -->
+        <article class="project-card reveal-up">
+          <div class="project-index">02</div>
+          <div class="p-content">
+            <h3>Octate Odyssey Company Webpage</h3>
+            <div class="p-tags">
+              <span>Next.js</span> <span>Tailwind CSS</span>
+              <span>Framer Motion</span>
+            </div>
+            <p>
+              A high-performance, modern corporate landing page featuring smooth
+              scroll animations, responsive design, and a sleek user interface
+              representing the brand's core identity.
+            </p>
+            <a
+              href="https://octate-odyssey.vercel.app/"
+              target="_blank"
+              rel="noopener noreferrer"
+              class="btn-outline"
+              style="margin-left: 0; padding: 12px 24px; display: inline-flex"
+              >Visit Live Site
+              <i class="fas fa-external-link-alt" style="margin-left: 8px"></i
+            ></a>
+          </div>
+          <div class="p-image">
+            <img
+              src="assets/images/projects/2.jpg"
+              alt="Octate Odyssey Webpage"
+            />
+          </div>
+        </article>
+
+        <!-- Project 03: Octate Odyssey Clinic Management -->
+        <article class="project-card reveal-up">
+          <div class="project-index">03</div>
+          <div class="p-content">
+            <h3>Octate Odyssey Clinic Management WebApp</h3>
+            <div class="p-tags">
+              <span>SaaS Dashboard</span> <span>Healthcare IT</span>
+              <span>Secure Auth</span>
+            </div>
+            <p>
+              A comprehensive, secure SaaS platform for managing clinic
+              operations, including patient records, staff management, and
+              appointment scheduling within an intuitive dashboard environment.
+            </p>
+            <a
+              href="https://octate-odyssey-clinic-saas.vercel.app/login"
+              target="_blank"
+              rel="noopener noreferrer"
+              class="btn-outline"
+              style="margin-left: 0; padding: 12px 24px; display: inline-flex"
+              >Visit Live App
+              <i class="fas fa-external-link-alt" style="margin-left: 8px"></i
+            ></a>
+          </div>
+          <div class="p-image">
+            <img
+              src="assets/images/projects/3.jpg"
+              alt="Clinic Management WebApp"
+            />
+          </div>
+        </article>
+
+        <!-- Project 04: OmniCare Signage -->
+        <article class="project-card reveal-up">
+          <div class="project-index">04</div>
+          <div class="p-content">
+            <h3>OmniCare Signage System</h3>
+            <div class="p-tags">
+              <span>Python</span> <span>LAN/WLAN</span> <span>FFmpeg</span>
+            </div>
+            <p>
+              Architected a cost-effective, centralized advertisement
+              broadcasting system across a multi-floor building, managing
+              concurrent video streaming for 10+ Smart TVs via custom
+              multi-threaded Python servers.
+            </p>
+            <!-- Link removed as requested -->
+          </div>
+          <div class="p-image">
+            <img src="assets/images/projects/4.jpg" alt="OmniCare Signage" />
+          </div>
+        </article>
+      </div>
+    </section>
+
+    <!-- PUBLISHED RESEARCH SECTION -->
+    <section id="research" class="section">
+      <h2 class="section-title reveal-up">Published <span>Research</span></h2>
+      <div class="research-grid">
+        <!-- Paper 1 -->
+        <a
+          href="https://zenodo.org/records/18813175"
+          target="_blank"
+          rel="noopener noreferrer"
+          class="research-hologram reveal-up"
         >
+          <div class="holo-grid"></div>
+          <div class="r-badge">AIOps / Machine Learning</div>
+          <h3>
+            Automated Anomaly Detection in Cloud Microservices Using LSTM
+            Autoencoders
+          </h3>
+          <div class="rh-link">
+            Access Repository <i class="fas fa-arrow-right"></i>
+          </div>
+        </a>
+        <!-- Paper 2 -->
+        <a
+          href="https://zenodo.org/records/18477902"
+          target="_blank"
+          rel="noopener noreferrer"
+          class="research-hologram reveal-up"
+        >
+          <div class="holo-grid"></div>
+          <div class="r-badge">Microservice Telemetry</div>
+          <h3>
+            Unsupervised Anomaly Detection in Microservice Telemetry:
+            Identifying Silent Failures
+          </h3>
+          <div class="rh-link">
+            Access Repository <i class="fas fa-arrow-right"></i>
+          </div>
+        </a>
+        <!-- Paper 3 -->
+        <a
+          href="https://doi.org/10.5281/zenodo.19229515"
+          target="_blank"
+          rel="noopener noreferrer"
+          class="research-hologram reveal-up"
+        >
+          <div class="holo-grid"></div>
+          <div class="r-badge">Hardware Maintenance</div>
+          <h3>
+            Leveraging Acoustic Side-Channel Analysis for Predictive Hardware
+            Maintenance
+          </h3>
+          <div class="rh-link">
+            Access Repository <i class="fas fa-arrow-right"></i>
+          </div>
+        </a>
+      </div>
+    </section>
+
+    <!-- ACTIVE DEFENSE MESH -->
+    <section class="section">
+      <h2 class="section-title reveal-up">Active <span>Defense Mesh</span></h2>
+
+      <div class="global-mesh-wrapper reveal-up">
+        <!-- Visual Node Sphere -->
+        <div class="mesh-visual">
+          <div class="globe-spinner">
+            <div class="node-pulse n1"></div>
+            <div class="node-pulse n2"></div>
+            <div class="node-pulse n3"></div>
+          </div>
+        </div>
+
+        <!-- Live Security Log Terminal -->
+        <div class="mesh-logs">
           <div
-            class="marquee-track"
-            style="gap: 100px; animation-duration: 40s"
+            style="
+              border-bottom: 1px solid var(--border-glass);
+              padding-bottom: 10px;
+              margin-bottom: 15px;
+              color: var(--accent-cyan);
+              font-weight: 700;
+            "
           >
-            <div class="test-card">
-              <p>
-                "Mustaquim completely transformed our onboarding workflow. We
-                saved 20 hours a week."
-              </p>
-              <span>— CTO, TechCorp</span>
-            </div>
-            <div class="test-card">
-              <p>
-                "The network security overhaul was seamless. Zero downtime
-                during the transition."
-              </p>
-              <span>— IT Director, Global Inc</span>
-            </div>
-            <div class="test-card">
-              <p>
-                "A rare combination of strategic vision and hands-on technical
-                excellence."
-              </p>
-              <span>— Project Manager, FinTech Ltd</span>
-            </div>
-            <div class="test-card">
-              <p>
-                "Mustaquim completely transformed our onboarding workflow. We
-                saved 20 hours a week."
-              </p>
-              <span>— CTO, TechCorp</span>
-            </div>
+            LIVE TELEMETRY FEED
+          </div>
+          <div class="log-stream" id="log-stream">
+            <!-- Logs populated by JS -->
           </div>
         </div>
-
-        <!-- Giant Footer -->
-        <footer class="big-footer" id="contact">
-          <div class="footer-top">
-            <div class="footer-cta fade-in">
-              <p>Have a challenge?</p>
-              <a
-                href="mailto:mustaquimmahmad@gmail.com"
-                class="giant-link ui-interact"
-                >Let's Connect</a
-              >
-            </div>
-
-            <!-- ENHANCED FOOTER INFO: 3 Columns -->
-            <div class="footer-info fade-in">
-              <!-- Column 1: Social Links -->
-              <div class="f-col">
-                <h4>Connect</h4>
-                <div class="s-icons-grid">
-                  <a
-                    href="https://www.linkedin.com/in/mustaquimahmad/"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    aria-label="LinkedIn"
-                    class="ui-interact"
-                    ><i class="fab fa-linkedin-in"></i
-                  ></a>
-                  <a
-                    href="https://github.com/mustaquim-ms?tab=repositories"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    aria-label="GitHub"
-                    class="ui-interact"
-                    ><i class="fab fa-github"></i
-                  ></a>
-                  <a
-                    href="https://medium.com/@mustaquim"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    aria-label="Medium"
-                    class="ui-interact"
-                    ><i class="fab fa-medium-m"></i
-                  ></a>
-                  <a
-                    href="mailto:mustaquimmahmad@gmail.com"
-                    aria-label="Email"
-                    class="ui-interact"
-                    ><i class="fas fa-envelope"></i
-                  ></a>
-                </div>
-              </div>
-
-              <!-- Column 2: Availability & Status -->
-              <div class="f-col">
-                <h4>Availability</h4>
-                <p
-                  style="
-                    display: flex;
-                    align-items: center;
-                    gap: 8px;
-                    font-weight: 600;
-                  "
-                >
-                  <span class="status-dot"></span> Open for Roles
-                </p>
-                <p style="color: var(--text-secondary); margin-top: 5px">
-                  Global Remote / Relocation
-                </p>
-              </div>
-
-              <!-- Column 3: Local Time & Location -->
-              <div class="f-col">
-                <h4>Local Time</h4>
-                <p id="live-time" style="margin-bottom: 5px">00:00:00 AM</p>
-                <p style="color: var(--text-secondary)">
-                  Dhaka, Bangladesh (GMT+6)
-                </p>
-              </div>
-            </div>
-          </div>
-
-          <!-- GLITCHING GIANT NAME OVERFLOW FIX -->
-          <div class="footer-bottom">
-            <h1 class="giant-name ui-interact" data-text="MUSTAQUIM">
-              MUSTAQUIM
-            </h1>
-          </div>
-        </footer>
       </div>
-      <!-- End Main Container -->
-    </div>
-    <!-- End Page Wrapper -->
+    </section>
 
-    <!-- Draggable Terminal Overlay -->
-    <div class="terminal-overlay" id="terminal">
-      <div class="terminal-window" id="term-window">
-        <!-- Grab Handle -->
-        <div class="terminal-header" id="term-header" style="cursor: grab">
-          <div class="term-dots">
-            <span class="dot-red"></span><span class="dot-yellow"></span
-            ><span class="dot-green"></span>
+    <!-- CAREER TIMELINE -->
+    <section id="experience" class="section">
+      <h2 class="section-title reveal-up">Career <span>Evolution</span></h2>
+      <div class="cyber-timeline">
+        <div class="ct-item reveal-up">
+          <div class="ct-track">
+            <div class="ct-node"></div>
+            <div class="ct-line"></div>
           </div>
-          <div class="term-title">mustaquim_admin@os:~ (Drag Me)</div>
-          <div class="term-close ui-interact" id="close-term">
-            <i class="fas fa-times"></i>
+          <div class="ct-content">
+            <div class="ct-header">
+              <span class="ct-date">Jan 2025 - Present</span
+              ><span class="ct-company">Omnicare Diagnostic Ltd.</span>
+            </div>
+            <h3 class="ct-role">Information Technology Officer</h3>
+            <p class="ct-desc">
+              Managing full IT asset lifecycle (500+ devices), administering HMS
+              systems, maintaining dual WAN connectivity, and overseeing vendor
+              relationships to reduce procurement turnaround by 30%.
+            </p>
           </div>
         </div>
-        <div class="terminal-body" id="term-body">
-          <div class="output" id="term-output">
-            <span class="prompt">➜ ~</span> Welcome to Mustaquim's Terminal.<br />
-            <span class="prompt">➜ ~</span> Type
-            <span class="cmd-highlight">'help'</span> to see commands. There
-            might be hidden ones...<br /><br />
-            <span class="prompt">➜ ~</span> Or execute:
-            <a
-              href="https://github.com/mustaquim-ms?tab=repositories"
-              target="_blank"
-              rel="noopener noreferrer"
-              style="color: #569cd6; text-decoration: none"
-              >./github.sh</a
+        <div class="ct-item reveal-up">
+          <div class="ct-track">
+            <div class="ct-node"></div>
+            <div class="ct-line"></div>
+          </div>
+          <div class="ct-content">
+            <div class="ct-header">
+              <span class="ct-date">Jan 2024 - Jul 2024</span
+              ><span class="ct-company">1000fix Services Ltd.</span>
+            </div>
+            <h3 class="ct-role">Technical Support Specialist</h3>
+            <p class="ct-desc">
+              Administered Azure AD, Intune, and SCCM for the Arla Foods
+              Project. Conducted proactive network monitoring via PRTG and MRTG,
+              identifying anomalies and reducing downtime incidents by 20%.
+            </p>
+          </div>
+        </div>
+        <div class="ct-item reveal-up">
+          <div class="ct-track">
+            <div class="ct-node"></div>
+            <div class="ct-line"></div>
+          </div>
+          <div class="ct-content">
+            <div class="ct-header">
+              <span class="ct-date">Feb 2021 - Dec 2023</span
+              ><span class="ct-company">Entrust Global Ltd.</span>
+            </div>
+            <h3 class="ct-role">Sr. IT Support Engineer</h3>
+            <p class="ct-desc">
+              Supported a critical Government-to-Government (UAE) project.
+              Resolved complex escalations via ServiceNow and led Root Cause
+              Analysis (RCA) reducing recurring issues by 30%.
+            </p>
+          </div>
+        </div>
+        <div class="ct-item reveal-up">
+          <div class="ct-track">
+            <div class="ct-node"></div>
+            <div class="ct-line"></div>
+          </div>
+          <div class="ct-content">
+            <div class="ct-header">
+              <span class="ct-date">Dec 2017 - Dec 2020</span
+              ><span class="ct-company">M/S Shahin International</span>
+            </div>
+            <h3 class="ct-role">IT Engineer</h3>
+            <p class="ct-desc">
+              Diagnosed hardware and network issues maintaining 98% system
+              uptime. Monitored traffic logs, analyzed bottlenecks, and
+              supported CCTV and biometric integrations.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- CERTIFICATIONS SECTION -->
+    <section id="certifications" class="section">
+      <h2 class="section-title reveal-up">
+        Professional <span>Certifications</span>
+      </h2>
+      <div class="cert-grid">
+        <a
+          href="https://coursera.org/share/60f93621427ee9ccee9f808a93ec49b4"
+          target="_blank"
+          class="cert-card reveal-up"
+        >
+          <div class="cert-img-wrap">
+            <img src="assets/images/certs/1.jpg" alt="Google Cybersecurity" />
+          </div>
+          <div class="cert-info">
+            <h3>Cybersecurity Professional</h3>
+            <div class="cert-issuer">Google / Coursera</div>
+            <span class="verify-btn"
+              >Verify Credential <i class="fas fa-external-link-alt"></i
+            ></span>
+          </div>
+        </a>
+        <a
+          href="https://www.coursera.org/account/accomplishments/professional-cert/XZBH7T60J6EZ"
+          target="_blank"
+          class="cert-card reveal-up"
+        >
+          <div class="cert-img-wrap">
+            <img src="assets/images/certs/2.jpg" alt="Google IT Support" />
+          </div>
+          <div class="cert-info">
+            <h3>IT Support Professional</h3>
+            <div class="cert-issuer">Google / Coursera</div>
+            <span class="verify-btn"
+              >Verify Credential <i class="fas fa-external-link-alt"></i
+            ></span>
+          </div>
+        </a>
+        <a
+          href="https://www.coursera.org/account/accomplishments/specialization/certificate/5PCWJJ5KCDXG"
+          target="_blank"
+          class="cert-card reveal-up"
+        >
+          <div class="cert-img-wrap">
+            <img src="assets/images/certs/2.jpg" alt="Data Analysis" />
+          </div>
+          <div class="cert-info">
+            <h3>Data Analysis & Visualization</h3>
+            <div class="cert-issuer">IBM / Coursera</div>
+            <span class="verify-btn"
+              >Verify Credential <i class="fas fa-external-link-alt"></i
+            ></span>
+          </div>
+        </a>
+        <a
+          href="https://udemy-certificate.s3.amazonaws.com/pdf/UC-3ce00936-8bee-4492-8a79-115b9e7a1209.pdf"
+          target="_blank"
+          class="cert-card reveal-up"
+        >
+          <div class="cert-img-wrap">
+            <img src="assets/images/certs/4.jpg" alt="MikroTik MTCNA" />
+          </div>
+          <div class="cert-info">
+            <h3>Certified Network Associate</h3>
+            <div class="cert-issuer">MikroTik (MTCNA)</div>
+            <span class="verify-btn"
+              >View Certificate <i class="fas fa-file-pdf"></i
+            ></span>
+          </div>
+        </a>
+        <a href="#" class="cert-card reveal-up">
+          <div class="cert-img-wrap">
+            <img src="assets/images/certs/5.jpg" alt="CompTIA A+" />
+          </div>
+          <div class="cert-info">
+            <h3>A+ (1000 Part 1 & 2)</h3>
+            <div class="cert-issuer">CompTIA</div>
+            <span class="verify-btn"
+              >View Details <i class="fas fa-arrow-right"></i
+            ></span>
+          </div>
+        </a>
+      </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer" id="contact">
+      <div class="footer-grid">
+        <div>
+          <h3
+            style="
+              font-size: 2.5rem;
+              margin-bottom: 20px;
+              font-weight: 800;
+              letter-spacing: -1px;
+            "
+          >
+            Initiate
+            <span
+              style="
+                color: var(--accent-cyan);
+                font-family: var(--font-serif);
+                font-style: italic;
+                font-weight: 400;
+              "
+              >Connection.</span
             >
-            |
-            <a
-              href="https://www.linkedin.com/in/mustaquimahmad/"
-              target="_blank"
-              rel="noopener noreferrer"
-              style="color: #569cd6; text-decoration: none"
-              >./linkedin.sh</a
-            ><br /><br />
-          </div>
-          <div class="input-line">
-            <span class="prompt">➜ ~</span>
-            <input type="text" id="term-input" autocomplete="off" autofocus />
-          </div>
+          </h3>
+          <a href="mailto:mustaquimmahmad@gmail.com" class="btn-glow"
+            >mustaquimmahmad@gmail.com <i class="fas fa-envelope"></i
+          ></a>
+        </div>
+        <div class="social-icons">
+          <a
+            href="https://www.linkedin.com/in/mustaquimahmad/"
+            target="_blank"
+            aria-label="LinkedIn"
+            ><i class="fab fa-linkedin-in"></i
+          ></a>
+          <a
+            href="https://github.com/mustaquim-ms?tab=repositories"
+            target="_blank"
+            aria-label="GitHub"
+            ><i class="fab fa-github"></i
+          ></a>
+          <a
+            href="https://medium.com/@mustaquim"
+            target="_blank"
+            aria-label="Medium"
+            ><i class="fab fa-medium-m"></i
+          ></a>
         </div>
       </div>
-    </div>
 
-    <!-- Scripts -->
-    <script src="assets/js/main.js"></script>
+      <!-- UNTOUCHED GLITCH FOOTER TEXT -->
+      <div class="footer-bottom">
+        <h1 class="giant-name" data-text="MUSTAQUIM">MUSTAQUIM</h1>
+      </div>
+    </footer>
 
-    <!-- Script for Live Telemetry Fluctuations & Local Time Clock -->
+    <!-- INTERACTIVE SCRIPTS -->
     <script>
       document.addEventListener("DOMContentLoaded", () => {
-        // Live Server Metric Simulation Script
-        const cpuEl = document.getElementById("live-cpu");
-        const netEl = document.getElementById("live-net");
-
-        if (cpuEl && netEl) {
-          setInterval(() => {
-            const newCpu = Math.floor(Math.random() * (18 - 11 + 1) + 11);
-            cpuEl.innerText = newCpu;
-            const newNet = Math.floor(Math.random() * (950 - 750 + 1) + 750);
-            netEl.innerText = newNet;
-          }, 2500);
+        // 1. Lenis Smooth Scrolling
+        if (typeof Lenis !== "undefined") {
+          const lenis = new Lenis({
+            duration: 1.2,
+            easing: (t) => Math.min(1, 1.001 - Math.pow(2, -10 * t)),
+          });
+          function raf(time) {
+            lenis.raf(time);
+            requestAnimationFrame(raf);
+          }
+          requestAnimationFrame(raf);
         }
 
-        // Live Time Clock for Footer (Asia/Dhaka)
-        const timeEl = document.getElementById("live-time");
-        if (timeEl) {
-          setInterval(() => {
-            const options = {
-              timeZone: "Asia/Dhaka",
-              hour: "2-digit",
-              minute: "2-digit",
-              second: "2-digit",
-              hour12: true,
-            };
-            timeEl.innerText = new Intl.DateTimeFormat("en-US", options).format(
-              new Date(),
-            );
-          }, 1000);
+        // 2. Abstract Cyber Preloader Logic
+        const preloader = document.getElementById("preloader");
+        const statusEl = document.getElementById("loader-text");
+        const loadMessages = [
+          "Establishing Secure Tunnel...",
+          "Bypassing Mainframe...",
+          "Loading Neural Assets...",
+          "Access Granted.",
+        ];
+
+        let msgIndex = 0;
+        const textInterval = setInterval(() => {
+          if (msgIndex < loadMessages.length) {
+            statusEl.innerText = loadMessages[msgIndex];
+            msgIndex++;
+          }
+        }, 600);
+
+        setTimeout(() => {
+          clearInterval(textInterval);
+          preloader.style.opacity = "0";
+          setTimeout(() => (preloader.style.visibility = "hidden"), 1000);
+        }, 3000);
+
+        // 3. Smooth Lerping Ambient Mouse Glow
+        let mouseX = window.innerWidth / 2,
+          mouseY = window.innerHeight / 2;
+        let glowX = mouseX,
+          glowY = mouseY;
+
+        window.addEventListener("mousemove", (e) => {
+          mouseX = e.clientX;
+          mouseY = e.clientY;
+          // Core follows instantly
+          const core = document.getElementById("ambient-glow-core");
+          if (core)
+            core.style.transform = `translate(calc(${mouseX}px - 50%), calc(${mouseY}px - 50%))`;
+        });
+
+        function animateGlow() {
+          glowX += (mouseX - glowX) * 0.08; // 0.08 = Smooth trailing effect
+          glowY += (mouseY - glowY) * 0.08;
+          const glow = document.getElementById("ambient-glow");
+          if (glow)
+            glow.style.transform = `translate(calc(${glowX}px - 50%), calc(${glowY}px - 50%))`;
+          requestAnimationFrame(animateGlow);
         }
+        animateGlow();
+
+        // 4. Shrinking Navbar Logic
+        const navbar = document.getElementById("navbar");
+        const navContent = document.getElementById("nav-content");
+
+        window.addEventListener("scroll", () => {
+          if (window.scrollY > 100) {
+            navbar.classList.add("scrolled");
+          } else {
+            navbar.classList.remove("scrolled");
+          }
+        });
+
+        // 5. Navbar Slider Logic
+        const navLinksContainer = document.querySelector(".nav-links");
+        const navItems = document.querySelectorAll(".nav-links a");
+        const navSlider = document.querySelector(".nav-slider");
+
+        if (navItems.length > 0 && navSlider) {
+          navItems.forEach((item) => {
+            item.addEventListener("mouseenter", (e) => {
+              const target = e.target;
+              const rect = target.getBoundingClientRect();
+              const containerRect = navLinksContainer.getBoundingClientRect();
+              const left = rect.left - containerRect.left;
+              navSlider.style.width = `${rect.width}px`;
+              navSlider.style.transform = `translateX(${left}px)`;
+              navSlider.style.opacity = "1";
+            });
+          });
+          navLinksContainer.addEventListener(
+            "mouseleave",
+            () => (navSlider.style.opacity = "0"),
+          );
+        }
+
+        // 6. Active Defense Log Simulator
+        const logStream = document.getElementById("log-stream");
+        if (logStream) {
+          const logs = [
+            { s: "ok", m: "Azure AD Sync Completed." },
+            { s: "ok", m: "Intune Policy 'Win10_Sec' deployed to 45 nodes." },
+            {
+              s: "block",
+              m: "Unauthorized SSH attempt blocked (IP: 192.168.x.x).",
+            },
+            { s: "warn", m: "High memory utilization on Node-B4." },
+            { s: "ok", m: "Zero-Trust verification passed for user 'Admin'." },
+            { s: "ok", m: "SCCM Software Update Group pushed successfully." },
+            {
+              s: "block",
+              m: "Malicious payload intercepted at Firewall Edge.",
+            },
+            { s: "ok", m: "Automated RCA generated for incident #4092." },
+          ];
+
+          setInterval(() => {
+            const log = logs[Math.floor(Math.random() * logs.length)];
+            const time = new Date().toLocaleTimeString("en-US", {
+              hour12: false,
+            });
+            const el = document.createElement("div");
+            el.className = "log-item";
+            el.innerHTML = `<span class="log-time">[${time}]</span> <span class="log-status ${log.s}">[${log.s.toUpperCase()}]</span> <span>${log.m}</span>`;
+            logStream.appendChild(el);
+
+            if (logStream.children.length > 8) {
+              logStream.removeChild(logStream.firstChild);
+            }
+          }, 2000);
+        }
+
+        // 7. Scroll Reveal & SVG Ring Graph Animation
+        const observer = new IntersectionObserver(
+          (entries) => {
+            entries.forEach((entry) => {
+              if (entry.isIntersecting) {
+                entry.target.classList.add("active");
+              }
+            });
+          },
+          { threshold: 0.1, rootMargin: "0px 0px -50px 0px" },
+        );
+
+        document
+          .querySelectorAll(".reveal-up, .reveal-graph")
+          .forEach((el) => observer.observe(el));
       });
     </script>
-
-    <!-- Toast Notification (Hidden by default) -->
-    <div class="toast-notification" id="toast">
-      <i class="fas fa-check-circle"></i>
-      <span>Email Copied to Clipboard!</span>
-    </div>
-
-    <!-- PDF Viewer Modal -->
-    <div class="pdf-modal" id="pdf-modal">
-      <div class="pdf-container">
-        <div class="pdf-header">
-          <span>Mustaquim_Resume.pdf</span>
-          <button id="close-pdf"><i class="fas fa-times"></i></button>
-        </div>
-        <iframe src="assets/pdf/resume.pdf" width="100%" height="100%"></iframe>
-      </div>
-    </div>
   </body>
 </html>
